@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'roboto_condensedregular';
+    src: url('../fonts/RobotoCondensed-Regular-webfont.eot');
+    src: url('../fonts/RobotoCondensed-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/RobotoCondensed-Regular-webfont.woff') format('woff'),
+         url('../fonts/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/RobotoCondensed-Regular-webfont.svg#roboto_condensedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ptsans_regular';
+    src: url('../fonts/PTSans-Regular-webfont.eot');
+    src: url('../fonts/PTSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/PTSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/PTSans-Regular-webfont.svg#ptsans_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NintendoNESFont';
+    src: url('../fonts/Nintendo-NES-Font.woff2') format('woff2'),
+        url('../fonts/Nintendo-NES-Font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,828 @@
+<html>
+	<head>
+		<title>Z1RT - Tracker</title>
+		<script src="js/track.js?v=10101"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/site.css?v=10101">
+		<link rel="stylesheet" type="text/css" href="css/owq1.css?v=10101">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css?v=10101">
+		<link rel="stylesheet" type="text/css" id="owstyle">
+		
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+	</head>
+	<body>
+		<div id="mainwrapper">
+			<div id="topwrapper" class="topwrapper">
+				<div id="topitems" class="topitems">
+					<div class="topswords">
+						<div id="item_woodsword" class="itembox woodsword itemnotcollected" onclick="itemclick('woodsword')"></div>
+						<div id="item_whitesword" class="itembox whitesword itemnotcollected" onclick="itemclick('whitesword')"></div>
+						<div id="item_magicsword" class="itembox magicsword itemnotcollected" onclick="itemclick('magicsword')"></div>
+					</div>
+					<div class="itemstopdiv">
+						<div id="item_raft" class="itembox raft itemnotcollected" onclick="itemclick('raft')"></div>
+						<div id="item_book" class="itemboxhalf book itemnotcollected" onclick="itemclick('book')"></div>
+						<div id="item_ring" class="itemboxhalf bluering itemnotcollected" onclick="itemclick('ring')"></div>
+						<div id="item_ladder" class="itembox ladder itemnotcollected" onclick="itemclick('ladder')"></div>
+						<div id="item_anykey" class="itemboxhalf anykey itemnotcollected" onclick="itemclick('anykey')"></div>
+						<div id="item_bracelet" class="itemboxhalf bracelet itemnotcollected" onclick="itemclick('bracelet')"></div>
+					</div>
+					<div class="itemsbottomdiv">
+						<div id="item_boomerang" class="itembox boomerang itemnotcollected" onclick="itemclick('boomerang')"></div>
+						<div id="item_bomb" class="itembox bomb itemnotcollected" onclick="itemclick('bomb')"></div>
+						<div id="item_arrow" class="itemboxhalf woodarrow itemnotcollected" onclick="itemclick('arrow')"></div>
+						<div id="item_bow" class="itemboxhalf bow itemnotcollected" onclick="itemclick('bow')"></div>
+						<div id="item_candle" class="itembox bluecandle itemnotcollected" onclick="itemclick('candle')"></div>
+						<div id="item_recorder" class="itembox recorder itemnotcollected" onclick="itemclick('recorder')"></div>
+						<div id="item_meat" class="itembox meat itemnotcollected" onclick="itemclick('meat')"></div>
+						<div id="item_potion" class="itembox manuscript itemnotcollected" onclick="itemclick('potion')"></div>
+						<div id="item_wand" class="itembox wand itemnotcollected" onclick="itemclick('wand')"></div>
+					</div>
+				</div>
+				<div class="tophearts">
+					<div id="topheartsheader" class="topheartsheader">MAX LIFE</div>
+					<div id="heart_9" class="heart"></div>
+					<div id="heart_10" class="heart"></div>
+					<div id="heart_11" class="heart"></div>
+					<div id="heart_12" class="heart"></div>
+					<div id="heart_13" class="heart"></div>
+					<div id="heart_14" class="heart"></div>
+					<div id="heart_15" class="heart"></div>
+					<div id="heart_16" class="heart"></div>
+					<div id="heart_1" class="heart"></div>
+					<div id="heart_2" class="heart"></div>
+					<div id="heart_3" class="heart"></div>
+					<div id="heart_4" class="heart"></div>
+					<div id="heart_5" class="heart"></div>
+					<div id="heart_6" class="heart"></div>
+					<div id="heart_7" class="heart"></div>
+					<div id="heart_8" class="heart"></div>
+					<div class="takeanyhearts">
+						<div id="takeanyheart_1" class="heartcontainer itemnotcollected" onclick="itemclick('heart1')"></div>
+						<div id="takeanyheart_2" class="heartcontainer itemnotcollected" onclick="itemclick('heart2')"></div>
+						<div id="takeanyheart_3" class="heartcontainer itemnotcollected" onclick="itemclick('heart3')"></div>
+						<div id="takeanyheart_4" class="heartcontainer itemnotcollected" onclick="itemclick('heart4')"></div>
+					</div>
+					<div class="owstats" id="owstats">
+						XX AVAILABLE / XX TOTAL
+					</div>
+				</div>
+				<div class="topinfo">
+
+				</div>
+				<div class="optionbuttons">
+					<div class="logo"></div>
+					<!-- <input type="button" class="optionbutton" value="Show Zones" />
+					<input type="button" class="optionbutton" value="Show Coords" />
+					<input type="button" class="optionbutton" value="View Hints" />
+					<input type="button" class="optionbutton" value="Shop Details" />
+					<input type="button" class="optionbutton" value="View/Edit Flags" /> -->
+				</div>
+				<div class="overworlditemsdiv">
+					<div class="overworlditemtext">OVERWORLD</div>
+					<div id="overworldwhitesword" class="owblock owwhitesword"></div>
+					<div id="overworlditem_1" class="owblock"></div>
+					<div id="overworldladder" class="owblock owladder"></div>
+					<div id="overworlditem_2" class="owblock"></div>
+					<div id="overworldarmos" class="owblock owarmos"></div>
+					<div id="overworlditem_3" class="owblock"></div>
+				</div>				
+			</div>
+			<div id="owwrapper" class="owwrapper">
+				<div id="ow_1_1" class="owmapdiv active ow_1_1" onclick="owclick(1,1);"><div id="owtag_1_1"></div><div id="owshop_1_1_1"></div><div id="owshop_1_1_2"></div><div id="owshop_1_1_3"></div></div>
+				<div id="ow_1_2" class="owmapdiv active ow_1_2" onclick="owclick(1,2);"><div id="owtag_1_2"></div><div id="owshop_1_2_1"></div><div id="owshop_1_2_2"></div><div id="owshop_1_2_3"></div></div>
+				<div id="ow_1_3" class="owmapdiv active ow_1_3" onclick="owclick(1,3);"><div id="owtag_1_3"></div><div id="owshop_1_3_1"></div><div id="owshop_1_3_2"></div><div id="owshop_1_3_3"></div></div>
+				<div id="ow_1_4" class="owmapdiv active ow_1_4" onclick="owclick(1,4);"><div id="owtag_1_4"></div><div id="owshop_1_4_1"></div><div id="owshop_1_4_2"></div><div id="owshop_1_4_3"></div></div>
+				<div id="ow_1_5" class="owmapdiv active ow_1_5" onclick="owclick(1,5);"><div id="owtag_1_5"></div><div id="owshop_1_5_1"></div><div id="owshop_1_5_2"></div><div id="owshop_1_5_3"></div></div>
+				<div id="ow_1_6" class="owmapdiv active ow_1_6" onclick="owclick(1,6);"><div id="owtag_1_6"></div><div id="owshop_1_6_1"></div><div id="owshop_1_6_2"></div><div id="owshop_1_6_3"></div></div>
+				<div id="ow_1_7" class="owmapdiv active ow_1_7" onclick="owclick(1,7);"><div id="owtag_1_7"></div><div id="owshop_1_7_1"></div><div id="owshop_1_7_2"></div><div id="owshop_1_7_3"></div></div>
+				<div id="ow_1_8" class="owmapdiv active ow_1_8" onclick="owclick(1,8);"><div id="owtag_1_8"></div><div id="owshop_1_8_1"></div><div id="owshop_1_8_2"></div><div id="owshop_1_8_3"></div></div>
+				<div id="ow_1_9" class="owmapdiv active ow_1_9" onclick="owclick(1,9);"><div id="owtag_1_9"></div><div id="owshop_1_9_1"></div><div id="owshop_1_9_2"></div><div id="owshop_1_9_3"></div></div>
+				<div id="ow_1_10" class="owmapdiv active ow_1_10" onclick="owclick(1,10);"><div id="owtag_1_10"></div><div id="owshop_1_10_1"></div><div id="owshop_1_10_2"></div><div id="owshop_1_10_3"></div></div>
+				<div id="ow_1_11" class="owmapdiv active ow_1_11" onclick="owclick(1,11);"><div id="owtag_1_11"></div><div id="owshop_1_11_1"></div><div id="owshop_1_11_2"></div><div id="owshop_1_11_3"></div></div>
+				<div id="ow_1_12" class="owmapdiv active ow_1_12" onclick="owclick(1,12);"><div id="owtag_1_12"></div><div id="owshop_1_12_1"></div><div id="owshop_1_12_2"></div><div id="owshop_1_12_3"></div></div>
+				<div id="ow_1_13" class="owmapdiv active ow_1_13" onclick="owclick(1,13);"><div id="owtag_1_13"></div><div id="owshop_1_13_1"></div><div id="owshop_1_13_2"></div><div id="owshop_1_13_3"></div></div>
+				<div id="ow_1_14" class="owmapdiv active ow_1_14" onclick="owclick(1,14);"><div id="owtag_1_14"></div><div id="owshop_1_14_1"></div><div id="owshop_1_14_2"></div><div id="owshop_1_14_3"></div></div>
+				<div id="ow_1_15" class="owmapdiv active ow_1_15" onclick="owclick(1,15);"><div id="owtag_1_15"></div><div id="owshop_1_15_1"></div><div id="owshop_1_15_2"></div><div id="owshop_1_15_3"></div></div>
+				<div id="ow_1_16" class="owmapdiv active ow_1_16" onclick="owclick(1,16);"><div id="owtag_1_16"></div><div id="owshop_1_16_1"></div><div id="owshop_1_16_2"></div><div id="owshop_1_16_3"></div></div>
+				<div id="ow_2_1" class="owmapdiv active ow_2_1" onclick="owclick(2,1);"><div id="owtag_2_1"></div><div id="owshop_2_1_1"></div><div id="owshop_2_1_2"></div><div id="owshop_2_1_3"></div></div>
+				<div id="ow_2_2" class="owmapdiv active ow_2_2" onclick="owclick(2,2);"><div id="owtag_2_2"></div><div id="owshop_2_2_1"></div><div id="owshop_2_2_2"></div><div id="owshop_2_2_3"></div></div>
+				<div id="ow_2_3" class="owmapdiv active ow_2_3" onclick="owclick(2,3);"><div id="owtag_2_3"></div><div id="owshop_2_3_1"></div><div id="owshop_2_3_2"></div><div id="owshop_2_3_3"></div></div>
+				<div id="ow_2_4" class="owmapdiv active ow_2_4" onclick="owclick(2,4);"><div id="owtag_2_4"></div><div id="owshop_2_4_1"></div><div id="owshop_2_4_2"></div><div id="owshop_2_4_3"></div></div>
+				<div id="ow_2_5" class="owmapdiv active ow_2_5" onclick="owclick(2,5);"><div id="owtag_2_5"></div><div id="owshop_2_5_1"></div><div id="owshop_2_5_2"></div><div id="owshop_2_5_3"></div></div>
+				<div id="ow_2_6" class="owmapdiv active ow_2_6" onclick="owclick(2,6);"><div id="owtag_2_6"></div><div id="owshop_2_6_1"></div><div id="owshop_2_6_2"></div><div id="owshop_2_6_3"></div></div>
+				<div id="ow_2_7" class="owmapdiv active ow_2_7" onclick="owclick(2,7);"><div id="owtag_2_7"></div><div id="owshop_2_7_1"></div><div id="owshop_2_7_2"></div><div id="owshop_2_7_3"></div></div>
+				<div id="ow_2_8" class="owmapdiv active ow_2_8" onclick="owclick(2,8);"><div id="owtag_2_8"></div><div id="owshop_2_8_1"></div><div id="owshop_2_8_2"></div><div id="owshop_2_8_3"></div></div>
+				<div id="ow_2_9" class="owmapdiv active ow_2_9" onclick="owclick(2,9);"><div id="owtag_2_9"></div><div id="owshop_2_9_1"></div><div id="owshop_2_9_2"></div><div id="owshop_2_9_3"></div></div>
+				<div id="ow_2_10" class="owmapdiv active ow_2_10" onclick="owclick(2,10);"><div id="owtag_2_10"></div><div id="owshop_2_10_1"></div><div id="owshop_2_10_2"></div><div id="owshop_2_10_3"></div></div>
+				<div id="ow_2_11" class="owmapdiv active ow_2_11" onclick="owclick(2,11);"><div id="owtag_2_11"></div><div id="owshop_2_11_1"></div><div id="owshop_2_11_2"></div><div id="owshop_2_11_3"></div></div>
+				<div id="ow_2_12" class="owmapdiv active ow_2_12" onclick="owclick(2,12);"><div id="owtag_2_12"></div><div id="owshop_2_12_1"></div><div id="owshop_2_12_2"></div><div id="owshop_2_12_3"></div></div>
+				<div id="ow_2_13" class="owmapdiv active ow_2_13" onclick="owclick(2,13);"><div id="owtag_2_13"></div><div id="owshop_2_13_1"></div><div id="owshop_2_13_2"></div><div id="owshop_2_13_3"></div></div>
+				<div id="ow_2_14" class="owmapdiv active ow_2_14" onclick="owclick(2,14);"><div id="owtag_2_14"></div><div id="owshop_2_14_1"></div><div id="owshop_2_14_2"></div><div id="owshop_2_14_3"></div></div>
+				<div id="ow_2_15" class="owmapdiv active ow_2_15" onclick="owclick(2,15);"><div id="owtag_2_15"></div><div id="owshop_2_15_1"></div><div id="owshop_2_15_2"></div><div id="owshop_2_15_3"></div></div>
+				<div id="ow_2_16" class="owmapdiv active ow_2_16" onclick="owclick(2,16);"><div id="owtag_2_16"></div><div id="owshop_2_16_1"></div><div id="owshop_2_16_2"></div><div id="owshop_2_16_3"></div></div>
+				<div id="ow_3_1" class="owmapdiv active ow_3_1" onclick="owclick(3,1);"><div id="owtag_3_1"></div><div id="owshop_3_1_1"></div><div id="owshop_3_1_2"></div><div id="owshop_3_1_3"></div></div>
+				<div id="ow_3_2" class="owmapdiv active ow_3_2" onclick="owclick(3,2);"><div id="owtag_3_2"></div><div id="owshop_3_2_1"></div><div id="owshop_3_2_2"></div><div id="owshop_3_2_3"></div></div>
+				<div id="ow_3_3" class="owmapdiv active ow_3_3" onclick="owclick(3,3);"><div id="owtag_3_3"></div><div id="owshop_3_3_1"></div><div id="owshop_3_3_2"></div><div id="owshop_3_3_3"></div></div>
+				<div id="ow_3_4" class="owmapdiv active ow_3_4" onclick="owclick(3,4);"><div id="owtag_3_4"></div><div id="owshop_3_4_1"></div><div id="owshop_3_4_2"></div><div id="owshop_3_4_3"></div></div>
+				<div id="ow_3_5" class="owmapdiv active ow_3_5" onclick="owclick(3,5);"><div id="owtag_3_5"></div><div id="owshop_3_5_1"></div><div id="owshop_3_5_2"></div><div id="owshop_3_5_3"></div></div>
+				<div id="ow_3_6" class="owmapdiv active ow_3_6" onclick="owclick(3,6);"><div id="owtag_3_6"></div><div id="owshop_3_6_1"></div><div id="owshop_3_6_2"></div><div id="owshop_3_6_3"></div></div>
+				<div id="ow_3_7" class="owmapdiv active ow_3_7" onclick="owclick(3,7);"><div id="owtag_3_7"></div><div id="owshop_3_7_1"></div><div id="owshop_3_7_2"></div><div id="owshop_3_7_3"></div></div>
+				<div id="ow_3_8" class="owmapdiv active ow_3_8" onclick="owclick(3,8);"><div id="owtag_3_8"></div><div id="owshop_3_8_1"></div><div id="owshop_3_8_2"></div><div id="owshop_3_8_3"></div></div>
+				<div id="ow_3_9" class="owmapdiv active ow_3_9" onclick="owclick(3,9);"><div id="owtag_3_9"></div><div id="owshop_3_9_1"></div><div id="owshop_3_9_2"></div><div id="owshop_3_9_3"></div></div>
+				<div id="ow_3_10" class="owmapdiv active ow_3_10" onclick="owclick(3,10);"><div id="owtag_3_10"></div><div id="owshop_3_10_1"></div><div id="owshop_3_10_2"></div><div id="owshop_3_10_3"></div></div>
+				<div id="ow_3_11" class="owmapdiv active ow_3_11" onclick="owclick(3,11);"><div id="owtag_3_11"></div><div id="owshop_3_11_1"></div><div id="owshop_3_11_2"></div><div id="owshop_3_11_3"></div></div>
+				<div id="ow_3_12" class="owmapdiv active ow_3_12" onclick="owclick(3,12);"><div id="owtag_3_12"></div><div id="owshop_3_12_1"></div><div id="owshop_3_12_2"></div><div id="owshop_3_12_3"></div></div>
+				<div id="ow_3_13" class="owmapdiv active ow_3_13" onclick="owclick(3,13);"><div id="owtag_3_13"></div><div id="owshop_3_13_1"></div><div id="owshop_3_13_2"></div><div id="owshop_3_13_3"></div></div>
+				<div id="ow_3_14" class="owmapdiv active ow_3_14" onclick="owclick(3,14);"><div id="owtag_3_14"></div><div id="owshop_3_14_1"></div><div id="owshop_3_14_2"></div><div id="owshop_3_14_3"></div></div>
+				<div id="ow_3_15" class="owmapdiv active ow_3_15" onclick="owclick(3,15);"><div id="owtag_3_15"></div><div id="owshop_3_15_1"></div><div id="owshop_3_15_2"></div><div id="owshop_3_15_3"></div></div>
+				<div id="ow_3_16" class="owmapdiv active ow_3_16" onclick="owclick(3,16);"><div id="owtag_3_16"></div><div id="owshop_3_16_1"></div><div id="owshop_3_16_2"></div><div id="owshop_3_16_3"></div></div>
+				<div id="ow_4_1" class="owmapdiv active ow_4_1" onclick="owclick(4,1);"><div id="owtag_4_1"></div><div id="owshop_4_1_1"></div><div id="owshop_4_1_2"></div><div id="owshop_4_1_3"></div></div>
+				<div id="ow_4_2" class="owmapdiv active ow_4_2" onclick="owclick(4,2);"><div id="owtag_4_2"></div><div id="owshop_4_2_1"></div><div id="owshop_4_2_2"></div><div id="owshop_4_2_3"></div></div>
+				<div id="ow_4_3" class="owmapdiv active ow_4_3" onclick="owclick(4,3);"><div id="owtag_4_3"></div><div id="owshop_4_3_1"></div><div id="owshop_4_3_2"></div><div id="owshop_4_3_3"></div></div>
+				<div id="ow_4_4" class="owmapdiv active ow_4_4" onclick="owclick(4,4);"><div id="owtag_4_4"></div><div id="owshop_4_4_1"></div><div id="owshop_4_4_2"></div><div id="owshop_4_4_3"></div></div>
+				<div id="ow_4_5" class="owmapdiv active ow_4_5" onclick="owclick(4,5);"><div id="owtag_4_5"></div><div id="owshop_4_5_1"></div><div id="owshop_4_5_2"></div><div id="owshop_4_5_3"></div></div>
+				<div id="ow_4_6" class="owmapdiv active ow_4_6" onclick="owclick(4,6);"><div id="owtag_4_6"></div><div id="owshop_4_6_1"></div><div id="owshop_4_6_2"></div><div id="owshop_4_6_3"></div></div>
+				<div id="ow_4_7" class="owmapdiv active ow_4_7" onclick="owclick(4,7);"><div id="owtag_4_7"></div><div id="owshop_4_7_1"></div><div id="owshop_4_7_2"></div><div id="owshop_4_7_3"></div></div>
+				<div id="ow_4_8" class="owmapdiv active ow_4_8" onclick="owclick(4,8);"><div id="owtag_4_8"></div><div id="owshop_4_8_1"></div><div id="owshop_4_8_2"></div><div id="owshop_4_8_3"></div></div>
+				<div id="ow_4_9" class="owmapdiv active ow_4_9" onclick="owclick(4,9);"><div id="owtag_4_9"></div><div id="owshop_4_9_1"></div><div id="owshop_4_9_2"></div><div id="owshop_4_9_3"></div></div>
+				<div id="ow_4_10" class="owmapdiv active ow_4_10" onclick="owclick(4,10);"><div id="owtag_4_10"></div><div id="owshop_4_10_1"></div><div id="owshop_4_10_2"></div><div id="owshop_4_10_3"></div></div>
+				<div id="ow_4_11" class="owmapdiv active ow_4_11" onclick="owclick(4,11);"><div id="owtag_4_11"></div><div id="owshop_4_11_1"></div><div id="owshop_4_11_2"></div><div id="owshop_4_11_3"></div></div>
+				<div id="ow_4_12" class="owmapdiv active ow_4_12" onclick="owclick(4,12);"><div id="owtag_4_12"></div><div id="owshop_4_12_1"></div><div id="owshop_4_12_2"></div><div id="owshop_4_12_3"></div></div>
+				<div id="ow_4_13" class="owmapdiv active ow_4_13" onclick="owclick(4,13);"><div id="owtag_4_13"></div><div id="owshop_4_13_1"></div><div id="owshop_4_13_2"></div><div id="owshop_4_13_3"></div></div>
+				<div id="ow_4_14" class="owmapdiv active ow_4_14" onclick="owclick(4,14);"><div id="owtag_4_14"></div><div id="owshop_4_14_1"></div><div id="owshop_4_14_2"></div><div id="owshop_4_14_3"></div></div>
+				<div id="ow_4_15" class="owmapdiv active ow_4_15" onclick="owclick(4,15);"><div id="owtag_4_15"></div><div id="owshop_4_15_1"></div><div id="owshop_4_15_2"></div><div id="owshop_4_15_3"></div></div>
+				<div id="ow_4_16" class="owmapdiv active ow_4_16" onclick="owclick(4,16);"><div id="owtag_4_16"></div><div id="owshop_4_16_1"></div><div id="owshop_4_16_2"></div><div id="owshop_4_16_3"></div></div>
+				<div id="ow_5_1" class="owmapdiv active ow_5_1" onclick="owclick(5,1);"><div id="owtag_5_1"></div><div id="owshop_5_1_1"></div><div id="owshop_5_1_2"></div><div id="owshop_5_1_3"></div></div>
+				<div id="ow_5_2" class="owmapdiv active ow_5_2" onclick="owclick(5,2);"><div id="owtag_5_2"></div><div id="owshop_5_2_1"></div><div id="owshop_5_2_2"></div><div id="owshop_5_2_3"></div></div>
+				<div id="ow_5_3" class="owmapdiv active ow_5_3" onclick="owclick(5,3);"><div id="owtag_5_3"></div><div id="owshop_5_3_1"></div><div id="owshop_5_3_2"></div><div id="owshop_5_3_3"></div></div>
+				<div id="ow_5_4" class="owmapdiv active ow_5_4" onclick="owclick(5,4);"><div id="owtag_5_4"></div><div id="owshop_5_4_1"></div><div id="owshop_5_4_2"></div><div id="owshop_5_4_3"></div></div>
+				<div id="ow_5_5" class="owmapdiv active ow_5_5" onclick="owclick(5,5);"><div id="owtag_5_5"></div><div id="owshop_5_5_1"></div><div id="owshop_5_5_2"></div><div id="owshop_5_5_3"></div></div>
+				<div id="ow_5_6" class="owmapdiv active ow_5_6" onclick="owclick(5,6);"><div id="owtag_5_6"></div><div id="owshop_5_6_1"></div><div id="owshop_5_6_2"></div><div id="owshop_5_6_3"></div></div>
+				<div id="ow_5_7" class="owmapdiv active ow_5_7" onclick="owclick(5,7);"><div id="owtag_5_7"></div><div id="owshop_5_7_1"></div><div id="owshop_5_7_2"></div><div id="owshop_5_7_3"></div></div>
+				<div id="ow_5_8" class="owmapdiv active ow_5_8" onclick="owclick(5,8);"><div id="owtag_5_8"></div><div id="owshop_5_8_1"></div><div id="owshop_5_8_2"></div><div id="owshop_5_8_3"></div></div>
+				<div id="ow_5_9" class="owmapdiv active ow_5_9" onclick="owclick(5,9);"><div id="owtag_5_9"></div><div id="owshop_5_9_1"></div><div id="owshop_5_9_2"></div><div id="owshop_5_9_3"></div></div>
+				<div id="ow_5_10" class="owmapdiv active ow_5_10" onclick="owclick(5,10);"><div id="owtag_5_10"></div><div id="owshop_5_10_1"></div><div id="owshop_5_10_2"></div><div id="owshop_5_10_3"></div></div>
+				<div id="ow_5_11" class="owmapdiv active ow_5_11" onclick="owclick(5,11);"><div id="owtag_5_11"></div><div id="owshop_5_11_1"></div><div id="owshop_5_11_2"></div><div id="owshop_5_11_3"></div></div>
+				<div id="ow_5_12" class="owmapdiv active ow_5_12" onclick="owclick(5,12);"><div id="owtag_5_12"></div><div id="owshop_5_12_1"></div><div id="owshop_5_12_2"></div><div id="owshop_5_12_3"></div></div>
+				<div id="ow_5_13" class="owmapdiv active ow_5_13" onclick="owclick(5,13);"><div id="owtag_5_13"></div><div id="owshop_5_13_1"></div><div id="owshop_5_13_2"></div><div id="owshop_5_13_3"></div></div>
+				<div id="ow_5_14" class="owmapdiv active ow_5_14" onclick="owclick(5,14);"><div id="owtag_5_14"></div><div id="owshop_5_14_1"></div><div id="owshop_5_14_2"></div><div id="owshop_5_14_3"></div></div>
+				<div id="ow_5_15" class="owmapdiv active ow_5_15" onclick="owclick(5,15);"><div id="owtag_5_15"></div><div id="owshop_5_15_1"></div><div id="owshop_5_15_2"></div><div id="owshop_5_15_3"></div></div>
+				<div id="ow_5_16" class="owmapdiv active ow_5_16" onclick="owclick(5,16);"><div id="owtag_5_16"></div><div id="owshop_5_16_1"></div><div id="owshop_5_16_2"></div><div id="owshop_5_16_3"></div></div>
+				<div id="ow_6_1" class="owmapdiv active ow_6_1" onclick="owclick(6,1);"><div id="owtag_6_1"></div><div id="owshop_6_1_1"></div><div id="owshop_6_1_2"></div><div id="owshop_6_1_3"></div></div>
+				<div id="ow_6_2" class="owmapdiv active ow_6_2" onclick="owclick(6,2);"><div id="owtag_6_2"></div><div id="owshop_6_2_1"></div><div id="owshop_6_2_2"></div><div id="owshop_6_2_3"></div></div>
+				<div id="ow_6_3" class="owmapdiv active ow_6_3" onclick="owclick(6,3);"><div id="owtag_6_3"></div><div id="owshop_6_3_1"></div><div id="owshop_6_3_2"></div><div id="owshop_6_3_3"></div></div>
+				<div id="ow_6_4" class="owmapdiv active ow_6_4" onclick="owclick(6,4);"><div id="owtag_6_4"></div><div id="owshop_6_4_1"></div><div id="owshop_6_4_2"></div><div id="owshop_6_4_3"></div></div>
+				<div id="ow_6_5" class="owmapdiv active ow_6_5" onclick="owclick(6,5);"><div id="owtag_6_5"></div><div id="owshop_6_5_1"></div><div id="owshop_6_5_2"></div><div id="owshop_6_5_3"></div></div>
+				<div id="ow_6_6" class="owmapdiv active ow_6_6" onclick="owclick(6,6);"><div id="owtag_6_6"></div><div id="owshop_6_6_1"></div><div id="owshop_6_6_2"></div><div id="owshop_6_6_3"></div></div>
+				<div id="ow_6_7" class="owmapdiv active ow_6_7" onclick="owclick(6,7);"><div id="owtag_6_7"></div><div id="owshop_6_7_1"></div><div id="owshop_6_7_2"></div><div id="owshop_6_7_3"></div></div>
+				<div id="ow_6_8" class="owmapdiv active ow_6_8" onclick="owclick(6,8);"><div id="owtag_6_8"></div><div id="owshop_6_8_1"></div><div id="owshop_6_8_2"></div><div id="owshop_6_8_3"></div></div>
+				<div id="ow_6_9" class="owmapdiv active ow_6_9" onclick="owclick(6,9);"><div id="owtag_6_9"></div><div id="owshop_6_9_1"></div><div id="owshop_6_9_2"></div><div id="owshop_6_9_3"></div></div>
+				<div id="ow_6_10" class="owmapdiv active ow_6_10" onclick="owclick(6,10);"><div id="owtag_6_10"></div><div id="owshop_6_10_1"></div><div id="owshop_6_10_2"></div><div id="owshop_6_10_3"></div></div>
+				<div id="ow_6_11" class="owmapdiv active ow_6_11" onclick="owclick(6,11);"><div id="owtag_6_11"></div><div id="owshop_6_11_1"></div><div id="owshop_6_11_2"></div><div id="owshop_6_11_3"></div></div>
+				<div id="ow_6_12" class="owmapdiv active ow_6_12" onclick="owclick(6,12);"><div id="owtag_6_12"></div><div id="owshop_6_12_1"></div><div id="owshop_6_12_2"></div><div id="owshop_6_12_3"></div></div>
+				<div id="ow_6_13" class="owmapdiv active ow_6_13" onclick="owclick(6,13);"><div id="owtag_6_13"></div><div id="owshop_6_13_1"></div><div id="owshop_6_13_2"></div><div id="owshop_6_13_3"></div></div>
+				<div id="ow_6_14" class="owmapdiv active ow_6_14" onclick="owclick(6,14);"><div id="owtag_6_14"></div><div id="owshop_6_14_1"></div><div id="owshop_6_14_2"></div><div id="owshop_6_14_3"></div></div>
+				<div id="ow_6_15" class="owmapdiv active ow_6_15" onclick="owclick(6,15);"><div id="owtag_6_15"></div><div id="owshop_6_15_1"></div><div id="owshop_6_15_2"></div><div id="owshop_6_15_3"></div></div>
+				<div id="ow_6_16" class="owmapdiv active ow_6_16" onclick="owclick(6,16);"><div id="owtag_6_16"></div><div id="owshop_6_16_1"></div><div id="owshop_6_16_2"></div><div id="owshop_6_16_3"></div></div>
+				<div id="ow_7_1" class="owmapdiv active ow_7_1" onclick="owclick(7,1);"><div id="owtag_7_1"></div><div id="owshop_7_1_1"></div><div id="owshop_7_1_2"></div><div id="owshop_7_1_3"></div></div>
+				<div id="ow_7_2" class="owmapdiv active ow_7_2" onclick="owclick(7,2);"><div id="owtag_7_2"></div><div id="owshop_7_2_1"></div><div id="owshop_7_2_2"></div><div id="owshop_7_2_3"></div></div>
+				<div id="ow_7_3" class="owmapdiv active ow_7_3" onclick="owclick(7,3);"><div id="owtag_7_3"></div><div id="owshop_7_3_1"></div><div id="owshop_7_3_2"></div><div id="owshop_7_3_3"></div></div>
+				<div id="ow_7_4" class="owmapdiv active ow_7_4" onclick="owclick(7,4);"><div id="owtag_7_4"></div><div id="owshop_7_4_1"></div><div id="owshop_7_4_2"></div><div id="owshop_7_4_3"></div></div>
+				<div id="ow_7_5" class="owmapdiv active ow_7_5" onclick="owclick(7,5);"><div id="owtag_7_5"></div><div id="owshop_7_5_1"></div><div id="owshop_7_5_2"></div><div id="owshop_7_5_3"></div></div>
+				<div id="ow_7_6" class="owmapdiv active ow_7_6" onclick="owclick(7,6);"><div id="owtag_7_6"></div><div id="owshop_7_6_1"></div><div id="owshop_7_6_2"></div><div id="owshop_7_6_3"></div></div>
+				<div id="ow_7_7" class="owmapdiv active ow_7_7" onclick="owclick(7,7);"><div id="owtag_7_7"></div><div id="owshop_7_7_1"></div><div id="owshop_7_7_2"></div><div id="owshop_7_7_3"></div></div>
+				<div id="ow_7_8" class="owmapdiv active ow_7_8" onclick="owclick(7,8);"><div id="owtag_7_8"></div><div id="owshop_7_8_1"></div><div id="owshop_7_8_2"></div><div id="owshop_7_8_3"></div></div>
+				<div id="ow_7_9" class="owmapdiv active ow_7_9" onclick="owclick(7,9);"><div id="owtag_7_9"></div><div id="owshop_7_9_1"></div><div id="owshop_7_9_2"></div><div id="owshop_7_9_3"></div></div>
+				<div id="ow_7_10" class="owmapdiv active ow_7_10" onclick="owclick(7,10);"><div id="owtag_7_10"></div><div id="owshop_7_10_1"></div><div id="owshop_7_10_2"></div><div id="owshop_7_10_3"></div></div>
+				<div id="ow_7_11" class="owmapdiv active ow_7_11" onclick="owclick(7,11);"><div id="owtag_7_11"></div><div id="owshop_7_11_1"></div><div id="owshop_7_11_2"></div><div id="owshop_7_11_3"></div></div>
+				<div id="ow_7_12" class="owmapdiv active ow_7_12" onclick="owclick(7,12);"><div id="owtag_7_12"></div><div id="owshop_7_12_1"></div><div id="owshop_7_12_2"></div><div id="owshop_7_12_3"></div></div>
+				<div id="ow_7_13" class="owmapdiv active ow_7_13" onclick="owclick(7,13);"><div id="owtag_7_13"></div><div id="owshop_7_13_1"></div><div id="owshop_7_13_2"></div><div id="owshop_7_13_3"></div></div>
+				<div id="ow_7_14" class="owmapdiv active ow_7_14" onclick="owclick(7,14);"><div id="owtag_7_14"></div><div id="owshop_7_14_1"></div><div id="owshop_7_14_2"></div><div id="owshop_7_14_3"></div></div>
+				<div id="ow_7_15" class="owmapdiv active ow_7_15" onclick="owclick(7,15);"><div id="owtag_7_15"></div><div id="owshop_7_15_1"></div><div id="owshop_7_15_2"></div><div id="owshop_7_15_3"></div></div>
+				<div id="ow_7_16" class="owmapdiv active ow_7_16" onclick="owclick(7,16);"><div id="owtag_7_16"></div><div id="owshop_7_16_1"></div><div id="owshop_7_16_2"></div><div id="owshop_7_16_3"></div></div>
+				<div id="ow_8_1" class="owmapdiv active ow_8_1" onclick="owclick(8,1);"><div id="owtag_8_1"></div><div id="owshop_8_1_1"></div><div id="owshop_8_1_2"></div><div id="owshop_8_1_3"></div></div>
+				<div id="ow_8_2" class="owmapdiv active ow_8_2" onclick="owclick(8,2);"><div id="owtag_8_2"></div><div id="owshop_8_2_1"></div><div id="owshop_8_2_2"></div><div id="owshop_8_2_3"></div></div>
+				<div id="ow_8_3" class="owmapdiv active ow_8_3" onclick="owclick(8,3);"><div id="owtag_8_3"></div><div id="owshop_8_3_1"></div><div id="owshop_8_3_2"></div><div id="owshop_8_3_3"></div></div>
+				<div id="ow_8_4" class="owmapdiv active ow_8_4" onclick="owclick(8,4);"><div id="owtag_8_4"></div><div id="owshop_8_4_1"></div><div id="owshop_8_4_2"></div><div id="owshop_8_4_3"></div></div>
+				<div id="ow_8_5" class="owmapdiv active ow_8_5" onclick="owclick(8,5);"><div id="owtag_8_5"></div><div id="owshop_8_5_1"></div><div id="owshop_8_5_2"></div><div id="owshop_8_5_3"></div></div>
+				<div id="ow_8_6" class="owmapdiv active ow_8_6" onclick="owclick(8,6);"><div id="owtag_8_6"></div><div id="owshop_8_6_1"></div><div id="owshop_8_6_2"></div><div id="owshop_8_6_3"></div></div>
+				<div id="ow_8_7" class="owmapdiv active ow_8_7" onclick="owclick(8,7);"><div id="owtag_8_7"></div><div id="owshop_8_7_1"></div><div id="owshop_8_7_2"></div><div id="owshop_8_7_3"></div></div>
+				<div id="ow_8_8" class="owmapdiv active ow_8_8" onclick="owclick(8,8);"><div id="owtag_8_8"></div><div id="owshop_8_8_1"></div><div id="owshop_8_8_2"></div><div id="owshop_8_8_3"></div></div>
+				<div id="ow_8_9" class="owmapdiv active ow_8_9" onclick="owclick(8,9);"><div id="owtag_8_9"></div><div id="owshop_8_9_1"></div><div id="owshop_8_9_2"></div><div id="owshop_8_9_3"></div></div>
+				<div id="ow_8_10" class="owmapdiv active ow_8_10" onclick="owclick(8,10);"><div id="owtag_8_10"></div><div id="owshop_8_10_1"></div><div id="owshop_8_10_2"></div><div id="owshop_8_10_3"></div></div>
+				<div id="ow_8_11" class="owmapdiv active ow_8_11" onclick="owclick(8,11);"><div id="owtag_8_11"></div><div id="owshop_8_11_1"></div><div id="owshop_8_11_2"></div><div id="owshop_8_11_3"></div></div>
+				<div id="ow_8_12" class="owmapdiv active ow_8_12" onclick="owclick(8,12);"><div id="owtag_8_12"></div><div id="owshop_8_12_1"></div><div id="owshop_8_12_2"></div><div id="owshop_8_12_3"></div></div>
+				<div id="ow_8_13" class="owmapdiv active ow_8_13" onclick="owclick(8,13);"><div id="owtag_8_13"></div><div id="owshop_8_13_1"></div><div id="owshop_8_13_2"></div><div id="owshop_8_13_3"></div></div>
+				<div id="ow_8_14" class="owmapdiv active ow_8_14" onclick="owclick(8,14);"><div id="owtag_8_14"></div><div id="owshop_8_14_1"></div><div id="owshop_8_14_2"></div><div id="owshop_8_14_3"></div></div>
+				<div id="ow_8_15" class="owmapdiv active ow_8_15" onclick="owclick(8,15);"><div id="owtag_8_15"></div><div id="owshop_8_15_1"></div><div id="owshop_8_15_2"></div><div id="owshop_8_15_3"></div></div>
+				<div id="ow_8_16" class="owmapdiv active ow_8_16" onclick="owclick(8,16);"><div id="owtag_8_16"></div><div id="owshop_8_16_1"></div><div id="owshop_8_16_2"></div><div id="owshop_8_16_3"></div></div>				
+			</div>
+			<div id="dungeonwrapper" class="dungeonwrapper">
+				<div id="dungeoninfo" class="dungeoninfo">
+					<div id="dungeoninfoheader" class="dungeoninfoheader">
+						<div id="unknowndungeonheader" class="dungeonheadersquare">?</div>
+						<div id="dungeonhintheader" class="dungeonheadersquare">H</div>
+						<div class="dungeonheadersquare"></div>
+						<div class="dungeonheadersquarewide">ITEMS</div>
+						<div class="dungeonheadersquarewide">BLOCK</div>
+					</div>
+					<div id="unknowndungeonscolumn" class="dungeoninfosingle">
+						<div id="unknowndungeon_1" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_2" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_3" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_4" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_5" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_6" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_7" class="dungeonunknownblock"></div>
+						<div id="unknowndungeon_8" class="dungeonunknownblock"></div>
+						<div class="dungeoninfosquare"></div>
+						<div class="dungeoninfosquare"></div>
+					</div>
+					<div id="hintdungeonscolumn" class="dungeoninfosingle">
+						<div id="dungeonhint_1" class="dungeonhintblock"></div>
+						<div id="dungeonhint_2" class="dungeonhintblock"></div>
+						<div id="dungeonhint_3" class="dungeonhintblock"></div>
+						<div id="dungeonhint_4" class="dungeonhintblock"></div>
+						<div id="dungeonhint_5" class="dungeonhintblock"></div>
+						<div id="dungeonhint_6" class="dungeonhintblock"></div>
+						<div id="dungeonhint_7" class="dungeonhintblock"></div>
+						<div id="dungeonhint_8" class="dungeonhintblock"></div>
+						<div id="dungeonhint_9" class="dungeonhintblock"></div>
+						<div class="dungeoninfosquare"></div>
+					</div>
+					<div id="triforcedungeonscolumn" class="dungeoninfosingle">
+						<div id="triforce_1" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(1);">1</div>
+						<div id="triforce_2" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(2);">2</div>
+						<div id="triforce_3" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(3);">3</div>
+						<div id="triforce_4" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(4);">4</div>
+						<div id="triforce_5" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(5);">5</div>
+						<div id="triforce_6" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(6);">6</div>
+						<div id="triforce_7" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(7);">7</div>
+						<div id="triforce_8" class="dungeontriforceblock itemnotcollected" onclick="collecttriforce(8);">8</div>
+						<div class="dungeoninfosquare"></div>
+						<div class="dungeoninfosquare"></div>
+					</div>
+					<div id="itemsdungeonscolumn" class="dungeoninfoslim">
+						<div id="dungeonitem_1_1" class="dungeonblock"><img id="dungeonitemimage_1_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_2_1" class="dungeonblock"><img id="dungeonitemimage_2_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_3_1" class="dungeonblock"><img id="dungeonitemimage_3_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_4_1" class="dungeonblock"><img id="dungeonitemimage_4_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_5_1" class="dungeonblock"><img id="dungeonitemimage_5_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_6_1" class="dungeonblock"><img id="dungeonitemimage_6_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_7_1" class="dungeonblock"><img id="dungeonitemimage_7_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_8_1" class="dungeonblock"><img id="dungeonitemimage_8_1" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_9_1" class="dungeonblockstairs"><img id="dungeonitemimage_9_1" class="dungeonitemimg" src="" /></div>
+					</div>
+					<div id="itemsdungeonscolumn" class="dungeoninfoslim">
+						<div id="dungeonitem_1_2" class="dungeonblock"><img id="dungeonitemimage_1_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_2_2" class="dungeonblock"><img id="dungeonitemimage_2_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_3_2" class="dungeonblockstairs"><img id="dungeonitemimage_3_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_4_2" class="dungeonblockstairs"><img id="dungeonitemimage_4_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_5_2" class="dungeonblockstairs"><img id="dungeonitemimage_5_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_6_2" class="dungeonblockstairs"><img id="dungeonitemimage_6_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_7_2" class="dungeonblockstairs"><img id="dungeonitemimage_7_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_8_2" class="dungeonblockstairs"><img id="dungeonitemimage_8_2" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_9_2" class="dungeonblockstairs"><img id="dungeonitemimage_9_2" class="dungeonitemimg" src="" /></div>
+					</div>
+					<div id="itemsdungeonscolumn" class="dungeoninfosinglewide">
+						<div id="dungeonitem_1_3" class="dungeonblockstairs"><img id="dungeonitemimage_1_3" class="dungeonitemimg" src="" /></div>
+						<div id="dungeonitem_2_3" class="dungeonblockstairs"></div>
+						<div id="dungeonitem_3_3" class="dungeonblockstairs"></div>
+						<div id="dungeonitem_4_3" class="dungeonblockstairs"></div>
+						<div id="dungeonitem_5_3" class="dungeonblockstairs"></div>
+						<div id="dungeonitem_6_3" class="dungeonblockstairs"></div>
+						<div id="dungeonitem_7_3" class="dungeonblockstairs"></div>
+						<div id="dungeonitem_8_3" class="dungeonblockstairs"><img id="dungeonitemimage_8_3" class="dungeonitemimg" src="" /></div>
+					</div>
+					<div id="blockersdungeonscolumn" class="dungeoninfoslim">
+						<div id="dungeonblock_1_1" class="dungeonblock"></div>
+						<div id="dungeonblock_2_1" class="dungeonblock"></div>
+						<div id="dungeonblock_3_1" class="dungeonblock"></div>
+						<div id="dungeonblock_4_1" class="dungeonblock"></div>
+						<div id="dungeonblock_5_1" class="dungeonblock"></div>
+						<div id="dungeonblock_6_1" class="dungeonblock"></div>
+						<div id="dungeonblock_7_1" class="dungeonblock"></div>
+						<div id="dungeonblock_8_1" class="dungeonblock"></div>
+						<div id="dungeonblock_9_1" class="dungeonblock"></div>
+					</div>
+					<div id="blockersdungeonscolumn" class="dungeoninfoslim">
+						<div id="dungeonblock_1_2" class="dungeonblock"></div>
+						<div id="dungeonblock_2_2" class="dungeonblock"></div>
+						<div id="dungeonblock_3_2" class="dungeonblock"></div>
+						<div id="dungeonblock_4_2" class="dungeonblock"></div>
+						<div id="dungeonblock_5_2" class="dungeonblock"></div>
+						<div id="dungeonblock_6_2" class="dungeonblock"></div>
+						<div id="dungeonblock_7_2" class="dungeonblock"></div>
+						<div id="dungeonblock_8_2" class="dungeonblock"></div>
+						<div id="dungeonblock_9_2" class="dungeonblock"></div>
+					</div>
+					<div id="blockersdungeonscolumn" class="dungeoninfosinglewide">
+						<div id="dungeonblock_1_3" class="dungeonblock"></div>
+						<div id="dungeonblock_2_3" class="dungeonblock"></div>
+						<div id="dungeonblock_3_3" class="dungeonblock"></div>
+						<div id="dungeonblock_4_3" class="dungeonblock"></div>
+						<div id="dungeonblock_5_3" class="dungeonblock"></div>
+						<div id="dungeonblock_6_3" class="dungeonblock"></div>
+						<div id="dungeonblock_7_3" class="dungeonblock"></div>
+						<div id="dungeonblock_8_3" class="dungeonblock"></div>
+						<div id="dungeonblock_9_3" class="dungeonblock"></div>
+					</div>
+					<div id="tabdungeonscolumn" class="dungeoninfotabs">
+						<div class="dungeonselecttab" onclick="switchdungeon(0);">1</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(1);">2</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(2);">3</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(3);">4</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(4);">5</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(5);">6</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(6);">7</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(7);">8</div>
+						<div class="dungeonselecttab" onclick="switchdungeon(8);">9</div>
+					</div>
+
+				</div>
+				<div id="dungeonmap" class="dungeonmap">
+					<div id="dungeonmapcolumn_1" class="dungeonmapcolumn">
+						<div id="dungeonmap_1_0" class="dungeonmapheader">L</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_1_1" class="dungeonmaproom"><div id="dungeonmapmonster_1_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_2" class="dungeonmaproom"><div id="dungeonmapmonster_1_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_3" class="dungeonmaproom"><div id="dungeonmapmonster_1_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_4" class="dungeonmaproom"><div id="dungeonmapmonster_1_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_5" class="dungeonmaproom"><div id="dungeonmapmonster_1_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_6" class="dungeonmaproom"><div id="dungeonmapmonster_1_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_7" class="dungeonmaproom"><div id="dungeonmapmonster_1_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_1_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_1_8" class="dungeonmaproom"><div id="dungeonmapmonster_1_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_1_8" class="dungeonmapitem"></div></div>	
+					</div>
+					<div id="dungeonmapspacer_1" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_1_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_1_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_2" class="dungeonmapcolumn">
+						<div id="dungeonmap_2_0" class="dungeonmapheader">E</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_2_1" class="dungeonmaproom"><div id="dungeonmapmonster_2_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_2" class="dungeonmaproom"><div id="dungeonmapmonster_2_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_3" class="dungeonmaproom"><div id="dungeonmapmonster_2_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_4" class="dungeonmaproom"><div id="dungeonmapmonster_2_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_5" class="dungeonmaproom"><div id="dungeonmapmonster_2_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_6" class="dungeonmaproom"><div id="dungeonmapmonster_2_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_7" class="dungeonmaproom"><div id="dungeonmapmonster_2_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_2_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_2_8" class="dungeonmaproom"><div id="dungeonmapmonster_2_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_2_8" class="dungeonmapitem"></div></div>	
+					</div>
+					<div id="dungeonmapspacer_2" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_2_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_2_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_3" class="dungeonmapcolumn">
+						<div id="dungeonmap_3_0" class="dungeonmapheader">V</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_3_1" class="dungeonmaproom"><div id="dungeonmapmonster_3_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_2" class="dungeonmaproom"><div id="dungeonmapmonster_3_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_3" class="dungeonmaproom"><div id="dungeonmapmonster_3_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_4" class="dungeonmaproom"><div id="dungeonmapmonster_3_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_5" class="dungeonmaproom"><div id="dungeonmapmonster_3_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_6" class="dungeonmaproom"><div id="dungeonmapmonster_3_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_7" class="dungeonmaproom"><div id="dungeonmapmonster_3_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_3_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_3_8" class="dungeonmaproom"><div id="dungeonmapmonster_3_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_3_8" class="dungeonmapitem"></div></div>
+					</div>
+					<div id="dungeonmapspacer_3" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_3_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_3_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_4" class="dungeonmapcolumn">
+						<div id="dungeonmap_4_0" class="dungeonmapheader">E</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_4_1" class="dungeonmaproom"><div id="dungeonmapmonster_4_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_2" class="dungeonmaproom"><div id="dungeonmapmonster_4_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_3" class="dungeonmaproom"><div id="dungeonmapmonster_4_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_4" class="dungeonmaproom"><div id="dungeonmapmonster_4_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_5" class="dungeonmaproom"><div id="dungeonmapmonster_4_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_6" class="dungeonmaproom"><div id="dungeonmapmonster_4_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_7" class="dungeonmaproom"><div id="dungeonmapmonster_4_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_4_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_4_8" class="dungeonmaproom"><div id="dungeonmapmonster_4_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_4_8" class="dungeonmapitem"></div></div>
+					</div>
+					<div id="dungeonmapspacer_4" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_4_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_4_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_5" class="dungeonmapcolumn">
+						<div id="dungeonmap_5_0" class="dungeonmapheader">L</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_5_1" class="dungeonmaproom"><div id="dungeonmapmonster_5_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_2" class="dungeonmaproom"><div id="dungeonmapmonster_5_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_3" class="dungeonmaproom"><div id="dungeonmapmonster_5_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_4" class="dungeonmaproom"><div id="dungeonmapmonster_5_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_5" class="dungeonmaproom"><div id="dungeonmapmonster_5_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_6" class="dungeonmaproom"><div id="dungeonmapmonster_5_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_7" class="dungeonmaproom"><div id="dungeonmapmonster_5_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_5_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_5_8" class="dungeonmaproom"><div id="dungeonmapmonster_5_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_5_8" class="dungeonmapitem"></div></div>
+					</div>
+					<div id="dungeonmapspacer_5" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_5_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_5_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_6" class="dungeonmapcolumn">
+						<div id="dungeonmap_6_0" class="dungeonmapheader">-</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_6_1" class="dungeonmaproom"><div id="dungeonmapmonster_6_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_2" class="dungeonmaproom"><div id="dungeonmapmonster_6_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_3" class="dungeonmaproom"><div id="dungeonmapmonster_6_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_4" class="dungeonmaproom"><div id="dungeonmapmonster_6_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_5" class="dungeonmaproom"><div id="dungeonmapmonster_6_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_6" class="dungeonmaproom"><div id="dungeonmapmonster_6_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_7" class="dungeonmaproom"><div id="dungeonmapmonster_6_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_6_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_6_8" class="dungeonmaproom"><div id="dungeonmapmonster_6_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_6_8" class="dungeonmapitem"></div></div>
+					</div>
+					<div id="dungeonmapspacer_6" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_6_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_6_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_7" class="dungeonmapcolumn">
+						<div id="dungeonmap_7_0" class="dungeonmapheader">X</div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_7_1" class="dungeonmaproom"><div id="dungeonmapmonster_7_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_2" class="dungeonmaproom"><div id="dungeonmapmonster_7_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_3" class="dungeonmaproom"><div id="dungeonmapmonster_7_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_4" class="dungeonmaproom"><div id="dungeonmapmonster_7_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_5" class="dungeonmaproom"><div id="dungeonmapmonster_7_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_6" class="dungeonmaproom"><div id="dungeonmapmonster_7_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_7" class="dungeonmaproom"><div id="dungeonmapmonster_7_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_7_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_7_8" class="dungeonmaproom"><div id="dungeonmapmonster_7_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_7_8" class="dungeonmapitem"></div></div>
+					</div>
+					<div id="dungeonmapspacer_7" class="dungeonmapdoorcolumn">
+						<div class="dungeonspacerew"></div>
+						<div class="dungeonspacertinyew"></div>
+						<div id="dungeondoorew_7_1" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_2" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_3" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_4" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_5" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_6" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_7" class="dungeonmapdoorew"></div>
+						<div class="dungeonspacersmallew"></div>
+						<div id="dungeondoorew_7_8" class="dungeonmapdoorew"></div>
+					</div>
+					<div id="dungeonmapcolumn_8" class="dungeonmapcolumn">
+						<div id="dungeonmap_8_0" class="dungeonmapheader"></div>
+						<div class="dungeonmapspacer"></div>
+						<div id="dungeonmap_8_1" class="dungeonmaproom"><div id="dungeonmapmonster_8_1" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_1" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_1" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_2" class="dungeonmaproom"><div id="dungeonmapmonster_8_2" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_2" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_2" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_3" class="dungeonmaproom"><div id="dungeonmapmonster_8_3" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_3" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_3" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_4" class="dungeonmaproom"><div id="dungeonmapmonster_8_4" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_4" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_4" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_5" class="dungeonmaproom"><div id="dungeonmapmonster_8_5" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_5" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_5" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_6" class="dungeonmaproom"><div id="dungeonmapmonster_8_6" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_6" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_6" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_7" class="dungeonmaproom"><div id="dungeonmapmonster_8_7" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_7" class="dungeonmapitem"></div></div>
+						<div id="dungeondoorns_8_7" class="dungeonmapdoorns"></div>
+						<div id="dungeonmap_8_8" class="dungeonmaproom"><div id="dungeonmapmonster_8_8" class="dungeonmapmonster"></div><div id="dungeonmapitem_8_8" class="dungeonmapitem"></div></div>
+					</div>
+
+				</div>
+				<div id="owmagnify" class="owmagnify">
+					<div id="owmagnify_1" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_2" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_3" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_4" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_5" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_6" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_7" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_8" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+					<div id="owmagnify_9" class="owmagnifypanel"><img class="owmagnifygrid" src="./images/overworld/grid.png"></div>
+				</div>
+			</div>
+			<div id="noteswrapper">
+				
+			</div>
+		</div>
+
+		<div id="unknowndungeonmodal" class="unknowndungeonmodal">
+			<div id="unknowndungeonselect_0" class="unknowndungeonmodalblock" onclick="setunknowndungeon('');"></div>
+			<div id="unknowndungeonselect_1" class="unknowndungeonmodalblock" onclick="setunknowndungeon('A');">A</div>
+			<div id="unknowndungeonselect_2" class="unknowndungeonmodalblock" onclick="setunknowndungeon('B');">B</div>
+			<div id="unknowndungeonselect_3" class="unknowndungeonmodalblock" onclick="setunknowndungeon('C');">C</div>
+			<div id="unknowndungeonselect_4" class="unknowndungeonmodalblock" onclick="setunknowndungeon('D');">D</div>
+			<div id="unknowndungeonselect_5" class="unknowndungeonmodalblock" onclick="setunknowndungeon('E');">E</div>
+			<div id="unknowndungeonselect_6" class="unknowndungeonmodalblock" onclick="setunknowndungeon('F');">F</div>
+			<div id="unknowndungeonselect_7" class="unknowndungeonmodalblock" onclick="setunknowndungeon('G');">G</div>
+			<div id="unknowndungeonselect_8" class="unknowndungeonmodalblock" onclick="setunknowndungeon('H');">H</div>
+		</div>
+
+		<div id="dungeonhintmodal" class="dungeonhintmodal">
+			<div id="dungeonhintselect_0" class="dungeonhintmodalblock" onclick="sethint('');"></div>
+			<div id="dungeonhintselect_1" class="dungeonhintmodalblock" onclick="sethint('CO');">CO</div>
+			<div id="dungeonhintselect_2" class="dungeonhintmodalblock" onclick="sethint('DE');">DE</div>
+			<div id="dungeonhintselect_3" class="dungeonhintmodalblock" onclick="sethint('DM');">DM</div>
+			<div id="dungeonhintselect_4" class="dungeonhintmodalblock" onclick="sethint('DW');">DW</div>
+			<div id="dungeonhintselect_5" class="dungeonhintmodalblock" onclick="sethint('FO');">FO</div>
+			<div id="dungeonhintselect_6" class="dungeonhintmodalblock" onclick="sethint('GR');">GR</div>
+			<div id="dungeonhintselect_7" class="dungeonhintmodalblock" onclick="sethint('LH');">LH</div>
+			<div id="dungeonhintselect_8" class="dungeonhintmodalblock" onclick="sethint('LK');">LK</div>
+			<div id="dungeonhintselect_9" class="dungeonhintmodalblock" onclick="sethint('RI');">RI</div>
+			<div id="dungeonhintselect_10" class="dungeonhintmodalblock" onclick="sethint('ST');">ST</div>
+		</div>
+
+		<div id="itemselectmodal" class="itemselectmodal">
+			<div id="itemheader" class="itemselectheader"><div class="modalheadeleft">HAVE</div><div class="modalheaderright">SEE</div></div>
+			<div id="itemselectanykey" class="modalblock itemselectanykey"></div>
+			<div id="itemselectbook" class="modalblock itemselectbook"></div>
+			<div id="itemselectboomerang" class="modalblock itemselectboomerang"></div>
+			<div id="itemselectbow" class="modalblock itemselectbow"></div>
+			<div id="itemselectladder" class="modalblock itemselectladder"></div>
+			<div id="itemselectmagicboomerang" class="modalblock itemselectmagicboomerang"></div>
+			<div id="itemselectbracelet" class="modalblock itemselectbracelet"></div>
+			<div id="itemselectraft" class="modalblock itemselectraft"></div>
+			<div id="itemselectrecorder" class="modalblock itemselectrecorder"></div>
+			<div id="itemselectredcandle" class="modalblock itemselectredcandle"></div>
+			<div id="itemselectredring" class="modalblock itemselectredring"></div>
+			<div id="itemselectsilverarrow" class="modalblock itemselectsilverarrow"></div>
+			<div id="itemselectwand" class="modalblock itemselectwand"></div>
+			<div id="itemselectwhitesword" class="modalblock itemselectwhitesword"></div>
+			<div id="itemselectheartcontainer" class="modalblock itemselectheartcontainer"></div>
+			<div id="itemselectempty" class="modalblock"></div>
+		</div>
+
+		<div id="blockerselectmodal" class="blockerselectmodal">
+			<div id="blockerheader" class="blockerselectheader"><div class="modalheadeleft">HARD BLOCK</div><div class="modalheaderright">SOFT BLOCK</div></div>
+			<div id="blockerselectbomb" class="modalblock blockerselectbomb"></div>
+			<div id="blockerselectbow" class="modalblock blockerselectbow"></div>
+			<div id="blockerselectkey" class="modalblock blockerselectkey"></div>
+			<div id="blockerselectladder" class="modalblock blockerselectladder"></div>
+			<div id="blockerselectmeat" class="modalblock blockerselectmeat"></div>
+			<div id="blockerselectrecorder" class="modalblock blockerselectrecorder"></div>
+			<div id="blockerselectmelee" class="modalblock blockerselectmelee"></div>
+			<div id="blockerselectempty" class="modalblock"></div>
+		</div>
+
+		<div id="owselectmodal" class="owselectmodal">
+			<div class="owselectheader">DUNGEONS</div>
+			<div id="owselectdungeon1" class="owselect owselectdungeon">1</div>
+			<div id="owselectdungeon2" class="owselect owselectdungeon">2</div>
+			<div id="owselectdungeon3" class="owselect owselectdungeon">3</div>
+			<div id="owselectdungeon4" class="owselect owselectdungeon">4</div>
+			<div id="owselectdungeon5" class="owselect owselectdungeon">5</div>
+			<div id="owselectdungeon6" class="owselect owselectdungeon">6</div>
+			<div id="owselectdungeon7" class="owselect owselectdungeon">7</div>
+			<div id="owselectdungeon8" class="owselect owselectdungeon">8</div>
+			<div id="owselectdungeon9" class="owselect owselectdungeon">9</div>
+			<div class="owselectheader">ANY ROADS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWORDS</div>
+			<div id="owselectanyroad1" class="owselect owselectanyroad">1</div>
+			<div id="owselectanyroad2" class="owselect owselectanyroad">2</div>
+			<div id="owselectanyroad3" class="owselect owselectanyroad">3</div>
+			<div id="owselectanyroad4" class="owselect owselectanyroad">4</div>
+			<div class="owselect owselectspacer"></div>
+			<div class="owselect owselectspacer"></div>
+			<div id="owselectwoodsword" class="owselect owselectsword woodsword_large"></div>
+			<div id="owselectwhitesword" class="owselect owselectsword whitesword_large"></div>
+			<div id="owselectmagicsword" class="owselect owselectsword magicsword_large"></div>
+			<div class="owselectheader">SHOP ITEMS</div>
+			<div class="owselect owselectspacer"></div>
+			<div id="owselectwoodarrow" class="owselect owselectshop woodarrow_large"></div>
+			<div id="owselectbomb" class="owselect owselectshop bomb"></div>
+			<div id="owselectbluecandle" class="owselect owselectshop bluecandle"></div>
+			<div id="owselectkey" class="owselect owselectshop key"></div>
+			<div id="owselectmeat" class="owselect owselectshop meat"></div>
+			<div id="owselectbluering" class="owselect owselectshop bluering_large"></div>
+			<div id="owselectshield" class="owselect owselectshop shield"></div>
+			<div class="owselect owselectspacer"></div>
+			<div class="owselectheader">MISC</div>
+			<div id="owselectmanuscript" class="owselect owselectmisc manuscript"></div>
+			<div id="owselectpotion" class="owselect owselectmisc redpotion"></div>
+			<div id="owselecthint" class="owselect owselectmisc">?</div>
+			<div id="owselectrupee" class="owselect owselectmisc rupee"></div>
+			<div id="owselecttakeany" class="owselect owselectmisc heartcontainer"></div>
+			<div id="owselectgamble" class="owselect owselectmisc">+</div>
+			<div class="owselect owselectspacer"></div>
+			<div id="owselectclear" class="owselect owselectclear"></div>
+			<div id="owselectunclear" class="owselect owselectunclear"></div>
+			<div id="owselecthovertext" class="owselectheader">XXXXX</div>
+		</div>
+
+		<div id="dungeonroommodal" class="dungeonroommodal">
+			<div id="dungeonselecthovertext" class="dungeonselectheader"></div>
+			<div id="dungeonroomstartingbottom" class="dungeonroom dungeonroomstartingbottom"></div>
+			<div id="dungeonroomstartingleft" class="dungeonroom dungeonroomstartingleft"></div>
+			<div id="dungeonroomstartingtop" class="dungeonroom dungeonroomstartingtop"></div>
+			<div id="dungeonroomstartingright" class="dungeonroom dungeonroomstartingright"></div>
+			<div id="dungeonroomganon" class="dungeonroom dungeonroomganon"></div>
+			<div id="dungeonroomzelda" class="dungeonroom dungeonroomzelda"></div>			
+			<div id="dungeonrooml9blank" class="dungeonroom dungeonroomblank"></div>
+			<div id="dungeonroomemptyroom" class="dungeonroom dungeonroomemptyroom"></div>
+			<div id="dungeonroompushroom" class="dungeonroom dungeonroompushroom"></div>
+			<div id="dungeonroomstaircase" class="dungeonroom dungeonroomstaircase"></div>
+			<div id="dungeonroomsingleriver" class="dungeonroom dungeonroomsingleriver" ></div>
+			<div id="dungeonroomdoubleriver" class="dungeonroom dungeonroomdoubleriver"></div>
+			<div id="dungeonroomeastriver" class="dungeonroom dungeonroomeastriver"></div>
+			<div id="dungeonroomsquareriver" class="dungeonroom dungeonroomsquareriver"></div>
+			<div id="dungeonroomchevyriver" class="dungeonroom dungeonroomchevyriver"></div>
+			<div id="dungeonroombottombridge" class="dungeonroom dungeonroombottombridge"></div>
+			<div id="dungeonroomleftbridge" class="dungeonroom dungeonroomleftbridge"></div>
+			<div id="dungeonroominsersection" class="dungeonroom dungeonroominsersection"></div>
+			<div id="dungeonroomchutens" class="dungeonroom dungeonroomchutens"></div>
+			<div id="dungeonroomchuteew" class="dungeonroom dungeonroomchuteew"></div>
+			<div id="dungeonroommugger" class="dungeonroom dungeonroommugger"></div>
+			<div id="dungeonroombombupgrade" class="dungeonroom dungeonroombombupgrade"></div>
+			<div id="dungeonroommeatblock" class="dungeonroom dungeonroommeatblock"></div>
+			<div id="dungeonroomtransport1" class="dungeonroom dungeonroomtransport1"></div>
+			<div id="dungeonroomtransport2" class="dungeonroom dungeonroomtransport2"></div>
+			<div id="dungeonroomtransport3" class="dungeonroom dungeonroomtransport3"></div>
+			<div id="dungeonroomtransport4" class="dungeonroom dungeonroomtransport4"></div>
+			<div id="dungeonroomtransport5" class="dungeonroom dungeonroomtransport5"></div>
+			<div id="dungeonroomtransport6" class="dungeonroom dungeonroomtransport6"></div>
+			<div id="dungeonroomtransport7" class="dungeonroom dungeonroomtransport7"></div>
+			<div id="dungeonroomtransport8" class="dungeonroom dungeonroomtransport8"></div>
+			<div id="dungeonroomtransport0" class="dungeonroom dungeonroomtransport0"></div>
+			<div id="dungeonroomblank" class="dungeonroom dungeonroomblank"></div>
+		</div>
+
+		<div id="dungeonobjectmodal" class="dungeonobjectmodal">
+			<div id="dungeonselectobjecthovertext" class="dungeonobjectheader"></div>
+			<div id="dungeonobjecttriforce" class="dungeonobject dungeonobjecttriforce"></div>
+			<div id="dungeonobjectheartcontainer" class="dungeonobject dungeonobjectheartcontainer"></div>
+			<div id="dungeonobjectitem" class="dungeonobject dungeonobjectitem"></div>
+			<div id="dungeonobjectbomb" class="dungeonobject dungeonobjectbomb"></div>
+			<div id="dungeonobjectkey" class="dungeonobject dungeonobjectkey"></div>
+			<div id="dungeonobjectrupee" class="dungeonobject dungeonobjectrupee"></div>
+			<div id="dungeonobjectmap" class="dungeonobject dungeonobjectmap"></div>
+			<div id="dungeonobjectcompass" class="dungeonobject dungeonobjectcompass"></div>
+			<div id="dungeonobjectblank" class="dungeonobject dungeonobjectblank"></div>
+		</div>
+
+		<div id="dungeonmonstermodal" class="dungeonmonstermodal">
+			<div id="dungeonselectmonsterhovertext" class="dungeonmonsterheader"></div>
+			<div id="dungeonmonstergleeok" class="dungeonmonster dungeonmonstergleeok"></div>
+			<div id="dungeonmonsterpatra" class="dungeonmonster dungeonmonsterpatra"></div>
+			<div id="dungeonmonstermanhandla" class="dungeonmonster dungeonmonstermanhandla"></div>
+			<div id="dungeonmonsteraquamentus" class="dungeonmonster dungeonmonsteraquamentus"></div>
+			<div id="dungeonmonstergohma" class="dungeonmonster dungeonmonstergohma"></div>
+			<div id="dungeonmonsterdigdogger" class="dungeonmonster dungeonmonsterdigdogger"></div>
+			<div id="dungeonmonstermoldorm" class="dungeonmonster dungeonmonstermoldorm"></div>
+			<div id="dungeonmonsterlanmola" class="dungeonmonster dungeonmonsterlanmola"></div>
+			<div id="dungeonmonsterdodongo" class="dungeonmonster dungeonmonsterdodongo"></div>
+			<div id="dungeonmonsterwizzrobe" class="dungeonmonster dungeonmonsterwizzrobe"></div>
+			<div id="dungeonmonsterdarknut" class="dungeonmonster dungeonmonsterdarknut"></div>
+			<div id="dungeonmonsterpolsvoice" class="dungeonmonster dungeonmonsterpolsvoice"></div>
+			<div id="dungeonmonsterbluebubble" class="dungeonmonster dungeonmonsterbluebubble"></div>
+			<div id="dungeonmonsterredbubble" class="dungeonmonster dungeonmonsterredbubble"></div>
+			<div id="dungeonmonsterother" class="dungeonmonster dungeonmonsterother"></div>
+			<div id="dungeonmonsterblank" class="dungeonmonster dungeonmonsterblank"></div>
+		</div>
+
+		<script>window.initialize()</script>
+	</body>
+</html>

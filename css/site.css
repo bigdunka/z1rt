@@ -1,0 +1,1599 @@
+body { 
+	font-family: NintendoNESFont, roboto_condensedregular, Arial, Helvetica, sans-serif; 
+	font-size: 14px;
+	background-color: black;
+}
+
+.logo {
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 116px;
+	height: 68px;
+}
+
+.topwrapper {
+	width: 960px;
+	height: 234px;
+	background-image: url(../images/itemgrid.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.owwrapper {
+	width: 960px;
+	height: 320px;
+	margin-top: 4px;
+}
+
+.owmapdiv {
+	width: 60px;
+	height: 40px;
+	background-size: cover;
+	float: left;
+	cursor: pointer;
+}
+
+.owmapdiv.available {
+	box-sizing: border-box;
+    border: 2px solid #00dbff;
+}
+
+.owmapdiv.tagged {
+	box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.owmapdiv.unavailable {
+	filter: grayscale(100%) brightness(70%);
+	box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.itembox {
+	width: 72px;
+	height: 72px;
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: contain;
+}
+
+.itemboxhalf {
+	width: 36px;
+	height: 72px;
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: contain;
+}
+
+.topswords {
+	width: 88px;
+	height: 234px;
+	float: left;
+}
+
+.itemnotcollected {
+	filter: grayscale(100%) !important;
+}
+
+.woodsword {
+	background-image: url(../images/woodsword.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	cursor: pointer;
+}
+
+.woodsword_large {
+	background-image: url(../images/woodsword_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+}
+
+.whitesword {
+	background-image: url(../images/whitesword.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.whitesword_large {
+	background-image: url(../images/whitesword_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	margin-top: 6px;
+}
+
+.magicsword {
+	background-image: url(../images/magicsword.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.magicsword_large {
+	background-image: url(../images/magicsword_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	margin-top: 6px;
+}
+
+.topitems {
+	width: 396px;
+	height: 234px;
+	float: left;
+}
+
+.itemstopdiv {
+	width: 376px;
+	height: 80px;
+}
+
+.raft {
+	background-image: url(../images/raft.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.book {
+	background-image: url(../images/book.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bluering {
+	background-image: url(../images/bluering.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.redring {
+	background-image: url(../images/redring.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bluering_large {
+	background-image: url(../images/bluering_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.redring_large {
+	background-image: url(../images/redring_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.ladder {
+	background-image: url(../images/ladder.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.anykey {
+	background-image: url(../images/anykey.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.anykey_large {
+	background-image: url(../images/anykey_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bracelet {
+	background-image: url(../images/bracelet.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bracelet_large {
+	background-image: url(../images/bracelet_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.itemsbottomdiv {
+	width: 376px;
+	height: 144px;
+}
+
+.boomerang {
+	background-image: url(../images/boomerang.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.magicboomerang {
+	background-image: url(../images/magicboomerang.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bomb {
+	background-image: url(../images/bomb.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.bombupgrade {
+	background-image: url(../images/bombupgrade.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.bombupgrade_large {
+	background-image: url(../images/bombupgrade_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.woodarrow {
+	background-image: url(../images/woodarrow.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.woodarrow_large {
+	background-image: url(../images/woodarrow_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.silverarrow {
+	background-image: url(../images/silverarrow.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.silverarrow_large {
+	background-image: url(../images/silverarrow_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bow {
+	background-image: url(../images/bow.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bow_large {
+	background-image: url(../images/bow_large.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.bluecandle {
+	background-image: url(../images/bluecandle.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.redcandle {
+	background-image: url(../images/redcandle.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.recorder {
+	background-image: url(../images/recorder.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.meat {
+	background-image: url(../images/meat.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.manuscript {
+	background-image: url(../images/manuscript.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.bluepotion {
+	background-image: url(../images/bluepotion.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.redpotion {
+	background-image: url(../images/redpotion.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+	cursor: pointer;
+}
+
+.wand {
+	background-image: url(../images/wand.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.key {
+	background-image: url(../images/key.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.shield {
+	background-image: url(../images/shield.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+.rupee {
+	background-image: url(../images/rupee.png);
+	filter: drop-shadow(0 0 .12rem rgb(255, 255, 255));
+	float: left;
+}
+
+
+
+.tophearts {
+	width: 240px;
+	height: 76px;
+	float: left;
+	margin-left: 40px;
+}
+
+.topheartsheader {
+	color: red;
+	font-size: 29px;
+	margin-bottom: 38px;
+}
+
+.takeanyhearts {
+	width: 224px;
+	height: 48px;
+	float: left;
+	padding-left: 24px;
+	margin-top: 10px;
+}
+
+.heart {
+	background-image: url(../images/heart.png);
+	height: 30px;
+	width: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	float: left;
+	visibility: hidden;
+}
+
+.heartcontainer {
+	background-image: url(../images/heartcontainer.png);
+	height: 48px;
+	width: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	float: left;
+	cursor: pointer;
+}
+
+.anypotion {
+	background-image: url(../images/redpotion.png);
+	height: 48px;
+	width: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	float: left;
+	cursor: pointer;
+}
+
+.topinfo {
+	height: 70px;
+	width: 120px;
+	float: left;
+	margin-left: 30px;
+}
+
+.optionbuttons {
+	width: 116px;
+	height: 176px;
+	float: left;
+	padding-left: 18px;
+}
+
+.optionbutton {
+	width: 110px;
+	color: white;
+	background-color: blue;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-top: 6px;
+}
+
+.modalblock {
+	height: 40px;
+	width: 40px;
+	border: 1px #dddcc8 solid;
+	background-color: #222;
+	float: left;
+	margin: 2px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;	
+}
+
+.owblock {
+	height: 32px;
+	width: 32px;
+	border: 1px #dddcc8 solid;
+	background-color: #222;
+	float: left;
+	margin: 2px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;	
+}
+
+.owwhitesword {
+	background-image: url(../images/whitesword.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.owladder {
+	background-image: url(../images/ladder.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.owarmos {
+	background-image: url(../images/armos.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.dungeonwrapper {
+	width: 960px;
+  	height: 396px;
+  	margin-top: 4px;
+}
+
+.dungeoninfo {
+	width: 384px;
+	height: 396px;
+	float: left;
+}
+
+.dungeonmap {
+	width: 576px;
+	height: 396px;
+	float: left;
+	display: none;
+}
+
+.owmagnify {
+	width: 576px;
+	height: 396px;
+	float: left;
+}
+
+.owmagnifypanel {
+	width: 192px;
+	height: 132px;
+	float: left;
+	background-repeat: no-repeat;
+  	background-size: contain;
+}
+
+.owmagnifygrid {
+	width: 192px;
+	height: 132px;
+	opacity: 0.6;
+}
+
+.dungeoninfoheader {
+	width: 384px;
+	height: 36px;
+}
+
+.dungeoninfosingle {
+	width: 36px;
+	height: 324px;
+	margin-right: 2px;
+	float: left;
+}
+
+.dungeoninfosinglewide {
+	width: 36px;
+	height: 324px;
+	margin-right: 6px;
+	float: left;
+}
+
+.dungeoninfoslim {
+	width: 36px;
+	height: 324px;
+	float: left;
+}
+
+.dungeoninfotabs {
+	width: 42px;
+	height: 324px;
+	float: left;
+}
+
+.dungeonheadersquare {
+	width: 38px;
+	height: 28px;
+	color: white;
+	float: left;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.dungeonheadersquarewide {
+	width: 114px;
+	height: 28px;
+	color: white;
+	float: left;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.dungeoninfosquare {
+	width: 36px;
+	height: 36px;
+}
+
+.dungeonblock {
+	height: 34px;
+	width: 34px;
+	border: 1px #dddcc8 solid;
+	background-color: #222;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.dungeonblockstairs {
+	background-image: url(../images/stairs.png);
+	background-repeat: no-repeat;
+	background-size: contain;	
+	height: 34px;
+	width: 34px;
+	border: 1px #dddcc8 solid;
+	background-color: #222;
+	cursor: pointer;
+}
+
+.dungeonitemimg {
+	background-repeat: no-repeat;
+	background-size: contain;	
+	height: 34px;
+	width: 34px;
+}
+
+.dungeonblockblank {
+	height: 36px;
+	width: 36px;
+}
+
+.dungeonselecttab {
+	height: 27px;
+	width: 32px;
+	background-color: black;
+	color: white;
+	border-radius: 10px 0px 0px 10px;
+	border: solid white;
+	border-width: 2px;
+	text-align: center;
+	font-size: 18px;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+.dungeontriforceblock {
+	background-image: url(../images/triforce.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 22px;
+	width: 36px;
+	text-align: center;
+	padding-top: 14px;
+	cursor: pointer;
+}
+
+.dungeonhintblock {
+	background-image: url(../images/hint.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 24px;
+	width: 36px;
+	text-align: center;
+	padding-top: 12px;
+	cursor: pointer;
+	font-size: 12px;
+	color: white;
+}
+
+.dungeonunknownblock {
+	background-image: url(../images/unknown.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 24px;
+	width: 36px;
+	text-align: center;
+	padding-top: 12px;
+	cursor: pointer;
+	font-size: 12px;
+	color: white;
+}
+
+.dungeonmapcolumn {
+	height: 396px;
+	width: 58px;
+	float: left;
+}
+
+.dungeonmapdoorcolumn {
+	height: 396px;
+	width: 16px;
+	float: left;
+}
+
+.dungeonmapheader {
+	width: 58px;
+	height: 24px;
+	text-align: center;
+	color: white;
+	padding-top: 6px;
+	font-size: 18px;
+}
+
+.dungeonmaproom {
+	width: 56px;
+	height: 28px;
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.dungeonmapdoorns {
+	width: 26px;
+	height: 14px;
+	border: 1px solid white;
+	margin: auto;
+	cursor: pointer;
+}
+
+.dungeonmapspacer {
+	width: 58px;
+	height: 6px;
+}
+
+.dungeonmapdoorew {
+	width: 14px;
+	height: 22px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.dungeonspacerew {
+	width: 16px;
+	height: 28px;
+}
+
+.dungeonspacersmallew {
+	width: 16px;
+	height: 16px;
+}
+
+.dungeonspacertinyew {
+	width: 16px;
+	height: 8px;
+}
+
+.owstats {
+	padding-top: 24px;
+	font-size: 10px;
+	color: white;
+	float: left;
+}
+
+.dungeonhintmodal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 36px;
+  	width: 396px;
+	background-color: black;
+	border: 1px solid white;
+	display: none;
+	color: white;
+	font-size: 12px;
+}
+
+.dungeonhintmodalblock {
+	background-image: url(../images/hint.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 24px;
+	width: 36px;
+	text-align: center;
+	padding-top: 12px;
+	cursor: pointer;
+	float: left;
+}
+
+.unknowndungeonmodal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 36px;
+  	width: 324px;
+	background-color: black;
+	border: 1px solid white;
+	display: none;
+	color: white;
+	font-size: 12px;
+}
+
+.unknowndungeonmodalblock {
+	background-image: url(../images/unknown.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 24px;
+	width: 36px;
+	text-align: center;
+	padding-top: 12px;
+	cursor: pointer;
+	float: left;
+}
+
+.itemselectmodal {
+	width: 184px;
+	height: 224px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	border: 1px solid white;
+	color: white;
+	font-size: 12px;
+}
+
+.itemselectheader {
+	background-image: url(../images/mouse.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 184px;
+	height: 40px;
+	background-color: #271931;
+}
+
+.blockerselectmodal {
+	width: 184px;
+	height: 132px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	border: 1px solid white;
+	color: white;
+	font-size: 12px;
+}
+
+.blockerselectheader {
+	background-image: url(../images/mouse.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 184px;
+	height: 40px;
+	background-color: #271931;
+}
+
+.itemselectanykey {
+	background-image: url(../images/anykey.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectbook {
+	background-image: url(../images/book.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectboomerang {
+	background-image: url(../images/boomerang.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectbow {
+	background-image: url(../images/bow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectladder {
+	background-image: url(../images/ladder.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectmagicboomerang {
+	background-image: url(../images/magicboomerang.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectbracelet {
+	background-image: url(../images/bracelet.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectraft {
+	background-image: url(../images/raft.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectrecorder {
+	background-image: url(../images/recorder.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectredcandle {
+	background-image: url(../images/redcandle.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectredring {
+	background-image: url(../images/redring.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectsilverarrow {
+	background-image: url(../images/silverarrow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectwand {
+	background-image: url(../images/wand.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectwhitesword {
+	background-image: url(../images/whitesword.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.itemselectheartcontainer {
+	background-image: url(../images/heartcontainer.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectkey {
+	background-image: url(../images/key.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectbow {
+	background-image: url(../images/bow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectladder {
+	background-image: url(../images/ladder.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectrecorder {
+	background-image: url(../images/recorder.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectmelee {
+	background-image: url(../images/melee.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectwand {
+	background-image: url(../images/wand.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectmeat {
+	background-image: url(../images/meat.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockerselectbomb {
+	background-image: url(../images/bomb.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.blockershardblock {
+	background-color: #6c1111;
+}
+
+.blockerssoftblock {
+	background-color: #c89f24;
+}
+
+.blockersobtained {
+	background-color: #208c11;
+}
+
+ .owselectmodal {
+	width: 288px;
+	height: 208px;
+ 	border: 1px solid white;
+	padding: 2px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+}
+
+ .owselect {
+	width: 30px;
+	height: 24px;
+	background-color: black;
+	border: 1px solid white;
+	float: left;
+	font-size: 16px;
+	padding-top: 6px;
+	text-align: center;
+ }
+
+ .owselectheader {
+	width: 288px;
+	height: 14px;
+	font-size: 11px;
+	color: white;
+	float: left;
+	text-align: center;
+	padding-top: 2px;
+	background-color: #271931;
+ }
+
+ .owselectdungeon {
+	background-color: #caca39;
+	cursor: pointer;
+ }
+
+ .owselectanyroad {
+	background-color: #ce6275;
+	cursor: pointer;
+ }
+
+ .owselectsword {
+	background-color: #202897;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 26px;
+	margin-top: 0px;
+	cursor: pointer;
+ }
+
+ .owselectshop {
+	background-color: #926e14;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 26px;
+	margin-top: 0px;
+	cursor: pointer;
+ }
+
+ .owselectmisc {
+	background-color: #377909;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 26px;
+	margin-top: 0px;
+	cursor: pointer;
+ }
+
+ .owselectclear {
+	background-color: #9a9a9a;
+	cursor: pointer;
+ }
+
+ .owselectunclear {
+	background-color: #fbd7a7;
+	cursor: pointer;
+ }
+
+ .owselectspacer {
+	border-color: #0000;
+ }
+
+ .modalheadeleft {
+	width: 80px;
+	text-align: center;
+	float: left;
+	margin-top: 10px;
+ }
+
+ .modalheaderright {
+	width: 60px;
+	text-align: center;
+	float: left;
+	margin-top: 10px;
+	margin-left: 36px;
+ }
+
+ .owtag {
+	width: 30px;
+	height: 22px;
+	border: 1px solid white;
+	font-size: 16px;
+	text-align: center;
+	margin: 3px auto auto auto;
+	padding-top: 6px;
+	float: initial;
+ }
+
+ .owshoptag {
+	width: 16px;
+	height: 16px;
+	border: 1px solid white;
+	margin: 8px auto auto auto;
+	padding-top: 6px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-color: black;
+ }
+
+ .overworlditemtext {
+	font-size: 14px;
+	color: white;
+	text-align: center;
+ }
+
+ .overworlditemsdiv {
+	height: 40px;
+	width: 228px;
+	float: right;
+}
+
+.dungeonroommodal {
+	height: 244px;
+	width: 370px;
+	display: none;
+	position: absolute;
+	left: 494px;
+	top: 678px;
+}
+
+.dungeonobjectmodal {
+	height: 208px;
+	width: 186px;
+	display: none;
+	position: absolute;
+	left: 588px;
+	top: 658px;
+}
+
+.dungeonmonstermodal {
+	height: 270px;
+	width: 248px;
+	background-color: red;
+	display: none;
+	position: absolute;
+	left: 556px;
+	top: 646px;
+}
+
+.dungeonroom {
+	width: 72px;
+	height: 36px;
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	cursor: pointer;
+	float: left;
+}
+
+ .dungeonselectheader {
+	width: 368px;
+	height: 18px;
+	font-size: 14px;
+	color: white;
+	float: left;
+	text-align: center;
+	padding-top: 2px;
+	background-color: #271931;
+ }
+
+ .dungeontileuncleared {
+	filter: brightness(150%);
+ }
+
+ .dungeonroomstartingtop {
+	background-image: url(../images/dungeons/startingtop.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+ .dungeonroomstartingleft {
+	background-image: url(../images/dungeons/startingleft.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+ }
+
+ .dungeonroomstartingright {
+	background-image: url(../images/dungeons/startingright.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+ }
+
+ .dungeonroomstartingbottom {
+	background-image: url(../images/dungeons/startingbottom.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+ }
+
+.dungeonroomdoubleriver {
+	background-image: url(../images/dungeons/doubleriver.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomsingleriver {
+	background-image: url(../images/dungeons/singleriver.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomeastriver {
+	background-image: url(../images/dungeons/eastriver.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomsquareriver {
+	background-image: url(../images/dungeons/squareriver.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomchevyriver {
+	background-image: url(../images/dungeons/chevyriver.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroombottombridge {
+	background-image: url(../images/dungeons/bottombridge.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomleftbridge {
+	background-image: url(../images/dungeons/leftbridge.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport1 {
+	background-image: url(../images/dungeons/transport1.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport2 {
+	background-image: url(../images/dungeons/transport2.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport3 {
+	background-image: url(../images/dungeons/transport3.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport4 {
+	background-image: url(../images/dungeons/transport4.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport5 {
+	background-image: url(../images/dungeons/transport5.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport6 {
+	background-image: url(../images/dungeons/transport6.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport7 {
+	background-image: url(../images/dungeons/transport7.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport8 {
+	background-image: url(../images/dungeons/transport8.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomtransport0 {
+	background-image: url(../images/dungeons/transport0.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomstaircase {
+	background-image: url(../images/dungeons/staircase.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomemptyroom {
+	background-image: url(../images/dungeons/emptyroom.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroompushroom {
+	background-image: url(../images/dungeons/pushroom.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroominsersection {
+	background-image: url(../images/dungeons/intersection.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomchutens {
+	background-image: url(../images/dungeons/chutens.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomchuteew {
+	background-image: url(../images/dungeons/chuteew.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroommugger {
+	background-image: url(../images/dungeons/mugger.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroombombupgrade {
+	background-image: url(../images/dungeons/bombupgrade.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroommeatblock {
+	background-image: url(../images/dungeons/meatblock.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomganon {
+	background-image: url(../images/dungeons/ganon.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomzelda {
+	background-image: url(../images/dungeons/zelda.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonroomblank {
+	background-color: black;
+}
+
+.dungeonddoor {
+	background-color: black;
+}
+
+.dungeondooropen {
+	background-color: grey;
+
+}
+
+.dungeondoorkey {
+	background-color: green;
+
+}
+
+.dungeondoorlocked {
+	background-color: purple;
+
+}
+
+.dungeondoorspecial {
+	background-color: gold;
+}
+
+.dungeondoorblock {
+	background-color: red;
+
+}
+
+.dungeonobject {
+	width: 60px;
+  	height: 60px;
+	background-color: black;
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	cursor: pointer;
+	float: left;
+}
+
+.dungeonobjecttriforce {
+	background-image: url(../images/triforce.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectheartcontainer {
+	background-image: url(../images/heartcontainer.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectitem {
+	background-image: url(../images/shield.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectbomb {
+	background-image: url(../images/bomb.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectkey {
+	background-image: url(../images/key.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectrupee {
+	background-image: url(../images/rupee.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectmap {
+	background-image: url(../images/map.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectcompass {
+	background-image: url(../images/compass.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonobjectblank {
+	background-color: black;
+}
+
+.dungeonobjectheader {
+	width: 186px;
+	height: 18px;
+	font-size: 12px;
+	color: white;
+	float: left;
+	text-align: center;
+	padding-top: 4px;
+	background-color: #271931;
+}
+
+.dungeonmonsterheader {
+	width: 248px;
+	height: 18px;
+	font-size: 12px;
+	color: white;
+	float: left;
+	text-align: center;
+	padding-top: 4px;
+	background-color: #271931;
+}
+
+.dungeonmonster {
+	width: 60px;
+  	height: 60px;
+	background-color: black;
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	cursor: pointer;
+	float: left;
+}
+
+.dungeonmonstergleeok {
+	background-image: url(../images/gleeok.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterpatra {
+	background-image: url(../images/patra.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonstermanhandla {
+	background-image: url(../images/manhandla.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsteraquamentus {
+	background-image: url(../images/aquamentus.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonstergohma {
+	background-image: url(../images/gohma.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterdigdogger {
+	background-image: url(../images/digdogger.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonstermoldorm {
+	background-image: url(../images/moldorm.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterlanmola {
+	background-image: url(../images/lanmola.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterdodongo {
+	background-image: url(../images/dodongo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterwizzrobe {
+	background-image: url(../images/wizzrobe.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterdarknut {
+	background-image: url(../images/darknut.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterpolsvoice {
+	background-image: url(../images/polsvoice.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterbluebubble {
+	background-image: url(../images/bluebubble.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterredbubble {
+	background-image: url(../images/redbubble.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterother {
+	background-image: url(../images/monsterother.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dungeonmonsterblank {
+	background-color: black;
+}
+
+.dungeonmapmonster {
+	top: -2px;
+	left: -2px;
+	width: 22px;
+	height: 22px;
+	position: relative;
+}
+
+.dungeonmapitem {
+	top: -14px;
+	left: 36px;
+	width: 22px;
+	height: 22px;
+	position: relative;
+}
+
