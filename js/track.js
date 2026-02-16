@@ -1321,7 +1321,7 @@
 					currentelement.style.backgroundImage = "url('')"; 
 				} else {
 					window.dungeons[i].items[j].obtained = false;
-					currentimg.src = "";
+					currentimg.src = "./images/blank.png";
 					if (j == 2 || (j == 1 && i < 2) || (j == 0 && i == 8)) {
 						currentelement.style.backgroundImage = "url('../images/stairs.png');";
 					}
