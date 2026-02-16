@@ -23,22 +23,238 @@
   		}
 	});
 
+	var query = uri_query();
+
 	window.flags = {
-		quest: '',
-		heartshuffle: false,
+		quest: query.f.charAt(0),
+		dungeonquest: 'S',
+		hints: query.f.charAt(1) != 'C',
+		heartshuffle: query.f.charAt(2) != 'D' && query.f.charAt(2) != 'N',
+		swordless: query.f.charAt(3) == 'S',
+		whiteswordmin: parseInt(query.f.charAt(4)),
+		whiteswordmax: parseInt(query.f.charAt(5)),
+		magicswordmin: parseInt("1" + query.f.charAt(6)),
+		magicswordmax: parseInt("1" + query.f.charAt(7)),
+		startingextrahearts: 3,
 		unknowndungeons: false,
-		hints: false,
-		swordless: false,
-		whiteswordmin: 4,
-		whiteswordmax: 6
+		showboard: query.f.charAt(14) == 'B'
 	}
 
+	
+	//Starting Hearts
+	if (query.f.charAt(13) == 'A') window.flags.startingextrahearts = 7;
+	else if (query.f.charAt(13) == 'B') window.flags.startingextrahearts = 8;
+	else if (query.f.charAt(13) == 'C') window.flags.startingextrahearts = 9;
+	else if (query.f.charAt(13) == 'D') window.flags.startingextrahearts = 10;
+	else if (query.f.charAt(13) == 'E') window.flags.startingextrahearts = 11;
+	else if (query.f.charAt(13) == 'F') window.flags.startingextrahearts = 12;
+	else if (query.f.charAt(13) == 'G') window.flags.startingextrahearts = 13;
+	else window.flags.startingextrahearts = parseInt(query.f.charAt(13)) - window.flags.startingextrahearts;
+
+/*
+1CDS4600RRRRR3L
+
+
+    //White Sword Item
+    if (fullsummarytext.indexOf('White Sword Cave: Random') > -1) {
+        whitesworditem.value = "R";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Book') > -1) {
+        whitesworditem.value = "B";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Boomerang') > -1) {
+        whitesworditem.value = "O";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Bow') > -1) {
+        whitesworditem.value = "W";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Heart Container') > -1) {
+        whitesworditem.value = "H";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Ladder') > -1) {
+        whitesworditem.value = "L";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Magical Boomerang') > -1) {
+        whitesworditem.value = "M";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Magical Key') > -1) {
+        whitesworditem.value = "A";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Power Bracelet') > -1) {
+        whitesworditem.value = "P";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Raft') > -1) {
+        whitesworditem.value = "F";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Recorder') > -1) {
+        whitesworditem.value = "E";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Red Candle') > -1) {
+        whitesworditem.value = "D";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Red Ring') > -1) {
+        whitesworditem.value = "I";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Silver Arrow') > -1) {
+        whitesworditem.value = "S";
+    } else if (fullsummarytext.indexOf('White Sword Cave: Wand') > -1) {
+        whitesworditem.value = "N";
+    } else if (fullsummarytext.indexOf('White Sword Cave: White Sword') > -1) {
+        whitesworditem.value = "T";
+    } else {
+        whitesworditem.value = "R";
+    }
+
+    //Armos Item
+    if (fullsummarytext.indexOf('Armos: Random') > -1) {
+        armositem.value = "R";
+    } else if (fullsummarytext.indexOf('Armos: Book') > -1) {
+        armositem.value = "B";
+    } else if (fullsummarytext.indexOf('Armos: Boomerang') > -1) {
+        armositem.value = "O";
+    } else if (fullsummarytext.indexOf('Armos: Bow') > -1) {
+        armositem.value = "W";
+    } else if (fullsummarytext.indexOf('Armos: Heart Container') > -1) {
+        armositem.value = "H";
+    } else if (fullsummarytext.indexOf('Armos: Ladder') > -1) {
+        armositem.value = "L";
+    } else if (fullsummarytext.indexOf('Armos: Magical Boomerang') > -1) {
+        armositem.value = "M";
+    } else if (fullsummarytext.indexOf('Armos: Magical Key') > -1) {
+        armositem.value = "A";
+    } else if (fullsummarytext.indexOf('Armos: Power Bracelet') > -1) {
+        armositem.value = "P";
+    } else if (fullsummarytext.indexOf('Armos: Raft') > -1) {
+        armositem.value = "F";
+    } else if (fullsummarytext.indexOf('Armos: Recorder') > -1) {
+        armositem.value = "E";
+    } else if (fullsummarytext.indexOf('Armos: Red Candle') > -1) {
+        armositem.value = "D";
+    } else if (fullsummarytext.indexOf('Armos: Red Ring') > -1) {
+        armositem.value = "I";
+    } else if (fullsummarytext.indexOf('Armos: Silver Arrow') > -1) {
+        armositem.value = "S";
+    } else if (fullsummarytext.indexOf('Armos: Wand') > -1) {
+        armositem.value = "N";
+    } else if (fullsummarytext.indexOf('Armos: White Sword') > -1) {
+        armositem.value = "T";
+    } else {
+        armositem.value = "R";
+    }
+
+    //Coast Item
+    if (fullsummarytext.indexOf('Coast: Random') > -1) {
+        coastitem.value = "R";
+    } else if (fullsummarytext.indexOf('Coast: Book') > -1) {
+        coastitem.value = "B";
+    } else if (fullsummarytext.indexOf('Coast: Boomerang') > -1) {
+        coastitem.value = "O";
+    } else if (fullsummarytext.indexOf('Coast: Bow') > -1) {
+        coastitem.value = "W";
+    } else if (fullsummarytext.indexOf('Coast: Heart Container') > -1) {
+        coastitem.value = "H";
+    } else if (fullsummarytext.indexOf('Coast: Magical Boomerang') > -1) {
+        coastitem.value = "M";
+    } else if (fullsummarytext.indexOf('Coast: Magical Key') > -1) {
+        coastitem.value = "A";
+    } else if (fullsummarytext.indexOf('Coast: Power Bracelet') > -1) {
+        coastitem.value = "P";
+    } else if (fullsummarytext.indexOf('Coast: Raft') > -1) {
+        coastitem.value = "F";
+    } else if (fullsummarytext.indexOf('Coast: Recorder') > -1) {
+        coastitem.value = "E";
+    } else if (fullsummarytext.indexOf('Coast: Red Candle') > -1) {
+        coastitem.value = "D";
+    } else if (fullsummarytext.indexOf('Coast: Red Ring') > -1) {
+        coastitem.value = "I";
+    } else if (fullsummarytext.indexOf('Coast: Silver Arrow') > -1) {
+        coastitem.value = "S";
+    } else if (fullsummarytext.indexOf('Coast: Wand') > -1) {
+        coastitem.value = "N";
+    } else if (fullsummarytext.indexOf('Coast: White Sword') > -1) {
+        coastitem.value = "T";
+    } else {
+        coastitem.value = "R";
+    }
+
+    tmp = fullsummarytext.substring(fullsummarytext.indexOf('Level 9 Items: ') + 15);
+    tmp = tmp.substring(0, tmp.indexOf(','));
+
+    //9 Item 1
+    if (tmp == 'Random') {
+        nineitem1.value = "R";
+    } else if (tmp == 'Book') {
+        nineitem1.value = "B";
+    } else if (tmp == 'Boomerang') {
+        nineitem1.value = "O";
+    } else if (tmp == 'Bow') {
+        nineitem1.value = "W";
+    } else if (tmp == 'Heart Container') {
+        nineitem1.value = "H";
+    } else if (tmp == 'Ladder') {
+        armositem.value = "L";
+    } else if (tmp == 'Magical Boomerang') {
+        nineitem1.value = "M";
+    } else if (tmp == 'Magical Key') {
+        nineitem1.value = "A";
+    } else if (tmp == 'Power Bracelet') {
+        nineitem1.value = "P";
+    } else if (tmp == 'Raft') {
+        nineitem1.value = "F";
+    } else if (tmp == 'Recorder') {
+        nineitem1.value = "E";
+    } else if (tmp == 'Red Candle') {
+        nineitem1.value = "D";
+    } else if (tmp == 'Red Ring') {
+        nineitem1.value = "I";
+    } else if (tmp == 'Silver Arrow') {
+        nineitem1.value = "S";
+    } else if (tmp == 'Wand') {
+        nineitem1.value = "N";
+    } else if (tmp == 'White Sword') {
+        nineitem1.value = "T";
+    } else {
+        nineitem1.value = "R";
+    }
+
+
+    tmp = fullsummarytext.substring(fullsummarytext.indexOf('Level 9 Items: ') + 15);
+    tmp = tmp.substring(tmp.indexOf(',') + 2, tmp.indexOf('\n'));
+
+    //9 Item 2
+    if (tmp == 'Random') {
+        nineitem2.value = "R";
+    } else if (tmp == 'Book') {
+        nineitem2.value = "B";
+    } else if (tmp == 'Boomerang') {
+        nineitem2.value = "O";
+    } else if (tmp == 'Bow') {
+        nineitem2.value = "W";
+    } else if (tmp == 'Heart Container') {
+        nineitem2.value = "H";
+    } else if (tmp == 'Ladder') {
+        armositem.value = "L";
+    } else if (tmp == 'Magical Boomerang') {
+        nineitem2.value = "M";
+    } else if (tmp == 'Magical Key') {
+        nineitem2.value = "A";
+    } else if (tmp == 'Power Bracelet') {
+        nineitem2.value = "P";
+    } else if (tmp == 'Raft') {
+        nineitem2.value = "F";
+    } else if (tmp == 'Recorder') {
+        nineitem2.value = "E";
+    } else if (tmp == 'Red Candle') {
+        nineitem2.value = "D";
+    } else if (tmp == 'Red Ring') {
+        nineitem2.value = "I";
+    } else if (tmp == 'Silver Arrow') {
+        nineitem2.value = "S";
+    } else if (tmp == 'Wand') {
+        nineitem2.value = "N";
+    } else if (tmp == 'White Sword') {
+        nineitem2.value = "T";
+    } else {
+        nineitem2.value = "R";
+    }
+		
+
+*/
+
+
 	//Test flags
-	window.flags.quest = '1';
-	window.flags.heartshuffle = false;
-	window.flags.unknowndungeons = false;
-	window.flags.hints = false;
-	window.flags.swordless = false;
+	//window.flags.quest = '1';
+	//window.flags.heartshuffle = false;
+	//window.flags.unknowndungeons = false;
+	//window.flags.hints = false;
+	//window.flags.swordless = false;
 
 	window.items = {
 		woodsword: false,
@@ -73,6 +289,57 @@
 		unknowndungeon: ['', '', '', '', '', '', '' ,''],
 		owitems: [ { item: '', obtained: false}, { item: '', obtained: false}, { item: '', obtained: false} ]
 	};
+
+	//White Sword Item
+	if (query.f.charAt(8) == 'B') window.items.owitems[0].item = 'book';
+	else if (query.f.charAt(8) == 'O') window.items.owitems[0].item = 'boomerang';
+	else if (query.f.charAt(8) == 'W') window.items.owitems[0].item = 'bow';
+	else if (query.f.charAt(8) == 'H') window.items.owitems[0].item = 'heartcontainer';
+	else if (query.f.charAt(8) == 'L') window.items.owitems[0].item = 'ladder';
+	else if (query.f.charAt(8) == 'M') window.items.owitems[0].item = 'magicboomerang';
+	else if (query.f.charAt(8) == 'A') window.items.owitems[0].item = 'anykey';
+	else if (query.f.charAt(8) == 'P') window.items.owitems[0].item = 'bracelet';
+	else if (query.f.charAt(8) == 'F') window.items.owitems[0].item = 'raft';
+	else if (query.f.charAt(8) == 'E') window.items.owitems[0].item = 'recorder';
+	else if (query.f.charAt(8) == 'D') window.items.owitems[0].item = 'redcandle';
+	else if (query.f.charAt(8) == 'I') window.items.owitems[0].item = 'redring';
+	else if (query.f.charAt(8) == 'S') window.items.owitems[0].item = 'silverarrow';
+	else if (query.f.charAt(8) == 'N') window.items.owitems[0].item = 'wand';
+	else if (query.f.charAt(8) == 'T') window.items.owitems[0].item = 'whitesword';
+
+	//Coast Item
+	if (query.f.charAt(9) == 'B') window.items.owitems[1].item = 'book';
+	else if (query.f.charAt(9) == 'O') window.items.owitems[1].item = 'boomerang';
+	else if (query.f.charAt(9) == 'W') window.items.owitems[1].item = 'bow';
+	else if (query.f.charAt(9) == 'H') window.items.owitems[1].item = 'heartcontainer';
+	else if (query.f.charAt(9) == 'L') window.items.owitems[1].item = 'ladder';
+	else if (query.f.charAt(9) == 'M') window.items.owitems[1].item = 'magicboomerang';
+	else if (query.f.charAt(9) == 'A') window.items.owitems[1].item = 'anykey';
+	else if (query.f.charAt(9) == 'P') window.items.owitems[1].item = 'bracelet';
+	else if (query.f.charAt(9) == 'F') window.items.owitems[1].item = 'raft';
+	else if (query.f.charAt(9) == 'E') window.items.owitems[1].item = 'recorder';
+	else if (query.f.charAt(9) == 'D') window.items.owitems[1].item = 'redcandle';
+	else if (query.f.charAt(9) == 'I') window.items.owitems[1].item = 'redring';
+	else if (query.f.charAt(9) == 'S') window.items.owitems[1].item = 'silverarrow';
+	else if (query.f.charAt(9) == 'N') window.items.owitems[1].item = 'wand';
+	else if (query.f.charAt(9) == 'T') window.items.owitems[1].item = 'whitesword';
+
+	//Armos Item
+	if (query.f.charAt(10) == 'B') window.items.owitems[2].item = 'book';
+	else if (query.f.charAt(10) == 'O') window.items.owitems[2].item = 'boomerang';
+	else if (query.f.charAt(10) == 'W') window.items.owitems[2].item = 'bow';
+	else if (query.f.charAt(10) == 'H') window.items.owitems[2].item = 'heartcontainer';
+	else if (query.f.charAt(10) == 'L') window.items.owitems[2].item = 'ladder';
+	else if (query.f.charAt(10) == 'M') window.items.owitems[2].item = 'magicboomerang';
+	else if (query.f.charAt(10) == 'A') window.items.owitems[2].item = 'anykey';
+	else if (query.f.charAt(10) == 'P') window.items.owitems[2].item = 'bracelet';
+	else if (query.f.charAt(10) == 'F') window.items.owitems[2].item = 'raft';
+	else if (query.f.charAt(10) == 'E') window.items.owitems[2].item = 'recorder';
+	else if (query.f.charAt(10) == 'D') window.items.owitems[2].item = 'redcandle';
+	else if (query.f.charAt(10) == 'I') window.items.owitems[2].item = 'redring';
+	else if (query.f.charAt(10) == 'S') window.items.owitems[2].item = 'silverarrow';
+	else if (query.f.charAt(10) == 'N') window.items.owitems[2].item = 'wand';
+	else if (query.f.charAt(10) == 'T') window.items.owitems[2].item = 'whitesword';
 
 	window.locations = [];
 
@@ -117,6 +384,41 @@
 			}
 		}
 	}
+
+	//9 Item 1
+	if (query.f.charAt(11) == 'B') window.dungeons[8].items[0] .item = 'book';
+	else if (query.f.charAt(11) == 'O') window.dungeons[8].items[0] .item = 'boomerang';
+	else if (query.f.charAt(11) == 'W') window.dungeons[8].items[0] .item = 'bow';
+	else if (query.f.charAt(11) == 'H') window.dungeons[8].items[0] .item = 'heartcontainer';
+	else if (query.f.charAt(11) == 'L') window.dungeons[8].items[0] .item = 'ladder';
+	else if (query.f.charAt(11) == 'M') window.dungeons[8].items[0] .item = 'magicboomerang';
+	else if (query.f.charAt(11) == 'A') window.dungeons[8].items[0] .item = 'anykey';
+	else if (query.f.charAt(11) == 'P') window.dungeons[8].items[0] .item = 'bracelet';
+	else if (query.f.charAt(11) == 'F') window.dungeons[8].items[0] .item = 'raft';
+	else if (query.f.charAt(11) == 'E') window.dungeons[8].items[0] .item = 'recorder';
+	else if (query.f.charAt(11) == 'D') window.dungeons[8].items[0] .item = 'redcandle';
+	else if (query.f.charAt(11) == 'I') window.dungeons[8].items[0] .item = 'redring';
+	else if (query.f.charAt(11) == 'S') window.dungeons[8].items[0] .item = 'silverarrow';
+	else if (query.f.charAt(11) == 'N') window.dungeons[8].items[0] .item = 'wand';
+	else if (query.f.charAt(11) == 'T') window.dungeons[8].items[0] .item = 'whitesword';
+
+	//9 Item 2
+	if (query.f.charAt(12) == 'B') window.dungeons[8].items[1] .item = 'book';
+	else if (query.f.charAt(12) == 'O') window.dungeons[8].items[1] .item = 'boomerang';
+	else if (query.f.charAt(12) == 'W') window.dungeons[8].items[1] .item = 'bow';
+	else if (query.f.charAt(12) == 'H') window.dungeons[8].items[1] .item = 'heartcontainer';
+	else if (query.f.charAt(12) == 'L') window.dungeons[8].items[1] .item = 'ladder';
+	else if (query.f.charAt(12) == 'M') window.dungeons[8].items[1] .item = 'magicboomerang';
+	else if (query.f.charAt(12) == 'A') window.dungeons[8].items[1] .item = 'anykey';
+	else if (query.f.charAt(12) == 'P') window.dungeons[8].items[1] .item = 'bracelet';
+	else if (query.f.charAt(12) == 'F') window.dungeons[8].items[1] .item = 'raft';
+	else if (query.f.charAt(12) == 'E') window.dungeons[8].items[1] .item = 'recorder';
+	else if (query.f.charAt(12) == 'D') window.dungeons[8].items[1] .item = 'redcandle';
+	else if (query.f.charAt(12) == 'I') window.dungeons[8].items[1] .item = 'redring';
+	else if (query.f.charAt(12) == 'S') window.dungeons[8].items[1] .item = 'silverarrow';
+	else if (query.f.charAt(12) == 'N') window.dungeons[8].items[1] .item = 'wand';
+	else if (query.f.charAt(12) == 'T') window.dungeons[8].items[1] .item = 'whitesword';
+
 
 	setdefaultstatus(window.flags.quest);
 	//updateow();
@@ -356,6 +658,15 @@
 			document.getElementById('blockerselectmelee').classList.add('blockerselectwand');
 			
 		}
+
+		if (window.flags.showboard) {
+			document.getElementById('dungeonmap_1_0').innerHTML = 'B';
+			document.getElementById('dungeonmap_2_0').innerHTML = 'O';
+			document.getElementById('dungeonmap_3_0').innerHTML = 'A';
+			document.getElementById('dungeonmap_4_0').innerHTML = 'R';
+			document.getElementById('dungeonmap_5_0').innerHTML = 'D';
+		}
+
 
 		switchdungeon(0);
 
@@ -690,6 +1001,10 @@
 				window.items.maxhearts++;
 			}
 		}
+
+		window.items.maxhearts = window.items.maxhearts + window.flags.startingextrahearts;
+
+		if (window.items.maxhearts > 16) window.items.maxhearts = 16;
 
 		for (var i = 1; i <= 16; i++) {
 			if (i <= window.items.maxhearts) {

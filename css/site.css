@@ -12,6 +12,10 @@ body {
 	height: 68px;
 }
 
+.launcherbody {
+	color: white;
+}
+
 .topwrapper {
 	width: 960px;
 	height: 234px;
@@ -1597,3 +1601,48 @@ body {
 	position: relative;
 }
 
+.selectionwrapper {
+	border: solid 4px blue;
+	border-radius: 6px;
+	padding: 10px;
+	width: 570px;
+}
+
+.summarytextarea {
+	width: 570px;
+	height: 200px;
+}
+
+.parseflagsbtn {
+	font-family: NintendoNESFont, roboto_condensedregular, Arial, Helvetica, sans-serif; 
+	font-size: 20px;
+	width: 300px;
+	height: 60px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.launchbtn {
+	font-family: NintendoNESFont, roboto_condensedregular, Arial, Helvetica, sans-serif; 
+	font-size: 20px;
+	margin-top: 10px;
+	width: 300px;
+	height: 60px;
+}
+
+.launchersidebar {
+	width: 300px;
+	float: left;
+}
+
+.selectiondiv {
+	float: left;
+}
+
+.selectnormal {
+	width: 190px;
+}
+
+.selectshort {
+	width: 50px;
+}

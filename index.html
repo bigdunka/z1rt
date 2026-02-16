@@ -1,0 +1,306 @@
+<html>
+   <head>
+      <title>Z1RT - Launcher</title>
+		<script src="js/index.js?v=10101"></script>
+		<link rel="stylesheet" type="text/css" href="css/site.css?v=10101">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css?v=10101">
+      
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="Expires" content="0" />
+      <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+   </head>
+   <body class="launcherbody">
+      <div>
+         <div class="launchersidebar">
+            <a href="./index.html"><img src="./images/logo.png"></a>
+         </div>
+         <div class="selectiondiv">
+            <div>
+               <div class="selectionwrapper">
+                  <span>
+                     PASTE SUMMARY TEXT:<br>
+                  </span>
+                  <div>
+                     <textarea class="summarytextarea" id="summarytext"></textarea>
+                  </div>
+               </div>
+               <center><button type="button" class="parseflagsbtn" onclick="parsesummarytext()">PARSE FLAGS</button></center>
+               <div>
+                  <div class="selectionwrapper">
+                     <span>
+                        OVERWORLD QUEST:
+                     </span>
+                     <span>
+                        <select id="overworldquest" class="selectnormal">
+                           <option value="1" selected>1ST QUEST</option>
+                           <option value="2">2ND QUEST</option>
+                           <option value="M">1ST MIXED</option>
+                           <option value="X">2ND MIXED</option>
+                        </select>
+                     </span>
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        HINTS:
+                     </span>
+                     <span>
+                        <select id="hints" class="selectnormal">
+                           <option value="H" selected>HELPFUL</option>
+                           <option value="C">COMMUNITY</option>
+                           <option value="D">DECEPTION</option>
+                           <option value="M">MIXED</option>
+                        </select>
+                     </span>
+                  </div>
+                  <!-- <div class="selectionwrapper">
+                     <span>
+                        DUNGEON QUEST:
+                     </span>
+                     <span>
+                        <select id="dungeonquest" class="selectnormal">
+                           <option value="1" selected>1ST QUEST</option>
+                           <option value="2">2ND QUEST</option>
+                           <option value="M">MIXED QUEST</option>
+                           <option value="S">SHAPES</option>
+                        </select>
+                     </span>
+                  </div> -->
+                  <div class="selectionwrapper">
+                     <span>
+                        DUNGEON ITEM SHUFFLE:
+                     </span>
+                     <span>
+                        <select id="dungeonitemshuffle" class="selectnormal">
+                           <option value="D" selected>DUNGEON ITEMS</option>
+                           <option value="H">HEARTS WITHIN DUNGEON</option>
+                           <option value="F">FULL SHUFFLE</option>
+                           <option value="N">NONE</option>
+                        </select>
+                     </span>                     
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        SWORDS:
+                     </span>
+                     <span>
+                        <select id="swords" class="selectnormal">
+                           <option value="N" selected>NORMAL</option>
+                           <option value="W">WOOD SWORD ONLY</option>
+                           <option value="O">NO WOOD SWORD</option>
+                           <option value="S">SWORDLESS</option>
+                        </select>
+                     </span>                     
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        WHITE SWORD HEARTS:
+                     </span>
+                     <span>
+                        <label>MIN</label>
+                        <select id="whiteswordmin" class="selectshort">
+                           <option value="4" selected>4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                        </select>
+                     </span>
+                     <span>
+                        <label>MAX</label>
+                        <select id="whiteswordmax" class="selectshort">
+                           <option value="6" selected>6</option>
+                           <option value="5">5</option>
+                           <option value="4">4</option>
+                        </select>
+                     </span>
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        MAGIC SWORD HEARTS:
+                     </span>
+                     <span>
+                        <label>MIN</label>
+                        <select id="magicswordmin" class="selectshort">
+                           <option value="0" selected>10</option>
+                           <option value="1">11</option>
+                           <option value="2">12</option>
+                           <option value="3">13</option>
+                           <option value="4">14</option>
+                        </select>
+                     </span>
+                     <span>
+                        <label>MAX</label>
+                        <select id="magicswordmax" class="selectshort">
+                           <option value="4" selected>14</option>
+                           <option value="3">13</option>
+                           <option value="2">12</option>
+                           <option value="1">11</option>
+                           <option value="0">10</option>
+                        </select>
+                     </span>
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        WHITE SWORD ITEM:
+                     </span>
+                     <span>
+                        <select id="whitesworditem" class="selectnormal">
+                           <option value="R" selected>RANDOM</option>
+                           <option value="A">ANY KEY</option>
+                           <option value="B">BOOK</option>
+                           <option value="O">BOOMERANG</option>
+                           <option value="W">BOW</option>
+                           <option value="H">HEART CONTAINER</option>
+                           <option value="L">LADDER</option>
+                           <option value="M">MAGIC BOOMERANG</option>
+                           <option value="P">POWER BRACELET</option>
+                           <option value="F">RAFT</option>
+                           <option value="E">RECORDER</option>
+                           <option value="D">RED CANDLE</option>
+                           <option value="I">RED RING</option>
+                           <option value="S">SILVER ARROW</option>
+                           <option value="N">WAND</option>
+                           <option value="T">WHITE SWORD</option>
+                        </select>
+                     </span>
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        COAST ITEM:
+                     </span>
+                     <span>
+                        <select id="coastitem" class="selectnormal">
+                           <option value="R" selected>RANDOM</option>
+                           <option value="A">ANY KEY</option>
+                           <option value="B">BOOK</option>
+                           <option value="O">BOOMERANG</option>
+                           <option value="W">BOW</option>
+                           <option value="H">HEART CONTAINER</option>
+                           <option value="M">MAGIC BOOMERANG</option>
+                           <option value="P">POWER BRACELET</option>
+                           <option value="F">RAFT</option>
+                           <option value="E">RECORDER</option>
+                           <option value="D">RED CANDLE</option>
+                           <option value="I">RED RING</option>
+                           <option value="S">SILVER ARROW</option>
+                           <option value="N">WAND</option>
+                           <option value="T">WHITE SWORD</option>
+                        </select>
+                     </span>
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        ARMOS ITEM:
+                     </span>
+                     <span>
+                        <select id="armositem" class="selectnormal">
+                           <option value="R" selected>RANDOM</option>
+                           <option value="A">ANY KEY</option>
+                           <option value="B">BOOK</option>
+                           <option value="O">BOOMERANG</option>
+                           <option value="W">BOW</option>
+                           <option value="H">HEART CONTAINER</option>
+                           <option value="L">LADDER</option>
+                           <option value="M">MAGIC BOOMERANG</option>
+                           <option value="P">POWER BRACELET</option>
+                           <option value="F">RAFT</option>
+                           <option value="E">RECORDER</option>
+                           <option value="D">RED CANDLE</option>
+                           <option value="I">RED RING</option>
+                           <option value="S">SILVER ARROW</option>
+                           <option value="N">WAND</option>
+                           <option value="T">WHITE SWORD</option>
+                        </select>
+                     </span>
+                  </div>
+                  <div class="selectionwrapper">
+                     <span>
+                        ITEMS IN 9:
+                     </span>
+                     <span>
+                        <select id="nineitem1" class="selectnormal">
+                           <option value="R" selected>RANDOM</option>
+                           <option value="A">ANY KEY</option>
+                           <option value="B">BOOK</option>
+                           <option value="O">BOOMERANG</option>
+                           <option value="W">BOW</option>
+                           <option value="H">HEART CONTAINER</option>
+                           <option value="L">LADDER</option>
+                           <option value="M">MAGIC BOOMERANG</option>
+                           <option value="P">POWER BRACELET</option>
+                           <option value="F">RAFT</option>
+                           <option value="E">RECORDER</option>
+                           <option value="D">RED CANDLE</option>
+                           <option value="I">RED RING</option>
+                           <option value="S">SILVER ARROW</option>
+                           <option value="N">WAND</option>
+                           <option value="T">WHITE SWORD</option>
+                        </select>
+                     </span>
+                     <span>
+                        <select id="nineitem2" class="selectnormal">
+                           <option value="R" selected>RANDOM</option>
+                           <option value="A">ANY KEY</option>
+                           <option value="B">BOOK</option>
+                           <option value="O">BOOMERANG</option>
+                           <option value="W">BOW</option>
+                           <option value="H">HEART CONTAINER</option>
+                           <option value="L">LADDER</option>
+                           <option value="M">MAGIC BOOMERANG</option>
+                           <option value="P">POWER BRACELET</option>
+                           <option value="F">RAFT</option>
+                           <option value="E">RECORDER</option>
+                           <option value="D">RED CANDLE</option>
+                           <option value="I">RED RING</option>
+                           <option value="S">SILVER ARROW</option>
+                           <option value="N">WAND</option>
+                           <option value="T">WHITE SWORD</option>
+                        </select>
+                     </span>
+                  </div>  
+                  <div class="selectionwrapper">
+                     <span>
+                        STARTING HEARTS:
+                     </span>
+                     <span>
+                        <select id="startinghearts" class="selectsort">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3" selected>3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="A">10</option>
+                           <option value="B">11</option>
+                           <option value="C">12</option>
+                           <option value="D">13</option>
+                           <option value="E">14</option>
+                           <option value="F">15</option>
+                           <option value="G">16</option>
+                        </select>
+                     </span>
+                  </div>                  
+                  <div class="selectionwrapper">
+                     <span>
+                        SHOW LEVEL VS BOARD:
+                     </span>
+                     <span>
+                        <select id="levelboard" class="selectnormal">
+                           <option value="L" selected>LEVEL</option>
+                           <option value="B">BOARD</option>
+                        </select>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div>
+               <center><button type="button" class="launchbtn" onclick="launchtracker()">LAUNCH TRACKER</button></center>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
