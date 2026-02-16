@@ -10,6 +10,7 @@ body {
 	background-size: contain;
 	width: 116px;
 	height: 68px;
+	float: right;
 }
 
 .launcherbody {
@@ -341,11 +342,9 @@ body {
 	float: left;
 }
 
-
-
 .tophearts {
 	width: 240px;
-	height: 76px;
+	height: 238px;
 	float: left;
 	margin-left: 40px;
 }
@@ -399,7 +398,7 @@ body {
 
 .topinfo {
 	height: 70px;
-	width: 120px;
+	width: 252px;
 	float: left;
 	margin-left: 30px;
 }
@@ -717,6 +716,7 @@ body {
 	font-size: 10px;
 	color: white;
 	float: left;
+	padding-left: 14px;
 }
 
 .dungeonhintmodal {
@@ -1121,6 +1121,8 @@ body {
  .overworlditemsdiv {
 	height: 40px;
 	width: 228px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 	float: right;
 }
 
@@ -1645,4 +1647,20 @@ body {
 
 .selectshort {
 	width: 50px;
+}
+
+.notesdiv {
+	width: 262px;
+	height: 160px;
+	float: left;
+	color: white;
+	margin-left: 20px;
+}
+
+.notesarea {
+	width: 260px;
+	height: 142px;
+	background-color: black;
+	border: 1px solid gray;
+	color: white;
 }
