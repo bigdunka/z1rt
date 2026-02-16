@@ -40,7 +40,6 @@
 		showboard: query.f.charAt(14) == 'B'
 	}
 
-	
 	//Starting Hearts
 	if (query.f.charAt(13) == 'A') window.flags.startingextrahearts = 7;
 	else if (query.f.charAt(13) == 'B') window.flags.startingextrahearts = 8;
@@ -50,211 +49,6 @@
 	else if (query.f.charAt(13) == 'F') window.flags.startingextrahearts = 12;
 	else if (query.f.charAt(13) == 'G') window.flags.startingextrahearts = 13;
 	else window.flags.startingextrahearts = parseInt(query.f.charAt(13)) - window.flags.startingextrahearts;
-
-/*
-1CDS4600RRRRR3L
-
-
-    //White Sword Item
-    if (fullsummarytext.indexOf('White Sword Cave: Random') > -1) {
-        whitesworditem.value = "R";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Book') > -1) {
-        whitesworditem.value = "B";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Boomerang') > -1) {
-        whitesworditem.value = "O";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Bow') > -1) {
-        whitesworditem.value = "W";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Heart Container') > -1) {
-        whitesworditem.value = "H";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Ladder') > -1) {
-        whitesworditem.value = "L";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Magical Boomerang') > -1) {
-        whitesworditem.value = "M";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Magical Key') > -1) {
-        whitesworditem.value = "A";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Power Bracelet') > -1) {
-        whitesworditem.value = "P";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Raft') > -1) {
-        whitesworditem.value = "F";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Recorder') > -1) {
-        whitesworditem.value = "E";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Red Candle') > -1) {
-        whitesworditem.value = "D";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Red Ring') > -1) {
-        whitesworditem.value = "I";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Silver Arrow') > -1) {
-        whitesworditem.value = "S";
-    } else if (fullsummarytext.indexOf('White Sword Cave: Wand') > -1) {
-        whitesworditem.value = "N";
-    } else if (fullsummarytext.indexOf('White Sword Cave: White Sword') > -1) {
-        whitesworditem.value = "T";
-    } else {
-        whitesworditem.value = "R";
-    }
-
-    //Armos Item
-    if (fullsummarytext.indexOf('Armos: Random') > -1) {
-        armositem.value = "R";
-    } else if (fullsummarytext.indexOf('Armos: Book') > -1) {
-        armositem.value = "B";
-    } else if (fullsummarytext.indexOf('Armos: Boomerang') > -1) {
-        armositem.value = "O";
-    } else if (fullsummarytext.indexOf('Armos: Bow') > -1) {
-        armositem.value = "W";
-    } else if (fullsummarytext.indexOf('Armos: Heart Container') > -1) {
-        armositem.value = "H";
-    } else if (fullsummarytext.indexOf('Armos: Ladder') > -1) {
-        armositem.value = "L";
-    } else if (fullsummarytext.indexOf('Armos: Magical Boomerang') > -1) {
-        armositem.value = "M";
-    } else if (fullsummarytext.indexOf('Armos: Magical Key') > -1) {
-        armositem.value = "A";
-    } else if (fullsummarytext.indexOf('Armos: Power Bracelet') > -1) {
-        armositem.value = "P";
-    } else if (fullsummarytext.indexOf('Armos: Raft') > -1) {
-        armositem.value = "F";
-    } else if (fullsummarytext.indexOf('Armos: Recorder') > -1) {
-        armositem.value = "E";
-    } else if (fullsummarytext.indexOf('Armos: Red Candle') > -1) {
-        armositem.value = "D";
-    } else if (fullsummarytext.indexOf('Armos: Red Ring') > -1) {
-        armositem.value = "I";
-    } else if (fullsummarytext.indexOf('Armos: Silver Arrow') > -1) {
-        armositem.value = "S";
-    } else if (fullsummarytext.indexOf('Armos: Wand') > -1) {
-        armositem.value = "N";
-    } else if (fullsummarytext.indexOf('Armos: White Sword') > -1) {
-        armositem.value = "T";
-    } else {
-        armositem.value = "R";
-    }
-
-    //Coast Item
-    if (fullsummarytext.indexOf('Coast: Random') > -1) {
-        coastitem.value = "R";
-    } else if (fullsummarytext.indexOf('Coast: Book') > -1) {
-        coastitem.value = "B";
-    } else if (fullsummarytext.indexOf('Coast: Boomerang') > -1) {
-        coastitem.value = "O";
-    } else if (fullsummarytext.indexOf('Coast: Bow') > -1) {
-        coastitem.value = "W";
-    } else if (fullsummarytext.indexOf('Coast: Heart Container') > -1) {
-        coastitem.value = "H";
-    } else if (fullsummarytext.indexOf('Coast: Magical Boomerang') > -1) {
-        coastitem.value = "M";
-    } else if (fullsummarytext.indexOf('Coast: Magical Key') > -1) {
-        coastitem.value = "A";
-    } else if (fullsummarytext.indexOf('Coast: Power Bracelet') > -1) {
-        coastitem.value = "P";
-    } else if (fullsummarytext.indexOf('Coast: Raft') > -1) {
-        coastitem.value = "F";
-    } else if (fullsummarytext.indexOf('Coast: Recorder') > -1) {
-        coastitem.value = "E";
-    } else if (fullsummarytext.indexOf('Coast: Red Candle') > -1) {
-        coastitem.value = "D";
-    } else if (fullsummarytext.indexOf('Coast: Red Ring') > -1) {
-        coastitem.value = "I";
-    } else if (fullsummarytext.indexOf('Coast: Silver Arrow') > -1) {
-        coastitem.value = "S";
-    } else if (fullsummarytext.indexOf('Coast: Wand') > -1) {
-        coastitem.value = "N";
-    } else if (fullsummarytext.indexOf('Coast: White Sword') > -1) {
-        coastitem.value = "T";
-    } else {
-        coastitem.value = "R";
-    }
-
-    tmp = fullsummarytext.substring(fullsummarytext.indexOf('Level 9 Items: ') + 15);
-    tmp = tmp.substring(0, tmp.indexOf(','));
-
-    //9 Item 1
-    if (tmp == 'Random') {
-        nineitem1.value = "R";
-    } else if (tmp == 'Book') {
-        nineitem1.value = "B";
-    } else if (tmp == 'Boomerang') {
-        nineitem1.value = "O";
-    } else if (tmp == 'Bow') {
-        nineitem1.value = "W";
-    } else if (tmp == 'Heart Container') {
-        nineitem1.value = "H";
-    } else if (tmp == 'Ladder') {
-        armositem.value = "L";
-    } else if (tmp == 'Magical Boomerang') {
-        nineitem1.value = "M";
-    } else if (tmp == 'Magical Key') {
-        nineitem1.value = "A";
-    } else if (tmp == 'Power Bracelet') {
-        nineitem1.value = "P";
-    } else if (tmp == 'Raft') {
-        nineitem1.value = "F";
-    } else if (tmp == 'Recorder') {
-        nineitem1.value = "E";
-    } else if (tmp == 'Red Candle') {
-        nineitem1.value = "D";
-    } else if (tmp == 'Red Ring') {
-        nineitem1.value = "I";
-    } else if (tmp == 'Silver Arrow') {
-        nineitem1.value = "S";
-    } else if (tmp == 'Wand') {
-        nineitem1.value = "N";
-    } else if (tmp == 'White Sword') {
-        nineitem1.value = "T";
-    } else {
-        nineitem1.value = "R";
-    }
-
-
-    tmp = fullsummarytext.substring(fullsummarytext.indexOf('Level 9 Items: ') + 15);
-    tmp = tmp.substring(tmp.indexOf(',') + 2, tmp.indexOf('\n'));
-
-    //9 Item 2
-    if (tmp == 'Random') {
-        nineitem2.value = "R";
-    } else if (tmp == 'Book') {
-        nineitem2.value = "B";
-    } else if (tmp == 'Boomerang') {
-        nineitem2.value = "O";
-    } else if (tmp == 'Bow') {
-        nineitem2.value = "W";
-    } else if (tmp == 'Heart Container') {
-        nineitem2.value = "H";
-    } else if (tmp == 'Ladder') {
-        armositem.value = "L";
-    } else if (tmp == 'Magical Boomerang') {
-        nineitem2.value = "M";
-    } else if (tmp == 'Magical Key') {
-        nineitem2.value = "A";
-    } else if (tmp == 'Power Bracelet') {
-        nineitem2.value = "P";
-    } else if (tmp == 'Raft') {
-        nineitem2.value = "F";
-    } else if (tmp == 'Recorder') {
-        nineitem2.value = "E";
-    } else if (tmp == 'Red Candle') {
-        nineitem2.value = "D";
-    } else if (tmp == 'Red Ring') {
-        nineitem2.value = "I";
-    } else if (tmp == 'Silver Arrow') {
-        nineitem2.value = "S";
-    } else if (tmp == 'Wand') {
-        nineitem2.value = "N";
-    } else if (tmp == 'White Sword') {
-        nineitem2.value = "T";
-    } else {
-        nineitem2.value = "R";
-    }
-		
-
-*/
-
-
-	//Test flags
-	//window.flags.quest = '1';
-	//window.flags.heartshuffle = false;
-	//window.flags.unknowndungeons = false;
-	//window.flags.hints = false;
-	//window.flags.swordless = false;
 
 	window.items = {
 		woodsword: false,
@@ -357,10 +151,10 @@
 	for (var i = 0; i < 9; i++) {
 		//If mystery, use letters instead of numbers
 		if (window.flags.unknowndungeons && i != 8) {
-			window.dungeons.push( { name: dungeonletter, items: [], blockers: [], rooms: [], doorsns: [], doorsew: [] });
+			window.dungeons.push( { name: dungeonletter, discovered: false, started: false, items: [], blockers: [], rooms: [], doorsns: [], doorsew: [] });
 			dungeonletter = String.fromCharCode(dungeonletter.charCodeAt() + 1)
 		} else {
-			window.dungeons.push( { name: i + 1, started: false, items: [], blockers: [], rooms: [], doorsns: [], doorsew: [] });
+			window.dungeons.push( { name: i + 1, discovered: false, started: false, items: [], blockers: [], rooms: [], doorsns: [], doorsew: [] });
 		}
 
 		//If heart shuffle is not live, put the heart in as item 1
@@ -1055,6 +849,13 @@
 				}
 			}
 
+			document.getElementById('dungeonselecttab_' + (i + 1)).className = '';
+			document.getElementById('dungeonselecttab_' + (i + 1)).classList.add('dungeonselecttab');
+
+			if (window.dungeons[i].discovered) {
+				document.getElementById('dungeonselecttab_' + (i + 1)).classList.add('discovered');
+			}
+
 			for (var j = 0; j < window.dungeons[i].blockers.length; j++) {
 				var currentelement = document.getElementById('dungeonblock_' + (parseInt(i) + 1) + '_' + (parseInt(j) + 1));
 				currentelement.classList.remove('blockerssoftblock');
@@ -1715,10 +1516,13 @@
 			if (eventid.startsWith('owselect')) {
 				var map = eventid.replace('owselect', '', eventid);
 
-				for (var i = 0; i < 8; i++) {
-					for (var j = 0; j < 16; j++) {
-						if (window.locations[i][j].tag == map) {
-							return;
+				if (map != 'manuscript' && map != 'potion' && map != 'hint' && map != 'rupee' && map != 'takeany' && map != 'gamble'
+					&& map != 'woodarrow' || map != 'bomb' || map != 'bluecandle' || map != 'key' || map != 'meat' || map != 'bluering' || map != 'shield') {
+					for (var i = 0; i < 8; i++) {
+						for (var j = 0; j < 16; j++) {
+							if (window.locations[i][j].tag == map) {
+								return;
+							}
 						}
 					}
 				}
@@ -1733,7 +1537,7 @@
 				} else {
 					window.locations[window.activepanelid][window.activepanelid2].status = 'T';
 
-					if (map == 'woodarrow' || map == 'bomb' || map == 'bluecandle' || map == 'key' || map == 'meat' || map == 'bluering' || map == 'shield' ) {
+					if (map == 'woodarrow' || map == 'bomb' || map == 'bluecandle' || map == 'key' || map == 'meat' || map == 'bluering' || map == 'shield') {
 						var existingitems = 0;
 						var additem = true;
 						for (var i = 0; i < 3; i++) {
@@ -1761,6 +1565,12 @@
 						}
 					} else {
 						window.locations[window.activepanelid][window.activepanelid2].tag = map;
+						if (map.startsWith('dungeon')) {
+							var dungeonint = parseInt(map.replace('dungeon', ''));
+							window.dungeons[dungeonint - 1].discovered = true;
+							//document.getElementById('dungeonselecttab_' + dungeonint).classList.add('discovered');
+							switchdungeon(dungeonint - 1);
+						}
 					} 
 
 				} 
@@ -1957,6 +1767,22 @@
 						window.dungeons[window.currentdungeon].rooms[currentroom].cleared = true;
 					}
 				}
+			} else if (event.target.id.startsWith('dungeondoorew_')) {
+				window.activepanelid = parseInt(event.target.id.substring(parseInt(event.target.id.indexOf('_')) + 1))- 1;
+				window.activepanelid2 = parseInt(event.target.id.substring(parseInt(event.target.id.lastIndexOf('_')) + 1)) - 1;
+
+				if (window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 8) + window.activepanelid2].tile == 'key' ||
+				window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 8) + window.activepanelid2].tile == 'locked') {
+					window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 8) + window.activepanelid2].tile = 'open';
+				}
+			} else if (event.target.id.startsWith('dungeondoorns_')) {
+				window.activepanelid = parseInt(event.target.id.substring(parseInt(event.target.id.indexOf('_')) + 1))- 1;
+				window.activepanelid2 = parseInt(event.target.id.substring(parseInt(event.target.id.lastIndexOf('_')) + 1)) - 1;
+
+				if (window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 7) + window.activepanelid2].tile == 'key' ||
+				window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 7) + window.activepanelid2].tile == 'locked') {
+					window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 7) + window.activepanelid2].tile = 'open';
+				}				
 			}
 		}
 

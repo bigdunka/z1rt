@@ -607,6 +607,10 @@ body {
 	cursor: pointer;
 }
 
+.dungeonselecttab.discovered {
+	background-color: #3c8622;
+}
+
 .dungeontriforceblock {
 	background-image: url(../images/triforce.png);
 	background-repeat: no-repeat;
