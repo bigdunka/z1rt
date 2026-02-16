@@ -1,6 +1,7 @@
 (function(window) {
     'use strict';
 
+	var buildstring = '10101';
 	window.availablechecks = 0;
 	window.remainingchecks = 0;
 
@@ -412,15 +413,481 @@
 			window.locations[7][13].startingstatus = 'A';
 			window.locations[7][13].requirements = 'B';
 		} else if (quest == "M") {
-
+			window.locations[0][0].status = 'M';
+			window.locations[0][0].startingstatus = 'M';
+			window.locations[0][0].requirements = 'B';
+			window.locations[0][1].status = 'A';
+			window.locations[0][1].startingstatus = 'A';
+			window.locations[0][1].requirements = 'B';
+			window.locations[0][2].status = 'M';
+			window.locations[0][2].startingstatus = 'M';
+			window.locations[0][2].requirements = 'B';
+			window.locations[0][3].status = 'A';
+			window.locations[0][3].startingstatus = 'A';
+			window.locations[0][3].requirements = 'B';
+			window.locations[0][4].status = 'A';
+			window.locations[0][4].startingstatus = 'A';
+			window.locations[0][5].status = 'M';
+			window.locations[0][5].startingstatus = 'M';
+			window.locations[0][5].requirements = 'B';
+			window.locations[0][6].status = 'M';
+			window.locations[0][6].startingstatus = 'M';
+			window.locations[0][6].requirements = 'F';
+			window.locations[0][7].status = 'A';
+			window.locations[0][7].startingstatus = 'A';
+			window.locations[0][7].requirements = 'B';
+			window.locations[0][9].status = 'M';
+			window.locations[0][9].startingstatus = 'M';
+			window.locations[0][9].requirements = 'P';
+			window.locations[0][10].status = 'A';
+			window.locations[0][10].startingstatus = 'A';
+			window.locations[0][11].status = 'A';
+			window.locations[0][11].startingstatus = 'A';
+			window.locations[0][12].status = 'A';
+			window.locations[0][12].startingstatus = 'A';
+			window.locations[0][13].status = 'A';
+			window.locations[0][13].startingstatus = 'A';
+			window.locations[0][13].requirements = 'B';
+			window.locations[0][14].status = 'A';
+			window.locations[0][14].startingstatus = 'A';
+			window.locations[0][15].status = 'A';
+			window.locations[0][15].startingstatus = 'A';
+			window.locations[1][0].status = 'A';
+			window.locations[1][0].startingstatus = 'A';
+			window.locations[1][0].requirements = 'B';
+			window.locations[1][1].status = 'M';
+			window.locations[1][1].startingstatus = 'M';
+			window.locations[1][1].requirements = 'P';
+			window.locations[1][2].status = 'A';
+			window.locations[1][2].startingstatus = 'A';
+			window.locations[1][2].requirements = 'B';
+			window.locations[1][3].status = 'A';
+			window.locations[1][3].startingstatus = 'A';
+			window.locations[1][3].requirements = 'B';
+			window.locations[1][4].status = 'A';
+			window.locations[1][4].startingstatus = 'A';
+			window.locations[1][4].requirements = 'B';
+			window.locations[1][5].status = 'M';
+			window.locations[1][5].startingstatus = 'M';
+			window.locations[1][5].requirements = 'B';
+			window.locations[1][6].status = 'A';
+			window.locations[1][6].startingstatus = 'A';
+			window.locations[1][6].requirements = 'B';
+			window.locations[1][8].status = 'M';
+			window.locations[1][8].startingstatus = 'M';
+			window.locations[1][8].requirements = 'L';
+			window.locations[1][9].status = 'M';
+			window.locations[1][9].startingstatus = 'M';
+			window.locations[1][9].requirements = 'L';
+			window.locations[1][10].status = 'A';
+			window.locations[1][10].startingstatus = 'A';
+			window.locations[1][11].status = 'M';
+			window.locations[1][11].startingstatus = 'M';
+			window.locations[1][11].requirements = 'P';
+			window.locations[1][12].status = 'A';
+			window.locations[1][12].startingstatus = 'A';
+			window.locations[1][13].status = 'A';
+			window.locations[1][13].startingstatus = 'A';
+			window.locations[1][13].requirements = 'P';
+			window.locations[1][14].status = 'A';
+			window.locations[1][14].startingstatus = 'A';
+			window.locations[1][14].requirements = 'B';
+			window.locations[1][15].status = 'A';
+			window.locations[1][15].startingstatus = 'A';
+			window.locations[2][0].status = 'M';
+			window.locations[2][0].startingstatus = 'M';
+			window.locations[2][1].status = 'M';
+			window.locations[2][1].startingstatus = 'M';
+			window.locations[2][2].status = 'A';
+			window.locations[2][2].startingstatus = 'A';
+			window.locations[2][3].status = 'A';
+			window.locations[2][3].startingstatus = 'A';
+			window.locations[2][3].requirements = 'P';
+			window.locations[2][4].status = 'A';
+			window.locations[2][4].startingstatus = 'A';
+			window.locations[2][5].status = 'A';
+			window.locations[2][5].startingstatus = 'A';
+			window.locations[2][6].status = 'A';
+			window.locations[2][6].startingstatus = 'A';
+			window.locations[2][6].requirements = 'B';
+			window.locations[2][7].status = 'M';
+			window.locations[2][7].startingstatus = 'M';
+			window.locations[2][7].requirements = 'B';
+			window.locations[2][8].status = 'A';
+			window.locations[2][8].startingstatus = 'A';
+			window.locations[2][8].requirements = 'C';
+			window.locations[2][9].status = 'M';
+			window.locations[2][9].startingstatus = 'M';
+			window.locations[2][9].requirements = 'F';
+			window.locations[2][11].status = 'M';
+			window.locations[2][11].startingstatus = 'M';
+			window.locations[2][11].requirements = 'F';
+			window.locations[2][12].status = 'M';
+			window.locations[2][12].startingstatus = 'M';
+			window.locations[2][12].requirements = 'B';
+			window.locations[2][13].status = 'A';
+			window.locations[2][13].startingstatus = 'A';
+			window.locations[2][13].requirements = 'B';
+			window.locations[2][15].status = 'A';
+			window.locations[2][15].startingstatus = 'A';
+			window.locations[2][15].requirements = 'R';
+			window.locations[3][0].status = 'M';
+			window.locations[3][0].startingstatus = 'M';
+			window.locations[3][0].requirements = 'F';
+			window.locations[3][3].status = 'A';
+			window.locations[3][3].startingstatus = 'A';
+			window.locations[3][3].requirements = 'B';
+			window.locations[3][4].status = 'A';
+			window.locations[3][4].startingstatus = 'A';
+			window.locations[3][7].status = 'A';
+			window.locations[3][7].startingstatus = 'A';
+			window.locations[3][10].status = 'M';
+			window.locations[3][10].startingstatus = 'M';
+			window.locations[3][10].requirements = 'F';
+			window.locations[3][12].status = 'A';
+			window.locations[3][12].startingstatus = 'A';
+			window.locations[3][12].requirements = 'F';
+			window.locations[3][13].status = 'A';
+			window.locations[3][13].startingstatus = 'A';
+			window.locations[4][2].status = 'A';
+			window.locations[4][2].startingstatus = 'A';
+			window.locations[4][2].requirements = 'F';
+			window.locations[4][4].status = 'A';
+			window.locations[4][4].startingstatus = 'A';
+			window.locations[4][5].status = 'A';
+			window.locations[4][5].startingstatus = 'A';
+			window.locations[4][5].requirements = 'R';
+			window.locations[4][6].status = 'A';
+			window.locations[4][6].startingstatus = 'A';
+			window.locations[4][6].requirements = 'C';
+			window.locations[4][7].status = 'M';
+			window.locations[4][7].startingstatus = 'M';
+			window.locations[4][7].requirements = 'C';
+			window.locations[4][8].status = 'A';
+			window.locations[4][8].startingstatus = 'A';
+			window.locations[4][8].requirements = 'C';
+			window.locations[4][9].status = 'A';
+			window.locations[4][9].startingstatus = 'A';
+			window.locations[4][9].requirements = 'P';
+			window.locations[4][10].status = 'A';
+			window.locations[4][10].startingstatus = 'A';
+			window.locations[4][11].status = 'A';
+			window.locations[4][11].startingstatus = 'A';
+			window.locations[4][11].requirements = 'C';
+			window.locations[4][13].status = 'A';
+			window.locations[4][13].startingstatus = 'A';
+			window.locations[4][13].requirements = 'C';
+			window.locations[4][14].status = 'A';
+			window.locations[4][14].startingstatus = 'A';
+			window.locations[5][1].status = 'A';
+			window.locations[5][1].startingstatus = 'A';
+			window.locations[5][1].requirements = 'C';
+			window.locations[5][3].status = 'M';
+			window.locations[5][3].startingstatus = 'M';
+			window.locations[5][3].requirements = 'C';
+			window.locations[5][6].status = 'A';
+			window.locations[5][6].startingstatus = 'A';
+			window.locations[5][6].requirements = 'C';
+			window.locations[5][8].status = 'M';
+			window.locations[5][8].startingstatus = 'M';
+			window.locations[5][8].requirements = 'F';
+			window.locations[5][11].status = 'A';
+			window.locations[5][11].startingstatus = 'A';
+			window.locations[5][11].requirements = 'C';
+			window.locations[5][14].status = 'A';
+			window.locations[5][14].startingstatus = 'A';
+			window.locations[6][0].status = 'M';
+			window.locations[6][0].startingstatus = 'M';
+			window.locations[6][0].requirements = 'F';
+			window.locations[6][2].status = 'M';
+			window.locations[6][2].startingstatus = 'M';
+			window.locations[6][2].requirements = 'C';
+			window.locations[6][3].status = 'A';
+			window.locations[6][3].startingstatus = 'A';
+			window.locations[6][3].requirements = 'C';
+			window.locations[6][4].status = 'A';
+			window.locations[6][4].startingstatus = 'A';
+			window.locations[6][6].status = 'A';
+			window.locations[6][6].startingstatus = 'A';
+			window.locations[6][7].status = 'M';
+			window.locations[6][7].startingstatus = 'M';
+			window.locations[6][7].requirements = 'B';
+			window.locations[6][8].status = 'A';
+			window.locations[6][8].startingstatus = 'A';
+			window.locations[6][8].requirements = 'C';
+			window.locations[6][10].status = 'A';
+			window.locations[6][10].startingstatus = 'A';
+			window.locations[6][10].requirements = 'C';
+			window.locations[6][11].status = 'M';
+			window.locations[6][11].startingstatus = 'M';
+			window.locations[6][11].requirements = 'C';
+			window.locations[6][12].status = 'M';
+			window.locations[6][12].startingstatus = 'M';
+			window.locations[6][12].requirements = 'C';
+			window.locations[6][13].status = 'M';
+			window.locations[6][13].startingstatus = 'M';
+			window.locations[6][13].requirements = 'C';			
+			window.locations[6][14].status = 'M';
+			window.locations[6][14].startingstatus = 'M';
+			window.locations[6][14].requirements = 'F';
+			window.locations[6][15].status = 'A';
+			window.locations[6][15].startingstatus = 'A';
+			window.locations[7][0].status = 'A';
+			window.locations[7][0].startingstatus = 'A';
+			window.locations[7][1].status = 'M';
+			window.locations[7][1].startingstatus = 'M';
+			window.locations[7][1].requirements = 'B';
+			window.locations[7][2].status = 'M';
+			window.locations[7][2].startingstatus = 'M';
+			window.locations[7][2].requirements = 'F';
+			window.locations[7][4].status = 'A';
+			window.locations[7][4].startingstatus = 'A';
+			window.locations[7][5].status = 'A';
+			window.locations[7][5].startingstatus = 'A';
+			window.locations[7][6].status = 'A';
+			window.locations[7][6].startingstatus = 'A';
+			window.locations[7][6].requirements = 'B';
+			window.locations[7][7].status = 'A';
+			window.locations[7][7].startingstatus = 'A';
+			window.locations[7][8].status = 'A';
+			window.locations[7][8].startingstatus = 'A';
+			window.locations[7][8].requirements = 'C';
+			window.locations[7][9].status = 'A';
+			window.locations[7][9].startingstatus = 'A';
+			window.locations[7][9].requirements = 'P';
+			window.locations[7][11].status = 'M';
+			window.locations[7][11].startingstatus = 'M';
+			window.locations[7][11].requirements = 'B';
+			window.locations[7][12].status = 'A';
+			window.locations[7][12].startingstatus = 'A';
+			window.locations[7][12].requirements = 'B';
+			window.locations[7][13].status = 'A';
+			window.locations[7][13].startingstatus = 'A';
+			window.locations[7][13].requirements = 'B';
 		} else if (quest == "2") {
-
-		} else if (quest == "Q") {
-
+			window.locations[0][0].status = 'A';
+			window.locations[0][0].startingstatus = 'A';
+			window.locations[0][0].requirements = 'B';
+			window.locations[0][1].status = 'A';
+			window.locations[0][1].startingstatus = 'A';
+			window.locations[0][1].requirements = 'B';
+			window.locations[0][2].status = 'A';
+			window.locations[0][2].startingstatus = 'A';
+			window.locations[0][2].requirements = 'B';
+			window.locations[0][3].status = 'A';
+			window.locations[0][3].startingstatus = 'A';
+			window.locations[0][3].requirements = 'B';
+			window.locations[0][4].status = 'A';
+			window.locations[0][4].startingstatus = 'A';
+			window.locations[0][6].status = 'A';
+			window.locations[0][6].startingstatus = 'A';
+			window.locations[0][6].requirements = 'F';
+			window.locations[0][7].status = 'A';
+			window.locations[0][7].startingstatus = 'A';
+			window.locations[0][7].requirements = 'B';
+			window.locations[0][9].status = 'A';
+			window.locations[0][9].startingstatus = 'A';
+			window.locations[0][9].requirements = 'P';
+			window.locations[0][10].status = 'A';
+			window.locations[0][10].startingstatus = 'A';
+			window.locations[0][12].status = 'A';
+			window.locations[0][12].startingstatus = 'A';
+			window.locations[0][13].status = 'A';
+			window.locations[0][13].startingstatus = 'A';
+			window.locations[0][13].requirements = 'B';
+			window.locations[0][14].status = 'A';
+			window.locations[0][14].startingstatus = 'A';
+			window.locations[0][15].status = 'A';
+			window.locations[0][15].startingstatus = 'A';
+			window.locations[1][0].status = 'A';
+			window.locations[1][0].startingstatus = 'A';
+			window.locations[1][0].requirements = 'B';
+			window.locations[1][1].status = 'A';
+			window.locations[1][1].startingstatus = 'A';
+			window.locations[1][1].requirements = 'P';
+			window.locations[1][2].status = 'A';
+			window.locations[1][2].startingstatus = 'A';
+			window.locations[1][2].requirements = 'B';
+			window.locations[1][3].status = 'A';
+			window.locations[1][3].startingstatus = 'A';
+			window.locations[1][3].requirements = 'B';
+			window.locations[1][4].status = 'A';
+			window.locations[1][4].startingstatus = 'A';
+			window.locations[1][4].requirements = 'B';
+			window.locations[1][5].status = 'A';
+			window.locations[1][5].startingstatus = 'A';
+			window.locations[1][5].requirements = 'B';
+			window.locations[1][6].status = 'A';
+			window.locations[1][6].startingstatus = 'A';
+			window.locations[1][6].requirements = 'B';
+			window.locations[1][8].status = 'A';
+			window.locations[1][8].startingstatus = 'A';
+			window.locations[1][8].requirements = 'L';
+			window.locations[1][9].status = 'A';
+			window.locations[1][9].startingstatus = 'A';
+			window.locations[1][9].requirements = 'L';
+			window.locations[1][10].status = 'A';
+			window.locations[1][10].startingstatus = 'A';
+			window.locations[1][11].status = 'A';
+			window.locations[1][11].startingstatus = 'A';
+			window.locations[1][11].requirements = 'p';
+			window.locations[1][12].status = 'A';
+			window.locations[1][12].startingstatus = 'A';
+			window.locations[1][13].status = 'A';
+			window.locations[1][13].startingstatus = 'A';
+			window.locations[1][13].requirements = 'P';
+			window.locations[1][14].status = 'A';
+			window.locations[1][14].startingstatus = 'A';
+			window.locations[1][14].requirements = 'B';
+			window.locations[1][15].status = 'A';
+			window.locations[1][15].startingstatus = 'A';
+			window.locations[2][0].status = 'A';
+			window.locations[2][0].startingstatus = 'A';
+			window.locations[2][2].status = 'A';
+			window.locations[2][2].startingstatus = 'A';
+			window.locations[2][3].status = 'A';
+			window.locations[2][3].startingstatus = 'A';
+			window.locations[2][3].requirements = 'P';
+			window.locations[2][4].status = 'A';
+			window.locations[2][4].startingstatus = 'A';
+			window.locations[2][5].status = 'A';
+			window.locations[2][5].startingstatus = 'A';
+			window.locations[2][6].status = 'A';
+			window.locations[2][6].startingstatus = 'A';
+			window.locations[2][6].requirements = 'B';
+			window.locations[2][8].status = 'A';
+			window.locations[2][8].startingstatus = 'A';
+			window.locations[2][8].requirements = 'C';
+			window.locations[2][9].status = 'A';
+			window.locations[2][9].startingstatus = 'A';
+			window.locations[2][9].requirements = 'F';
+			window.locations[2][11].status = 'A';
+			window.locations[2][11].startingstatus = 'A';
+			window.locations[2][11].requirements = 'F';
+			window.locations[2][13].status = 'A';
+			window.locations[2][13].startingstatus = 'A';
+			window.locations[2][13].requirements = 'B';
+			window.locations[2][15].status = 'A';
+			window.locations[2][15].startingstatus = 'A';
+			window.locations[2][15].requirements = 'R';
+			window.locations[3][0].status = 'A';
+			window.locations[3][0].startingstatus = 'A';
+			window.locations[3][0].requirements = 'F';
+			window.locations[3][3].status = 'A';
+			window.locations[3][3].startingstatus = 'A';
+			window.locations[3][3].requirements = 'B';
+			window.locations[3][4].status = 'A';
+			window.locations[3][4].startingstatus = 'A';
+			window.locations[3][7].status = 'A';
+			window.locations[3][7].startingstatus = 'A';
+			window.locations[3][10].status = 'A';
+			window.locations[3][10].startingstatus = 'A';
+			window.locations[3][10].requirements = 'F';
+			window.locations[3][12].status = 'A';
+			window.locations[3][12].startingstatus = 'A';
+			window.locations[3][12].requirements = 'F';
+			window.locations[3][13].status = 'A';
+			window.locations[3][13].startingstatus = 'A';
+			window.locations[4][4].status = 'A';
+			window.locations[4][4].startingstatus = 'A';
+			window.locations[4][5].status = 'A';
+			window.locations[4][5].startingstatus = 'A';
+			window.locations[4][5].requirements = 'R';
+			window.locations[4][6].status = 'A';
+			window.locations[4][6].startingstatus = 'A';
+			window.locations[4][6].requirements = 'C';
+			window.locations[4][8].status = 'A';
+			window.locations[4][8].startingstatus = 'A';
+			window.locations[4][8].requirements = 'C';
+			window.locations[4][9].status = 'A';
+			window.locations[4][9].startingstatus = 'A';
+			window.locations[4][9].requirements = 'P';
+			window.locations[4][10].status = 'A';
+			window.locations[4][10].startingstatus = 'A';
+			window.locations[4][11].status = 'A';
+			window.locations[4][11].startingstatus = 'A';
+			window.locations[4][11].requirements = 'C';
+			window.locations[4][13].status = 'A';
+			window.locations[4][13].startingstatus = 'A';
+			window.locations[4][13].requirements = 'C';
+			window.locations[4][14].status = 'A';
+			window.locations[4][14].startingstatus = 'A';
+			window.locations[5][1].status = 'A';
+			window.locations[5][1].startingstatus = 'A';
+			window.locations[5][1].requirements = 'C';
+			window.locations[5][3].status = 'A';
+			window.locations[5][3].startingstatus = 'A';
+			window.locations[5][3].requirements = 'C';
+			window.locations[5][6].status = 'A';
+			window.locations[5][6].startingstatus = 'A';
+			window.locations[5][6].requirements = 'C';
+			window.locations[5][8].status = 'A';
+			window.locations[5][8].startingstatus = 'A';
+			window.locations[5][8].requirements = 'F';
+			window.locations[5][11].status = 'A';
+			window.locations[5][11].startingstatus = 'A';
+			window.locations[5][11].requirements = 'C';
+			window.locations[5][14].status = 'A';
+			window.locations[5][14].startingstatus = 'A';
+			window.locations[6][0].status = 'A';
+			window.locations[6][0].startingstatus = 'A';
+			window.locations[6][0].requirements = 'F';
+			window.locations[6][3].status = 'A';
+			window.locations[6][3].startingstatus = 'A';
+			window.locations[6][3].requirements = 'C';
+			window.locations[6][4].status = 'A';
+			window.locations[6][4].startingstatus = 'A';
+			window.locations[6][6].status = 'A';
+			window.locations[6][6].startingstatus = 'A';
+			window.locations[6][8].status = 'A';
+			window.locations[6][8].startingstatus = 'A';
+			window.locations[6][8].requirements = 'C';
+			window.locations[6][10].status = 'A';
+			window.locations[6][10].startingstatus = 'A';
+			window.locations[6][10].requirements = 'C';
+			window.locations[6][11].status = 'A';
+			window.locations[6][11].startingstatus = 'A';
+			window.locations[6][11].requirements = 'C';
+			window.locations[6][12].status = 'A';
+			window.locations[6][12].startingstatus = 'A';
+			window.locations[6][12].requirements = 'C';
+			window.locations[6][14].status = 'A';
+			window.locations[6][14].startingstatus = 'A';
+			window.locations[6][14].requirements = 'F';
+			window.locations[6][15].status = 'A';
+			window.locations[6][15].startingstatus = 'A';
+			window.locations[7][0].status = 'A';
+			window.locations[7][0].startingstatus = 'A';
+			window.locations[7][2].status = 'A';
+			window.locations[7][2].startingstatus = 'A';
+			window.locations[7][2].requirements = 'F';
+			window.locations[7][4].status = 'A';
+			window.locations[7][4].startingstatus = 'A';
+			window.locations[7][5].status = 'A';
+			window.locations[7][5].startingstatus = 'A';
+			window.locations[7][6].status = 'A';
+			window.locations[7][6].startingstatus = 'A';
+			window.locations[7][6].requirements = 'B';
+			window.locations[7][7].status = 'A';
+			window.locations[7][7].startingstatus = 'A';
+			window.locations[7][8].status = 'A';
+			window.locations[7][8].startingstatus = 'A';
+			window.locations[7][8].requirements = 'C';
+			window.locations[7][9].status = 'A';
+			window.locations[7][9].startingstatus = 'A';
+			window.locations[7][9].requirements = 'P';
+			window.locations[7][12].status = 'A';
+			window.locations[7][12].startingstatus = 'A';
+			window.locations[7][12].requirements = 'B';
+			window.locations[7][13].status = 'A';
+			window.locations[7][13].startingstatus = 'A';
+			window.locations[7][13].requirements = 'B';
 		}
 	};
 
 	window.initialize = function() {
+		document.getElementById("owstyle").href = "css/owq" + window.flags.quest + ".css?v=" + buildstring;
+	
 		//Hide the blocks that we don't want there, but not including throws off formatting
 		//Use visibility hidden and not display none because of floats
 		document.getElementById('dungeonitem_2_3').style.visibility = 'hidden';
@@ -633,6 +1100,7 @@
 			for (var j = 1; j < 17; j++) {
 				var currentow = document.getElementById('ow_' + i + '_' + j);
 				currentow.classList.remove('available');
+				currentow.classList.remove('mixedavailable');
 				currentow.classList.remove('tagged');
 				currentow.classList.remove('unavailable');
 
@@ -643,7 +1111,7 @@
 								currentow.classList.add('unavailable');
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							} else {
-								currentow.classList.add('available');
+								currentow.classList.add(window.locations[i - 1][j - 1].startingstatus == 'M' ? 'mixedavailable' : 'available');
 								if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							}
@@ -653,7 +1121,7 @@
 								currentow.classList.add('unavailable');
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							} else {
-								currentow.classList.add('available');
+								currentow.classList.add(window.locations[i - 1][j - 1].startingstatus == 'M' ? 'mixedavailable' : 'available');
 								if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							}
@@ -663,7 +1131,7 @@
 								currentow.classList.add('unavailable');
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							} else {
-								currentow.classList.add('available');
+								currentow.classList.add(window.locations[i - 1][j - 1].startingstatus == 'M' ? 'mixedavailable' : 'available');
 								if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							}
@@ -673,7 +1141,7 @@
 								currentow.classList.add('unavailable');
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							} else {
-								currentow.classList.add('available');
+								currentow.classList.add(window.locations[i - 1][j - 1].startingstatus == 'M' ? 'mixedavailable' : 'available');
 								if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							}
@@ -683,7 +1151,17 @@
 								currentow.classList.add('unavailable');
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							} else {
-								currentow.classList.add('available');
+								currentow.classList.add(window.locations[i - 1][j - 1].startingstatus == 'M' ? 'mixedavailable' : 'available');
+								if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
+								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
+							}
+							break;
+						case 'L':
+							if (!items.ladder || !items.bomb) {
+								currentow.classList.add('unavailable');
+								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
+							} else {
+								currentow.classList.add(window.locations[i - 1][j - 1].startingstatus == 'M' ? 'mixedavailable' : 'available');
 								if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
 								if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							}
@@ -699,8 +1177,12 @@
 							currentow.classList.add('unavailable');
 							break;
 						case 'A':
-						case 'M':
 							currentow.classList.add('available');
+							if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
+							if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
+							break;
+						case 'M':
+							currentow.classList.add('mixedavailable');
 							if (window.locations[i - 1][j - 1].tag == '') window.remainingchecks++;
 							if (window.locations[i - 1][j - 1].tag == '') window.availablechecks++;
 							break;
@@ -1078,6 +1560,7 @@
 			} else if (window.locations[x - 1][y - 1].status == 'A' || window.locations[x - 1][y - 1].status == 'M') {
 				if (window.locations[x - 1][y - 1].requirements == '' ||
 					window.locations[x - 1][y - 1].requirements == 'B' && window.items.bomb || 
+					window.locations[x - 1][y - 1].requirements == 'L' && (window.items.bomb && window.items.ladder) || 
 					window.locations[x - 1][y - 1].requirements == 'C' && (window.items.bluecandle || window.items.redcandle) || 
 					window.locations[x - 1][y - 1].requirements == 'P' && window.items.bracelet || 
 					window.locations[x - 1][y - 1].requirements == 'R' && window.items.raft || 
@@ -1135,13 +1618,13 @@
 
 			if (x != 1) {
 				if (y != 1) {
-					document.getElementById('owmagnify_1').style.backgroundImage = "url('./images/overworld/q1/row-" + (x - 1) + "-column-" + (y - 1) + ".png')"; 
+					document.getElementById('owmagnify_1').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + (x - 1) + "-column-" + (y - 1) + ".png')"; 
 				} else {
 					document.getElementById('owmagnify_1').style.backgroundImage = "";
 				}
-				document.getElementById('owmagnify_2').style.backgroundImage = "url('./images/overworld/q1/row-" + (x - 1) + "-column-" + y + ".png')";
+				document.getElementById('owmagnify_2').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + (x - 1) + "-column-" + y + ".png')";
 				if (y != 16)  {
-					document.getElementById('owmagnify_3').style.backgroundImage = "url('./images/overworld/q1/row-" + (x - 1) + "-column-" + (y + 1) + ".png')"; 
+					document.getElementById('owmagnify_3').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + (x - 1) + "-column-" + (y + 1) + ".png')"; 
 				} else {
 					document.getElementById('owmagnify_3').style.backgroundImage = "";
 				}
@@ -1152,26 +1635,26 @@
 			}
 
 			if (y != 1) {
-				document.getElementById('owmagnify_4').style.backgroundImage = "url('./images/overworld/q1/row-" + x + "-column-" + (y - 1) + ".png')"; 
+				document.getElementById('owmagnify_4').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + x + "-column-" + (y - 1) + ".png')"; 
 			} else {
 				document.getElementById('owmagnify_4').style.backgroundImage = "";
 			}
-			document.getElementById('owmagnify_5').style.backgroundImage = "url('./images/overworld/q1/row-" + x + "-column-" + y + ".png')";
+			document.getElementById('owmagnify_5').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + x + "-column-" + y + ".png')";
 			if (y != 16)  {
-				document.getElementById('owmagnify_6').style.backgroundImage = "url('./images/overworld/q1/row-" + x + "-column-" + (y + 1) + ".png')"; 
+				document.getElementById('owmagnify_6').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + x + "-column-" + (y + 1) + ".png')"; 
 			} else {
 				document.getElementById('owmagnify_6').style.backgroundImage = "";
 			}
 
 			if (x != 8) {
 				if (y != 1) {
-					document.getElementById('owmagnify_7').style.backgroundImage = "url('./images/overworld/q1/row-" + (x + 1) + "-column-" + (y - 1) + ".png')"; 
+					document.getElementById('owmagnify_7').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + (x + 1) + "-column-" + (y - 1) + ".png')"; 
 				} else {
 					document.getElementById('owmagnify_7').style.backgroundImage = "";
 				}
-				document.getElementById('owmagnify_8').style.backgroundImage = "url('./images/overworld/q1/row-" + (x + 1) + "-column-" + y + ".png')";
+				document.getElementById('owmagnify_8').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + (x + 1) + "-column-" + y + ".png')";
 				if (y != 16)  {
-					document.getElementById('owmagnify_9').style.backgroundImage = "url('./images/overworld/q1/row-" + (x + 1) + "-column-" + (y + 1) + ".png')"; 
+					document.getElementById('owmagnify_9').style.backgroundImage = "url('./images/overworld/q" + window.flags.quest + "/row-" + (x + 1) + "-column-" + (y + 1) + ".png')"; 
 				} else {
 					document.getElementById('owmagnify_9').style.backgroundImage = "";
 				}

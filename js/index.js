@@ -51,7 +51,7 @@ function parsesummarytext() {
     } else if (fullsummarytext.indexOf('Mixed Quest - 1st Overworld') > -1) {
         overworldquest.value = "M";
     } else if (fullsummarytext.indexOf('Mixed Quest - 2nd Overworld') > -1) {
-        overworldquest.value = "X";
+        overworldquest.value = "M";
     } else {
         overworldquest.value = "1";
     }
