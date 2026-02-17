@@ -1810,7 +1810,7 @@
 					var currentheartcount = 0;
 					for (var i = 0; i < window.dungeons.length; i++) {
 						for (var j = 0; j < window.dungeons[i].items.length; j++) {
-							if (window.dungeons[i].items[j].item == 'heartcontainer') {
+							if (window.dungeons[i].items[j].item == 'heartcontainer' && window.dungeons[i].items[j].obtained) {
 								currentheartcount++;
 							}
 							if (window.dungeons[i].items[j].item != '' && window.dungeons[i].items[j].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
@@ -1820,7 +1820,7 @@
 					}
 
 					for (var i = 0; i < 3; i++) {
-						if (window.items.owitems[i].item == 'heartcontainer') {
+						if (window.items.owitems[i].item == 'heartcontainer' && window.items.owitems[i].obtained) {
 							currentheartcount++;
 						}
 						if (window.items.owitems[i].item != '' && window.items.owitems[i].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
@@ -1914,7 +1914,7 @@
 
 					for (var i = 0; i < window.dungeons.length; i++) {
 						for (var j = 0; j < window.dungeons[i].items.length; j++) {
-							if (window.dungeons[i].items[j].item == 'heartcontainer') {
+							if (window.dungeons[i].items[j].item == 'heartcontainer' && window.dungeons[i].items[j].item.obtained) {
 								currentheartcount++;
 							}
 							if (window.dungeons[i].items[j].item != '' && window.dungeons[i].items[j].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
@@ -1925,7 +1925,7 @@
 
 
 					for (var i = 0; i < 3; i++) {
-						if (window.items.owitems[i].item == 'heartcontainer') {
+						if (window.items.owitems[i].item == 'heartcontainer' && window.items.owitems[i].obtained) {
 							currentheartcount++;
 						}
 						if (window.items.owitems[i].item != '' && window.items.owitems[i].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
@@ -1958,7 +1958,7 @@
 						case 'whitesword': window.items.whitesword = (leftclick ? true : false); break;
 						case 'heartcontainer':
 							for (var i = 0; i < 9; i++) {
-								if (window.items.heartcontainers[i] == false) {
+								if (window.items.heartcontainers[i] == false && leftclick) {
 									window.items.heartcontainers[i] = true;
 									i = 99;
 								}
@@ -2000,7 +2000,7 @@
 				var map = eventid.replace('owselect', '', eventid);
 
 				if (map != 'manuscript' && map != 'potion' && map != 'hint' && map != 'rupee' && map != 'takeany' && map != 'gamble'
-					&& map != 'woodarrow' || map != 'bomb' || map != 'bluecandle' || map != 'key' || map != 'meat' || map != 'bluering' || map != 'shield') {
+					&& map != 'woodarrow' && map != 'bomb' && map != 'bluecandle' && map != 'key' && map != 'meat' && map != 'bluering' && map != 'shield') {
 					for (var i = 0; i < 8; i++) {
 						for (var j = 0; j < 16; j++) {
 							if (window.locations[i][j].tag == map) {
@@ -2262,9 +2262,9 @@
 				window.activepanelid = parseInt(event.target.id.substring(parseInt(event.target.id.indexOf('_')) + 1))- 1;
 				window.activepanelid2 = parseInt(event.target.id.substring(parseInt(event.target.id.lastIndexOf('_')) + 1)) - 1;
 
-				if (window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 7) + window.activepanelid2].tile == 'key' ||
-				window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 7) + window.activepanelid2].tile == 'locked') {
-					window.dungeons[window.currentdungeon].doorsew[(window.activepanelid * 7) + window.activepanelid2].tile = 'open';
+				if (window.dungeons[window.currentdungeon].doorsns[(window.activepanelid * 7) + window.activepanelid2].tile == 'key' ||
+				window.dungeons[window.currentdungeon].doorsns[(window.activepanelid * 7) + window.activepanelid2].tile == 'locked') {
+					window.dungeons[window.currentdungeon].doorsns[(window.activepanelid * 7) + window.activepanelid2].tile = 'open';
 				}				
 			}
 		}
@@ -2315,8 +2315,8 @@
 
 				window.activepanelid = parseInt(event.target.id.substring(parseInt(event.target.id.indexOf('_')) + 1));
 
-				document.getElementById('itemselectmodal').style.left = ((window.activepanelid - 1) * 76) + 628; 
-				document.getElementById('itemselectmodal').style.top = 200;
+				document.getElementById('itemselectmodal').style.left = ((window.activepanelid - 1) * 76) + 496; 
+				document.getElementById('itemselectmodal').style.top = 163;
 			//Dungeon Map
 			} else if (event.target.id.startsWith('dungeonmap_') || event.target.id.startsWith('dungeonmapmonster_') || event.target.id.startsWith('dungeonmapitem_')) {
 				window.activepanel = 'M';
