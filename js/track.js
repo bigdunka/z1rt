@@ -1307,7 +1307,7 @@
 				currentimg.classList.remove('itemnotcollected');
 				if (window.dungeons[i].items[j].item != '') {
 					var largemod = '';
-					if (window.dungeons[i].items[j].item == 'anykey' || window.dungeons[i].items[j].item == 'book' || 
+					if (window.dungeons[i].items[j].item == 'anykey' || window.dungeons[i].items[j].item == 'book'|| window.dungeons[i].items[j].item == 'bracelet' || 
 						window.dungeons[i].items[j].item == 'bow' || window.dungeons[i].items[j].item == 'redring' || 
 						window.dungeons[i].items[j].item == 'silverarrow' || window.dungeons[i].items[j].item == 'whitesword') {
 							largemod = '_large';
