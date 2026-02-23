@@ -401,6 +401,17 @@ body {
 	cursor: pointer;
 }
 
+.anycandle {
+	background-image: url(../images/bluecandle.png);
+	height: 48px;
+	width: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	float: left;
+	cursor: pointer;
+}
+
 .topinfo {
 	height: 70px;
 	width: 252px;
@@ -422,6 +433,7 @@ body {
 	border-radius: 10px;
 	cursor: pointer;
 	margin-top: 6px;
+	margin-left: 10px;
 }
 
 .modalblock {
@@ -500,6 +512,8 @@ body {
 	float: left;
 	background-repeat: no-repeat;
   	background-size: contain;
+	border: black 2px solid;
+  	box-sizing: border-box;
 }
 
 .owmagnifygrid {
@@ -739,6 +753,7 @@ body {
 	display: none;
 	color: white;
 	font-size: 12px;
+	z-index: 4;
 }
 
 .dungeonhintmodalblock {
@@ -1668,8 +1683,48 @@ body {
 
 .notesarea {
 	width: 260px;
-	height: 142px;
+	height: 100px;
 	background-color: black;
 	border: 1px solid gray;
 	color: white;
+}
+
+.zoneimage {
+	width: 960px;
+	height: 320px;
+	background-image: url(../images/overworld/zones.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	display: none;
+	position: relative;
+}
+
+.dungeonroomempty {
+	visibility: hidden;
+}
+
+.showhintspanel {
+	width: 300px;
+	height: 325px;
+	position: absolute;
+	left: 86px;
+	top: 605px;
+	color: white;
+	background-color: black;
+	display: none;
+}
+
+.hintrow {
+	font-size: 15px;
+	height: 28px;
+	margin-left: 4px;
+	padding-top: 8px;
+}
+
+.releasetext {
+	color: white;
+	font-size: 9px;
 }

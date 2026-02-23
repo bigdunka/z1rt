@@ -9,6 +9,8 @@
 	window.activepanelid = 0;
 	window.activepanelid2 = 0;
 	window.currentdungeon = 0;
+	window.showzoneimage = false;
+	window.showhinttile = false;
 
 	window.coordx = 0;
 	window.coordy = 0;
@@ -38,7 +40,8 @@
 		magicswordmax: parseInt("1" + query.f.charAt(7)),
 		startingextrahearts: 3,
 		unknowndungeons: false,
-		showboard: query.f.charAt(14) == 'B'
+		showboard: query.f.charAt(14) == 'B',
+		extracandles: query.f.charAt(15) == 'Y'
 	}
 
 	//Starting Hearts
@@ -905,6 +908,7 @@
 		if (!window.flags.hints) {
 			document.getElementById('dungeonhintheader').style.visibility = 'hidden';
 			document.getElementById('hintdungeonscolumn').style.visibility = 'hidden';
+			document.getElementById('showhintsbutton').style.visibility = 'hidden';
 		}
 
 		if (window.flags.swordless) {
@@ -967,15 +971,19 @@
 		document.getElementById('takeanyheart_1').classList.remove('itemnotcollected');
 		document.getElementById('takeanyheart_1').classList.remove('heartcontainer');
 		document.getElementById('takeanyheart_1').classList.remove('anypotion');
+		document.getElementById('takeanyheart_1').classList.remove('anycandle');
 		document.getElementById('takeanyheart_2').classList.remove('itemnotcollected');
 		document.getElementById('takeanyheart_2').classList.remove('heartcontainer');
 		document.getElementById('takeanyheart_2').classList.remove('anypotion');
+		document.getElementById('takeanyheart_2').classList.remove('anycandle');
 		document.getElementById('takeanyheart_3').classList.remove('itemnotcollected');
 		document.getElementById('takeanyheart_3').classList.remove('heartcontainer');
 		document.getElementById('takeanyheart_3').classList.remove('anypotion');
+		document.getElementById('takeanyheart_3').classList.remove('anycandle');
 		document.getElementById('takeanyheart_4').classList.remove('itemnotcollected');
 		document.getElementById('takeanyheart_4').classList.remove('heartcontainer');
 		document.getElementById('takeanyheart_4').classList.remove('anypotion');
+		document.getElementById('takeanyheart_4').classList.remove('anycandle');
 
 		document.getElementById('itemselectanykey').classList.remove('itemnotcollected');
 		document.getElementById('itemselectbook').classList.remove('itemnotcollected');
@@ -1065,35 +1073,41 @@
 			} else if (window.items.anyheart[i] == 1) {
 				document.getElementById('takeanyheart_' + (i + 1)).classList.add('heartcontainer');
 				window.items.maxhearts++;
-			} else {
+			} else if (window.items.anyheart[i] == 2) {
 				document.getElementById('takeanyheart_' + (i + 1)).classList.add('anypotion');
+			} else {
+				document.getElementById('takeanyheart_' + (i + 1)).classList.add('anycandle');
 			}
 		}
+
+		var hccount = 0;
+		var obtainedheartcount = 0;
 
 		for (var i = 0; i < window.dungeons.length; i++) {
 			for (var j = 0; j < window.dungeons[i].items.length; j++) {
 				if (window.dungeons[i].items[j].item != '') {
-					if (!window.dungeons[i].items[j].item == 'heartcontainer') {
+					if (window.dungeons[i].items[j].item != 'heartcontainer') {
 						document.getElementById('itemselect' + window.dungeons[i].items[j].item).classList.add('itemnotcollected');
 					} else {
-						if (window.flags.heartshuffle || i == 8 || j > 0) {
-							document.getElementById('itemselect' + window.dungeons[i].items[j].item).classList.add('itemnotcollected');
-						}
+						if (window.dungeons[i].items[j].obtained) obtainedheartcount++;
+						hccount++;
 					}
 				}
 			}			
 		}
-
 		for (var i = 0; i < 3; i++) {
 			if (window.items.owitems[i].item != '') {
-				if (!window.items.owitems[i].item == 'heartcontainer') {
+				if (window.items.owitems[i].item != 'heartcontainer') {
 					document.getElementById('itemselect' + window.items.owitems[i].item).classList.add('itemnotcollected');
 				} else {
-					if (window.flags.heartshuffle || i == 8 || j > 0) {
-						document.getElementById('itemselect' + window.items.owitems[i].item).classList.add('itemnotcollected');
-					}
+					if (window.items.owitems[i].item) obtainedheartcount++;
+					hccount++;
 				}
-			}		
+			}
+		}
+
+		if (hccount > 8) {
+			document.getElementById('itemselectheartcontainer').classList.add('itemnotcollected');
 		}
 
 		for (var i = 1; i < 9; i++) {
@@ -1272,13 +1286,7 @@
 			}
 		}
 
-		for (var i = 0; i < 9; i++) {
-			if (window.items.heartcontainers[i] == true) {
-				window.items.maxhearts++;
-			}
-		}
-
-		window.items.maxhearts = window.items.maxhearts + window.flags.startingextrahearts;
+		window.items.maxhearts = window.items.maxhearts + window.flags.startingextrahearts + obtainedheartcount;
 
 		if (window.items.maxhearts > 16) window.items.maxhearts = 16;
 
@@ -1485,6 +1493,10 @@
 		} */
 
 		document.getElementById('owstats').innerHTML = availablechecks + ' AVAILABLE / ' + remainingchecks + ' TOTAL';
+
+		document.getElementById('zoneimage').style.display = window.showzoneimage ? 'block' : 'none';
+
+		document.getElementById('showhintspanel').style.display = window.showhinttile ? 'block' : 'none';
 	};
 
 
@@ -1534,7 +1546,7 @@
 				var whichheart = x == 'heart1' ? 0 : x == 'heart2' ? 1 : x == 'heart3' ? 2 : 3;
 
 				window.items.anyheart[whichheart]++;
-				if (window.items.anyheart[whichheart] == 3) {
+				if (window.items.anyheart[whichheart] == 3 + (window.flags.extracandles ? 1 : 0)) {
 					window.items.anyheart[whichheart] = 0;
 				}
 				break;
@@ -1575,6 +1587,7 @@
 	window.sethint = function(x) {
 		window.items.hints[window.activepanelid] = x;
 		window.activepanel = 'X'
+		window.showhinttile = false;
 		window.updateow();
 	}
 
@@ -1807,23 +1820,24 @@
 			if (eventid.startsWith('itemselect')) {
 				var item = eventid.replace('itemselect', '', eventid);
 				if (item != 'empty') {
-					var currentheartcount = 0;
-					for (var i = 0; i < window.dungeons.length; i++) {
-						for (var j = 0; j < window.dungeons[i].items.length; j++) {
-							if (window.dungeons[i].items[j].item == 'heartcontainer' && window.dungeons[i].items[j].obtained) {
-								currentheartcount++;
-							}
-							if (window.dungeons[i].items[j].item != '' && window.dungeons[i].items[j].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
-								return;
+					var hccount = 0;
+					
+					if (item == 'heartcontainer') {
+						for (var i = 0; i < window.dungeons.length; i++) {
+							for (var j = 0; j < window.dungeons[i].items.length; j++) {
+								if (window.dungeons[i].items[j].item == 'heartcontainer') {
+									hccount++;
+								}
 							}
 						}
-					}
 
-					for (var i = 0; i < 3; i++) {
-						if (window.items.owitems[i].item == 'heartcontainer' && window.items.owitems[i].obtained) {
-							currentheartcount++;
+						for (var i = 0; i < 3; i++) {
+							if (window.items.owitems[i].item == 'heartcontainer') {
+								hccount++;
+							}
 						}
-						if (window.items.owitems[i].item != '' && window.items.owitems[i].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
+
+						if (hccount > 8) {
 							return;
 						}
 					}
@@ -1910,25 +1924,24 @@
 			if (eventid.startsWith('itemselect')) {
 				var item = eventid.replace('itemselect', '', eventid);
 				if (item != 'empty') {
-					var currentheartcount = 0;
-
-					for (var i = 0; i < window.dungeons.length; i++) {
-						for (var j = 0; j < window.dungeons[i].items.length; j++) {
-							if (window.dungeons[i].items[j].item == 'heartcontainer' && window.dungeons[i].items[j].item.obtained) {
-								currentheartcount++;
-							}
-							if (window.dungeons[i].items[j].item != '' && window.dungeons[i].items[j].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
-								return;
+					var hccount = 0;
+					
+					if (item == 'heartcontainer') {
+						for (var i = 0; i < window.dungeons.length; i++) {
+							for (var j = 0; j < window.dungeons[i].items.length; j++) {
+								if (window.dungeons[i].items[j].item == 'heartcontainer') {
+									hccount++;
+								}
 							}
 						}
-					}
 
-
-					for (var i = 0; i < 3; i++) {
-						if (window.items.owitems[i].item == 'heartcontainer' && window.items.owitems[i].obtained) {
-							currentheartcount++;
+						for (var i = 0; i < 3; i++) {
+							if (window.items.owitems[i].item == 'heartcontainer') {
+								hccount++;
+							}
 						}
-						if (window.items.owitems[i].item != '' && window.items.owitems[i].item == item && (item != 'heartcontainer' || currentheartcount >= 9)) {
+
+						if (hccount > 8) {
 							return;
 						}
 					}
@@ -2424,9 +2437,16 @@
 
 			window.updateow();
 		}
-
 	}
 
-	
+	window.showzones = function() {
+		window.showzoneimage = !window.showzoneimage;
+		window.updateow();
+	}
+
+	window.showhints = function() {
+		window.showhinttile = !window.showhinttile;
+		window.updateow();
+	}
 
 }(window));

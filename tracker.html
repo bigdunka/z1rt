@@ -83,7 +83,7 @@
 					<div class="logo"></div>
 				</div>
 				<!-- <div class="optionbuttons">
-					<input type="button" class="optionbutton" value="Show Zones" />
+					
 					<input type="button" class="optionbutton" value="Show Coords" />
 					<input type="button" class="optionbutton" value="View Hints" />
 					<input type="button" class="optionbutton" value="Shop Details" />
@@ -92,7 +92,8 @@
 				<div class="notesdiv">
 					NOTES:<br>
 					<textarea class="notesarea"></textarea>
-
+					<input type="button" class="optionbutton" value="Toggle Zones" onclick="showzones();" />
+					<input id="showhintsbutton" type="button" class="optionbutton" value="Toggle Hints" onclick="showhints();" />
 				</div>
 			</div>
 			<div id="owwrapper" class="owwrapper">
@@ -224,6 +225,7 @@
 				<div id="ow_8_14" class="owmapdiv active ow_8_14" onclick="owclick(8,14);"><div id="owtag_8_14"></div><div id="owshop_8_14_1"></div><div id="owshop_8_14_2"></div><div id="owshop_8_14_3"></div></div>
 				<div id="ow_8_15" class="owmapdiv active ow_8_15" onclick="owclick(8,15);"><div id="owtag_8_15"></div><div id="owshop_8_15_1"></div><div id="owshop_8_15_2"></div><div id="owshop_8_15_3"></div></div>
 				<div id="ow_8_16" class="owmapdiv active ow_8_16" onclick="owclick(8,16);"><div id="owtag_8_16"></div><div id="owshop_8_16_1"></div><div id="owshop_8_16_2"></div><div id="owshop_8_16_3"></div></div>				
+				<div id="zoneimage" class="zoneimage"></div>
 			</div>
 			<div id="dungeonwrapper" class="dungeonwrapper">
 				<div id="dungeoninfo" class="dungeoninfo">
@@ -667,16 +669,16 @@
 
 		<div id="dungeonhintmodal" class="dungeonhintmodal">
 			<div id="dungeonhintselect_0" class="dungeonhintmodalblock" onclick="sethint('');"></div>
-			<div id="dungeonhintselect_1" class="dungeonhintmodalblock" onclick="sethint('CO');">CO</div>
-			<div id="dungeonhintselect_2" class="dungeonhintmodalblock" onclick="sethint('DE');">DE</div>
-			<div id="dungeonhintselect_3" class="dungeonhintmodalblock" onclick="sethint('DM');">DM</div>
-			<div id="dungeonhintselect_4" class="dungeonhintmodalblock" onclick="sethint('DW');">DW</div>
-			<div id="dungeonhintselect_5" class="dungeonhintmodalblock" onclick="sethint('FO');">FO</div>
-			<div id="dungeonhintselect_6" class="dungeonhintmodalblock" onclick="sethint('GR');">GR</div>
-			<div id="dungeonhintselect_7" class="dungeonhintmodalblock" onclick="sethint('LH');">LH</div>
-			<div id="dungeonhintselect_8" class="dungeonhintmodalblock" onclick="sethint('LK');">LK</div>
-			<div id="dungeonhintselect_9" class="dungeonhintmodalblock" onclick="sethint('RI');">RI</div>
-			<div id="dungeonhintselect_10" class="dungeonhintmodalblock" onclick="sethint('ST');">ST</div>
+			<div id="dungeonhintselect_1" class="dungeonhintmodalblock" onclick="sethint('CO');" title="COAST">CO</div>
+			<div id="dungeonhintselect_2" class="dungeonhintmodalblock" onclick="sethint('DE');" title="DESERT">DE</div>
+			<div id="dungeonhintselect_3" class="dungeonhintmodalblock" onclick="sethint('DM');" title="DEATH MOUNTAIN">DM</div>
+			<div id="dungeonhintselect_4" class="dungeonhintmodalblock" onclick="sethint('DW');" title="DEAD WOODS">DW</div>
+			<div id="dungeonhintselect_5" class="dungeonhintmodalblock" onclick="sethint('FO');" title="FOREST">FO</div>
+			<div id="dungeonhintselect_6" class="dungeonhintmodalblock" onclick="sethint('GR');" title="GRAVE">GR</div>
+			<div id="dungeonhintselect_7" class="dungeonhintmodalblock" onclick="sethint('LH');" title="LOST HILLS">LH</div>
+			<div id="dungeonhintselect_8" class="dungeonhintmodalblock" onclick="sethint('LK');" title="LAKE">LK</div>
+			<div id="dungeonhintselect_9" class="dungeonhintmodalblock" onclick="sethint('RI');" title="RIVER">RI</div>
+			<div id="dungeonhintselect_10" class="dungeonhintmodalblock" onclick="sethint('ST');" title="START">ST</div>
 		</div>
 
 		<div id="itemselectmodal" class="itemselectmodal">
@@ -823,6 +825,19 @@
 			<div id="dungeonmonsterredbubble" class="dungeonmonster dungeonmonsterredbubble"></div>
 			<div id="dungeonmonsterother" class="dungeonmonster dungeonmonsterother"></div>
 			<div id="dungeonmonsterblank" class="dungeonmonster dungeonmonsterblank"></div>
+		</div>
+
+		<div id="showhintspanel" class="showhintspanel">
+			<div class="hintrow">AQUAMENTUS AWAITS</div>
+			<div class="hintrow">DODONGO DWELLS</div>
+			<div class="hintrow">HANHANDLA THREATENS</div>
+			<div class="hintrow">GLEEOK LURKS</div>
+			<div class="hintrow">DIGDOGGER GAZES</div>
+			<div class="hintrow">GOHMA CREEPS</div>
+			<div class="hintrow">GORIYA GRUMBLES</div>
+			<div class="hintrow">GLEEOK RETURNS</div>
+			<div class="hintrow">ENTRANCE TO DEATH</div>
+
 		</div>
 
 		<script>window.initialize()</script>

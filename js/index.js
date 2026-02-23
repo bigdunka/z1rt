@@ -14,8 +14,9 @@ function launchtracker() {
 	var itemin92flag = nineitem2.options[nineitem2.selectedIndex].value;
 	var startingheartsflag = startinghearts.options[startinghearts.selectedIndex].value;
 	var levelboardflag = levelboard.options[levelboard.selectedIndex].value;
+    var extracandlesflag = extracandles.options[extracandles.selectedIndex].value;
 
-    var trackerWindow = window.open('tracker.html?f={quest}{hints}{dungeonitem}{swords}{whiteswordmin}{whiteswordmax}{magicswordmin}{magicswordmax}{whitesworditem}{coastitem}{armositem}{itemin91}{itemin92}{startinghearts}{levelboard}&r={epoch}'
+    var trackerWindow = window.open('tracker.html?f={quest}{hints}{dungeonitem}{swords}{whiteswordmin}{whiteswordmax}{magicswordmin}{magicswordmax}{whitesworditem}{coastitem}{armositem}{itemin91}{itemin92}{startinghearts}{levelboard}{extracandles}&r={epoch}'
 			.replace('{quest}', questflag)
             .replace('{hints}', hintsflag)
 			.replace('{dungeonitem}', dungeonitemflag)
@@ -31,6 +32,7 @@ function launchtracker() {
 			.replace('{itemin92}', itemin92flag)
 			.replace('{startinghearts}', startingheartsflag)
 			.replace('{levelboard}', levelboardflag)
+            .replace('{extracandles}', extracandlesflag)
 			.replace('{epoch}', Date.now()),
 		'',
 		'width=980,height=980,titlebar=0,menubar=0,toolbar=0,scrollbars=0,resizable=0');
@@ -319,6 +321,13 @@ function parsesummarytext() {
         startinghearts.value = "F";
     } else if (tmp == '16') {
         startinghearts.value = "G";
+    }
+
+    //Extra Candles
+    if (fullsummarytext.indexOf('Yes Extra Candles') > -1) {
+        extracandles.value = "Y";
+    } else {
+        extracandles.value = "N";
     }
 }
 
