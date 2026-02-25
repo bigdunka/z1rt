@@ -15,8 +15,9 @@ function launchtracker() {
 	var startingheartsflag = startinghearts.options[startinghearts.selectedIndex].value;
 	var levelboardflag = levelboard.options[levelboard.selectedIndex].value;
     var extracandlesflag = extracandles.options[extracandles.selectedIndex].value;
+    var dungeonquestflag = dungeonquest.options[dungeonquest.selectedIndex].value;
 
-    var trackerWindow = window.open('tracker.html?f={quest}{hints}{dungeonitem}{swords}{whiteswordmin}{whiteswordmax}{magicswordmin}{magicswordmax}{whitesworditem}{coastitem}{armositem}{itemin91}{itemin92}{startinghearts}{levelboard}{extracandles}&r={epoch}'
+    var trackerWindow = window.open('tracker.html?f={quest}{hints}{dungeonitem}{swords}{whiteswordmin}{whiteswordmax}{magicswordmin}{magicswordmax}{whitesworditem}{coastitem}{armositem}{itemin91}{itemin92}{startinghearts}{levelboard}{extracandles}{dungeonquest}&r={epoch}'
 			.replace('{quest}', questflag)
             .replace('{hints}', hintsflag)
 			.replace('{dungeonitem}', dungeonitemflag)
@@ -33,6 +34,7 @@ function launchtracker() {
 			.replace('{startinghearts}', startingheartsflag)
 			.replace('{levelboard}', levelboardflag)
             .replace('{extracandles}', extracandlesflag)
+            .replace('{dungeonquest}', dungeonquestflag)
 			.replace('{epoch}', Date.now()),
 		'',
 		'width=980,height=980,titlebar=0,menubar=0,toolbar=0,scrollbars=0,resizable=0');
@@ -56,6 +58,17 @@ function parsesummarytext() {
         overworldquest.value = "M";
     } else {
         overworldquest.value = "1";
+    }
+
+    //Dungeon Quest
+    if (fullsummarytext.indexOf('1st Quest Dungeons') > -1) {
+        dungeonquest.value = "1";
+    } else if (fullsummarytext.indexOf('2nd Quest Dungeons') > -1) {
+        dungeonquest.value = "2";
+    } else if (fullsummarytext.indexOf('Shapes Dungeons') > -1) {
+        dungeonquest.value = "S";
+    } else {
+        dungeonquest.value = "S";
     }
 
     //Hints

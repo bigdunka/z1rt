@@ -1,7 +1,7 @@
 (function(window) {
     'use strict';
 
-	var buildstring = '10101';
+	var buildstring = '10103';
 	window.availablechecks = 0;
 	window.remainingchecks = 0;
 
@@ -30,7 +30,7 @@
 
 	window.flags = {
 		quest: query.f.charAt(0),
-		dungeonquest: 'S',
+		dungeonquest: query.f.charAt(16),
 		hints: query.f.charAt(1) != 'C',
 		heartshuffle: query.f.charAt(2) != 'D' && query.f.charAt(2) != 'N',
 		swordless: query.f.charAt(3) == 'S',
@@ -219,7 +219,6 @@
 
 
 	setdefaultstatus(window.flags.quest);
-	//updateow();
 
 	//Set default statuses
 	function setdefaultstatus(quest)  {
@@ -629,7 +628,7 @@
 			window.locations[6][12].requirements = 'C';
 			window.locations[6][13].status = 'M';
 			window.locations[6][13].startingstatus = 'M';
-			window.locations[6][13].requirements = 'C';			
+			window.locations[6][13].requirements = 'C'
 			window.locations[6][14].status = 'M';
 			window.locations[6][14].startingstatus = 'M';
 			window.locations[6][14].requirements = 'F';
@@ -932,6 +931,984 @@
 			document.getElementById('dungeonmap_5_0').innerHTML = 'D';
 		}
 
+		if (window.flags.dungeonquest == "1") {
+			//Default dungeons to empty, except for level 9
+			for (var j = 0; j < 8; j++) {
+				for (var i = 0; i < 64; i++) {
+					window.dungeons[j].rooms[i].tile = 'empty';
+					if (i < 56) {
+						window.dungeons[j].doorsns[i].tile = 'empty';
+						window.dungeons[j].doorsew[i].tile = 'empty';
+					}
+				}
+			}
+
+			//Dungeon 1
+			window.dungeons[0].rooms[12].tile = '';
+			window.dungeons[0].rooms[18].tile = '';
+			window.dungeons[0].rooms[20].tile = '';
+			window.dungeons[0].rooms[21].tile = '';
+			window.dungeons[0].rooms[23].tile = '';
+			window.dungeons[0].rooms[26].tile = '';
+			window.dungeons[0].rooms[27].tile = '';
+			window.dungeons[0].rooms[28].tile = '';
+			window.dungeons[0].rooms[29].tile = '';
+			window.dungeons[0].rooms[30].tile = '';
+			window.dungeons[0].rooms[31].tile = '';
+			window.dungeons[0].rooms[36].tile = '';
+			window.dungeons[0].rooms[37].tile = '';
+			window.dungeons[0].rooms[39].tile = '';
+			window.dungeons[0].rooms[43].tile = '';
+			window.dungeons[0].rooms[44].tile = '';
+			window.dungeons[0].rooms[51].tile = '';
+
+			window.dungeons[0].doorsns[18].tile = '';
+			window.dungeons[0].doorsns[23].tile = '';
+			window.dungeons[0].doorsns[24].tile = '';
+			window.dungeons[0].doorsns[25].tile = '';
+			window.dungeons[0].doorsns[26].tile = '';
+			window.dungeons[0].doorsns[27].tile = '';
+			window.dungeons[0].doorsns[32].tile = '';
+			window.dungeons[0].doorsns[38].tile = '';
+
+			window.dungeons[0].doorsew[12].tile = '';
+			window.dungeons[0].doorsew[18].tile = '';
+			window.dungeons[0].doorsew[20].tile = '';
+			window.dungeons[0].doorsew[21].tile = '';
+			window.dungeons[0].doorsew[23].tile = '';
+			window.dungeons[0].doorsew[28].tile = '';
+			window.dungeons[0].doorsew[29].tile = '';
+			window.dungeons[0].doorsew[31].tile = '';
+			window.dungeons[0].doorsew[36].tile = '';
+			window.dungeons[0].doorsew[43].tile = '';
+
+			//Dungeon 2
+			window.dungeons[1].rooms[22].tile = '';
+			window.dungeons[1].rooms[24].tile = '';
+			window.dungeons[1].rooms[30].tile = '';
+			window.dungeons[1].rooms[31].tile = '';
+			window.dungeons[1].rooms[32].tile = '';
+			window.dungeons[1].rooms[33].tile = '';
+			window.dungeons[1].rooms[34].tile = '';
+			window.dungeons[1].rooms[35].tile = '';
+			window.dungeons[1].rooms[36].tile = '';
+			window.dungeons[1].rooms[37].tile = '';
+			window.dungeons[1].rooms[38].tile = '';
+			window.dungeons[1].rooms[39].tile = '';
+			window.dungeons[1].rooms[41].tile = '';
+			window.dungeons[1].rooms[42].tile = '';
+			window.dungeons[1].rooms[43].tile = '';
+			window.dungeons[1].rooms[44].tile = '';
+			window.dungeons[1].rooms[45].tile = '';
+			window.dungeons[1].rooms[46].tile = '';
+
+			window.dungeons[1].doorsns[27].tile = '';
+			window.dungeons[1].doorsns[28].tile = '';
+			window.dungeons[1].doorsns[29].tile = '';
+			window.dungeons[1].doorsns[30].tile = '';
+			window.dungeons[1].doorsns[31].tile = '';
+			window.dungeons[1].doorsns[32].tile = '';
+			window.dungeons[1].doorsns[33].tile = '';
+			window.dungeons[1].doorsns[34].tile = '';
+			window.dungeons[1].doorsns[36].tile = '';
+			window.dungeons[1].doorsns[37].tile = '';
+			window.dungeons[1].doorsns[38].tile = '';
+			window.dungeons[1].doorsns[39].tile = '';
+			window.dungeons[1].doorsns[40].tile = '';
+
+			window.dungeons[1].doorsew[22].tile = '';
+			window.dungeons[1].doorsew[24].tile = '';
+			window.dungeons[1].doorsew[30].tile = '';
+			window.dungeons[1].doorsew[31].tile = '';
+			window.dungeons[1].doorsew[33].tile = '';
+			window.dungeons[1].doorsew[34].tile = '';
+			window.dungeons[1].doorsew[35].tile = '';
+			window.dungeons[1].doorsew[36].tile = '';
+			window.dungeons[1].doorsew[37].tile = '';
+			window.dungeons[1].doorsew[38].tile = '';
+
+			//Dungeon 3
+			window.dungeons[2].rooms[12].tile = '';
+			window.dungeons[2].rooms[13].tile = '';
+			window.dungeons[2].rooms[14].tile = '';
+			window.dungeons[2].rooms[18].tile = '';
+			window.dungeons[2].rooms[20].tile = '';
+			window.dungeons[2].rooms[21].tile = '';
+			window.dungeons[2].rooms[26].tile = '';
+			window.dungeons[2].rooms[27].tile = '';
+			window.dungeons[2].rooms[28].tile = '';
+			window.dungeons[2].rooms[29].tile = '';
+			window.dungeons[2].rooms[30].tile = '';
+			window.dungeons[2].rooms[31].tile = '';
+			window.dungeons[2].rooms[36].tile = '';
+			window.dungeons[2].rooms[37].tile = '';
+			window.dungeons[2].rooms[39].tile = '';
+			window.dungeons[2].rooms[43].tile = '';
+			window.dungeons[2].rooms[44].tile = '';
+			window.dungeons[2].rooms[45].tile = '';
+
+			window.dungeons[2].doorsns[11].tile = '';
+			window.dungeons[2].doorsns[12].tile = '';
+			window.dungeons[2].doorsns[18].tile = '';
+			window.dungeons[2].doorsns[23].tile = '';
+			window.dungeons[2].doorsns[24].tile = '';
+			window.dungeons[2].doorsns[25].tile = '';
+			window.dungeons[2].doorsns[26].tile = '';
+			window.dungeons[2].doorsns[27].tile = '';
+			window.dungeons[2].doorsns[32].tile = '';
+			window.dungeons[2].doorsns[38].tile = '';
+			window.dungeons[2].doorsns[39].tile = '';
+
+			window.dungeons[2].doorsew[12].tile = '';
+			window.dungeons[2].doorsew[13].tile = '';
+			window.dungeons[2].doorsew[18].tile = '';
+			window.dungeons[2].doorsew[20].tile = '';
+			window.dungeons[2].doorsew[21].tile = '';
+			window.dungeons[2].doorsew[28].tile = '';
+			window.dungeons[2].doorsew[29].tile = '';
+			window.dungeons[2].doorsew[31].tile = '';
+			window.dungeons[2].doorsew[36].tile = '';
+			window.dungeons[2].doorsew[37].tile = '';
+
+			//Dungeon 4
+			window.dungeons[3].rooms[16].tile = '';
+			window.dungeons[3].rooms[17].tile = '';
+			window.dungeons[3].rooms[18].tile = '';
+			window.dungeons[3].rooms[19].tile = '';
+			window.dungeons[3].rooms[20].tile = '';
+			window.dungeons[3].rooms[21].tile = '';
+			window.dungeons[3].rooms[23].tile = '';
+			window.dungeons[3].rooms[24].tile = '';
+			window.dungeons[3].rooms[25].tile = '';
+			window.dungeons[3].rooms[26].tile = '';
+			window.dungeons[3].rooms[27].tile = '';
+			window.dungeons[3].rooms[29].tile = '';
+			window.dungeons[3].rooms[30].tile = '';
+			window.dungeons[3].rooms[31].tile = '';
+			window.dungeons[3].rooms[32].tile = '';
+			window.dungeons[3].rooms[33].tile = '';
+			window.dungeons[3].rooms[35].tile = '';
+			window.dungeons[3].rooms[38].tile = '';
+			window.dungeons[3].rooms[40].tile = '';
+			window.dungeons[3].rooms[41].tile = '';
+
+			window.dungeons[3].doorsns[14].tile = '';
+			window.dungeons[3].doorsns[15].tile = '';
+			window.dungeons[3].doorsns[16].tile = '';
+			window.dungeons[3].doorsns[17].tile = '';
+			window.dungeons[3].doorsns[18].tile = '';
+			window.dungeons[3].doorsns[21].tile = '';
+			window.dungeons[3].doorsns[22].tile = '';
+			window.dungeons[3].doorsns[23].tile = '';
+			window.dungeons[3].doorsns[26].tile = '';
+			window.dungeons[3].doorsns[27].tile = '';
+			window.dungeons[3].doorsns[28].tile = '';
+			window.dungeons[3].doorsns[35].tile = '';
+
+			window.dungeons[3].doorsew[16].tile = '';
+			window.dungeons[3].doorsew[17].tile = '';
+			window.dungeons[3].doorsew[18].tile = '';
+			window.dungeons[3].doorsew[19].tile = '';
+			window.dungeons[3].doorsew[21].tile = '';
+			window.dungeons[3].doorsew[23].tile = '';
+			window.dungeons[3].doorsew[24].tile = '';
+			window.dungeons[3].doorsew[25].tile = '';
+			window.dungeons[3].doorsew[27].tile = '';
+			window.dungeons[3].doorsew[30].tile = '';
+			window.dungeons[3].doorsew[32].tile = '';
+			window.dungeons[3].doorsew[33].tile = '';
+
+			//Dungeon 5
+			window.dungeons[4].rooms[17].tile = '';
+			window.dungeons[4].rooms[18].tile = '';
+			window.dungeons[4].rooms[19].tile = '';
+			window.dungeons[4].rooms[22].tile = '';
+			window.dungeons[4].rooms[24].tile = '';
+			window.dungeons[4].rooms[25].tile = '';
+			window.dungeons[4].rooms[26].tile = '';
+			window.dungeons[4].rooms[29].tile = '';
+			window.dungeons[4].rooms[30].tile = '';
+			window.dungeons[4].rooms[32].tile = '';
+			window.dungeons[4].rooms[33].tile = '';
+			window.dungeons[4].rooms[34].tile = '';
+			window.dungeons[4].rooms[36].tile = '';
+			window.dungeons[4].rooms[37].tile = '';
+			window.dungeons[4].rooms[38].tile = '';
+			window.dungeons[4].rooms[39].tile = '';
+			window.dungeons[4].rooms[41].tile = '';
+			window.dungeons[4].rooms[42].tile = '';
+			window.dungeons[4].rooms[43].tile = '';
+			window.dungeons[4].rooms[44].tile = '';
+			window.dungeons[4].rooms[45].tile = '';
+			window.dungeons[4].rooms[46].tile = '';
+			window.dungeons[4].rooms[47].tile = '';
+
+			window.dungeons[4].doorsns[15].tile = '';
+			window.dungeons[4].doorsns[16].tile = '';
+			window.dungeons[4].doorsns[21].tile = '';
+			window.dungeons[4].doorsns[22].tile = '';
+			window.dungeons[4].doorsns[26].tile = '';
+			window.dungeons[4].doorsns[28].tile = '';
+			window.dungeons[4].doorsns[29].tile = '';
+			window.dungeons[4].doorsns[32].tile = '';
+			window.dungeons[4].doorsns[33].tile = '';
+			window.dungeons[4].doorsns[34].tile = '';
+			window.dungeons[4].doorsns[36].tile = '';
+			window.dungeons[4].doorsns[37].tile = '';
+			window.dungeons[4].doorsns[38].tile = '';
+			window.dungeons[4].doorsns[39].tile = '';
+			window.dungeons[4].doorsns[40].tile = '';
+			window.dungeons[4].doorsns[41].tile = '';
+
+			window.dungeons[4].doorsew[17].tile = '';
+			window.dungeons[4].doorsew[18].tile = '';
+			window.dungeons[4].doorsew[22].tile = '';
+			window.dungeons[4].doorsew[24].tile = '';
+			window.dungeons[4].doorsew[25].tile = '';
+			window.dungeons[4].doorsew[26].tile = '';
+			window.dungeons[4].doorsew[29].tile = '';
+			window.dungeons[4].doorsew[30].tile = '';
+			window.dungeons[4].doorsew[33].tile = '';
+			window.dungeons[4].doorsew[34].tile = '';
+			window.dungeons[4].doorsew[36].tile = '';
+			window.dungeons[4].doorsew[37].tile = '';
+			window.dungeons[4].doorsew[38].tile = '';
+			window.dungeons[4].doorsew[39].tile = '';
+
+			//Dungeon 6
+			window.dungeons[5].rooms[9].tile = '';
+			window.dungeons[5].rooms[10].tile = '';
+			window.dungeons[5].rooms[11].tile = '';
+			window.dungeons[5].rooms[12].tile = '';
+			window.dungeons[5].rooms[13].tile = '';
+			window.dungeons[5].rooms[14].tile = '';
+			window.dungeons[5].rooms[15].tile = '';
+			window.dungeons[5].rooms[16].tile = '';
+			window.dungeons[5].rooms[17].tile = '';
+			window.dungeons[5].rooms[18].tile = '';
+			window.dungeons[5].rooms[19].tile = '';
+			window.dungeons[5].rooms[23].tile = '';
+			window.dungeons[5].rooms[24].tile = '';
+			window.dungeons[5].rooms[25].tile = '';
+			window.dungeons[5].rooms[27].tile = '';
+			window.dungeons[5].rooms[30].tile = '';
+			window.dungeons[5].rooms[31].tile = '';
+			window.dungeons[5].rooms[32].tile = '';
+			window.dungeons[5].rooms[33].tile = '';
+			window.dungeons[5].rooms[40].tile = '';
+			window.dungeons[5].rooms[41].tile = '';
+			window.dungeons[5].rooms[42].tile = '';
+			window.dungeons[5].rooms[43].tile = '';
+			window.dungeons[5].rooms[49].tile = '';
+			window.dungeons[5].rooms[50].tile = '';
+
+			window.dungeons[5].doorsns[8].tile = '';
+			window.dungeons[5].doorsns[9].tile = '';
+			window.dungeons[5].doorsns[10].tile = '';
+			window.dungeons[5].doorsns[11].tile = '';
+			window.dungeons[5].doorsns[12].tile = '';
+			window.dungeons[5].doorsns[13].tile = '';
+			window.dungeons[5].doorsns[14].tile = '';
+			window.dungeons[5].doorsns[15].tile = '';
+			window.dungeons[5].doorsns[16].tile = '';
+			window.dungeons[5].doorsns[21].tile = '';
+			window.dungeons[5].doorsns[27].tile = '';
+			window.dungeons[5].doorsns[28].tile = '';
+			window.dungeons[5].doorsns[35].tile = '';
+			window.dungeons[5].doorsns[36].tile = '';
+			window.dungeons[5].doorsns[37].tile = '';
+			window.dungeons[5].doorsns[43].tile = '';
+
+			window.dungeons[5].doorsew[9].tile = '';
+			window.dungeons[5].doorsew[10].tile = '';
+			window.dungeons[5].doorsew[11].tile = '';
+			window.dungeons[5].doorsew[16].tile = '';
+			window.dungeons[5].doorsew[17].tile = '';
+			window.dungeons[5].doorsew[19].tile = '';
+			window.dungeons[5].doorsew[23].tile = '';
+			window.dungeons[5].doorsew[24].tile = '';
+			window.dungeons[5].doorsew[25].tile = '';
+			window.dungeons[5].doorsew[32].tile = '';
+			window.dungeons[5].doorsew[33].tile = '';
+			window.dungeons[5].doorsew[41].tile = '';
+			window.dungeons[5].doorsew[42].tile = '';
+
+			//Dungeon 7
+			window.dungeons[6].rooms[8].tile = '';
+			window.dungeons[6].rooms[9].tile = '';
+			window.dungeons[6].rooms[10].tile = '';
+			window.dungeons[6].rooms[11].tile = '';
+			window.dungeons[6].rooms[12].tile = '';
+			window.dungeons[6].rooms[13].tile = '';
+			window.dungeons[6].rooms[14].tile = '';
+			window.dungeons[6].rooms[15].tile = '';
+			window.dungeons[6].rooms[16].tile = '';
+			window.dungeons[6].rooms[17].tile = '';
+			window.dungeons[6].rooms[18].tile = '';
+			window.dungeons[6].rooms[19].tile = '';
+			window.dungeons[6].rooms[20].tile = '';
+			window.dungeons[6].rooms[21].tile = '';
+			window.dungeons[6].rooms[22].tile = '';
+			window.dungeons[6].rooms[23].tile = '';
+			window.dungeons[6].rooms[24].tile = '';
+			window.dungeons[6].rooms[25].tile = '';
+			window.dungeons[6].rooms[26].tile = '';
+			window.dungeons[6].rooms[27].tile = '';
+			window.dungeons[6].rooms[29].tile = '';
+			window.dungeons[6].rooms[30].tile = '';
+			window.dungeons[6].rooms[31].tile = '';
+			window.dungeons[6].rooms[32].tile = '';
+			window.dungeons[6].rooms[33].tile = '';
+			window.dungeons[6].rooms[34].tile = '';
+			window.dungeons[6].rooms[37].tile = '';
+			window.dungeons[6].rooms[38].tile = '';
+			window.dungeons[6].rooms[40].tile = '';
+			window.dungeons[6].rooms[41].tile = '';
+			window.dungeons[6].rooms[46].tile = '';
+			window.dungeons[6].rooms[48].tile = '';
+			window.dungeons[6].rooms[54].tile = '';
+
+			window.dungeons[6].doorsns[7].tile = '';
+			window.dungeons[6].doorsns[8].tile = '';
+			window.dungeons[6].doorsns[9].tile = '';
+			window.dungeons[6].doorsns[10].tile = '';
+			window.dungeons[6].doorsns[11].tile = '';
+			window.dungeons[6].doorsns[12].tile = '';
+			window.dungeons[6].doorsns[13].tile = '';
+			window.dungeons[6].doorsns[14].tile = '';
+			window.dungeons[6].doorsns[15].tile = '';
+			window.dungeons[6].doorsns[16].tile = '';
+			window.dungeons[6].doorsns[17].tile = '';
+			window.dungeons[6].doorsns[18].tile = '';
+			window.dungeons[6].doorsns[19].tile = '';
+			window.dungeons[6].doorsns[20].tile = '';
+			window.dungeons[6].doorsns[21].tile = '';
+			window.dungeons[6].doorsns[22].tile = '';
+			window.dungeons[6].doorsns[23].tile = '';
+			window.dungeons[6].doorsns[26].tile = '';
+			window.dungeons[6].doorsns[27].tile = '';
+			window.dungeons[6].doorsns[28].tile = '';
+			window.dungeons[6].doorsns[29].tile = '';
+			window.dungeons[6].doorsns[33].tile = '';
+			window.dungeons[6].doorsns[35].tile = '';
+
+			window.dungeons[6].doorsew[8].tile = '';
+			window.dungeons[6].doorsew[9].tile = '';
+			window.dungeons[6].doorsew[10].tile = '';
+			window.dungeons[6].doorsew[11].tile = '';
+			window.dungeons[6].doorsew[12].tile = '';
+			window.dungeons[6].doorsew[13].tile = '';
+			window.dungeons[6].doorsew[14].tile = '';
+			window.dungeons[6].doorsew[15].tile = '';
+			window.dungeons[6].doorsew[16].tile = '';
+			window.dungeons[6].doorsew[17].tile = '';
+			window.dungeons[6].doorsew[18].tile = '';
+			window.dungeons[6].doorsew[19].tile = '';
+			window.dungeons[6].doorsew[21].tile = '';
+			window.dungeons[6].doorsew[22].tile = '';
+			window.dungeons[6].doorsew[23].tile = '';
+			window.dungeons[6].doorsew[24].tile = '';
+			window.dungeons[6].doorsew[25].tile = '';
+			window.dungeons[6].doorsew[26].tile = '';
+			window.dungeons[6].doorsew[29].tile = '';
+			window.dungeons[6].doorsew[30].tile = '';
+			window.dungeons[6].doorsew[23].tile = '';
+			window.dungeons[6].doorsew[32].tile = '';
+			window.dungeons[6].doorsew[33].tile = '';
+			window.dungeons[6].doorsew[38].tile = '';
+			window.dungeons[6].doorsew[40].tile = '';
+			window.dungeons[6].doorsew[46].tile = '';
+
+			//Dungeon 8
+			window.dungeons[7].rooms[11].tile = '';
+			window.dungeons[7].rooms[12].tile = '';
+			window.dungeons[7].rooms[18].tile = '';
+			window.dungeons[7].rooms[19].tile = '';
+			window.dungeons[7].rooms[20].tile = '';
+			window.dungeons[7].rooms[21].tile = '';
+			window.dungeons[7].rooms[23].tile = '';
+			window.dungeons[7].rooms[25].tile = '';
+			window.dungeons[7].rooms[26].tile = '';
+			window.dungeons[7].rooms[27].tile = '';
+			window.dungeons[7].rooms[28].tile = '';
+			window.dungeons[7].rooms[29].tile = '';
+			window.dungeons[7].rooms[31].tile = '';
+			window.dungeons[7].rooms[32].tile = '';
+			window.dungeons[7].rooms[33].tile = '';
+			window.dungeons[7].rooms[34].tile = '';
+			window.dungeons[7].rooms[35].tile = '';
+			window.dungeons[7].rooms[36].tile = '';
+			window.dungeons[7].rooms[37].tile = '';
+			window.dungeons[7].rooms[38].tile = '';
+			window.dungeons[7].rooms[39].tile = '';
+			window.dungeons[7].rooms[41].tile = '';
+			window.dungeons[7].rooms[43].tile = '';
+			window.dungeons[7].rooms[45].tile = '';
+			window.dungeons[7].rooms[47].tile = '';
+
+			window.dungeons[7].doorsns[10].tile = '';
+			window.dungeons[7].doorsns[16].tile = '';
+			window.dungeons[7].doorsns[17].tile = '';
+			window.dungeons[7].doorsns[18].tile = '';
+			window.dungeons[7].doorsns[22].tile = '';
+			window.dungeons[7].doorsns[23].tile = '';
+			window.dungeons[7].doorsns[24].tile = '';
+			window.dungeons[7].doorsns[25].tile = '';
+			window.dungeons[7].doorsns[28].tile = '';
+			window.dungeons[7].doorsns[29].tile = '';
+			window.dungeons[7].doorsns[30].tile = '';
+			window.dungeons[7].doorsns[31].tile = '';
+			window.dungeons[7].doorsns[32].tile = '';
+			window.dungeons[7].doorsns[33].tile = '';
+			window.dungeons[7].doorsns[34].tile = '';
+
+			window.dungeons[7].doorsew[11].tile = '';
+			window.dungeons[7].doorsew[12].tile = '';
+			window.dungeons[7].doorsew[18].tile = '';
+			window.dungeons[7].doorsew[19].tile = '';
+			window.dungeons[7].doorsew[20].tile = '';
+			window.dungeons[7].doorsew[21].tile = '';
+			window.dungeons[7].doorsew[23].tile = '';
+			window.dungeons[7].doorsew[25].tile = '';
+			window.dungeons[7].doorsew[26].tile = '';
+			window.dungeons[7].doorsew[27].tile = '';
+			window.dungeons[7].doorsew[28].tile = '';
+			window.dungeons[7].doorsew[29].tile = '';
+			window.dungeons[7].doorsew[31].tile = '';
+			window.dungeons[7].doorsew[33].tile = '';
+			window.dungeons[7].doorsew[35].tile = '';
+			window.dungeons[7].doorsew[37].tile = '';
+			window.dungeons[7].doorsew[39].tile = '';
+
+			//Dungeon 9
+			window.dungeons[8].rooms[0].tile = 'empty';
+			window.dungeons[8].rooms[6].tile = 'empty';
+			window.dungeons[8].rooms[7].tile = 'empty';
+			window.dungeons[8].rooms[23].tile = 'empty';
+			window.dungeons[8].rooms[47].tile = 'empty';
+			window.dungeons[8].rooms[62].tile = 'empty';
+			window.dungeons[8].rooms[63].tile = 'empty';
+
+			window.dungeons[8].doorsns[0].tile = 'empty';
+			window.dungeons[8].doorsns[5].tile = 'empty';
+			window.dungeons[8].doorsns[6].tile = 'empty';
+			window.dungeons[8].doorsns[20].tile = 'empty';
+			window.dungeons[8].doorsns[41].tile = 'empty';
+			window.dungeons[8].doorsns[54].tile = 'empty';
+			window.dungeons[8].doorsns[55].tile = 'empty';
+
+			window.dungeons[8].doorsew[0].tile = 'empty';
+			window.dungeons[8].doorsew[6].tile = 'empty';
+			window.dungeons[8].doorsew[7].tile = 'empty';
+			window.dungeons[8].doorsew[15].tile = 'empty';
+			window.dungeons[8].doorsew[23].tile = 'empty';
+			window.dungeons[8].doorsew[39].tile = 'empty';
+			window.dungeons[8].doorsew[47].tile = 'empty';
+			window.dungeons[8].doorsew[54].tile = 'empty';
+			window.dungeons[8].doorsew[55].tile = 'empty';
+		} else if (window.flags.dungeonquest == "2") {
+			//Default dungeons to empty, except for level 9
+			for (var j = 0; j < 8; j++) {
+				for (var i = 0; i < 64; i++) {
+					window.dungeons[j].rooms[i].tile = 'empty';
+					if (i < 56) {
+						window.dungeons[j].doorsns[i].tile = 'empty';
+						window.dungeons[j].doorsew[i].tile = 'empty';
+					}
+				}
+			}
+
+			//Dungeon 1
+			window.dungeons[0].rooms[16].tile = '';
+			window.dungeons[0].rooms[17].tile = '';
+			window.dungeons[0].rooms[18].tile = '';
+			window.dungeons[0].rooms[19].tile = '';
+			window.dungeons[0].rooms[20].tile = '';
+			window.dungeons[0].rooms[21].tile = '';
+			window.dungeons[0].rooms[22].tile = '';
+			window.dungeons[0].rooms[23].tile = '';
+			window.dungeons[0].rooms[24].tile = '';
+			window.dungeons[0].rooms[25].tile = '';
+			window.dungeons[0].rooms[27].tile = '';
+			window.dungeons[0].rooms[28].tile = '';
+			window.dungeons[0].rooms[30].tile = '';
+			window.dungeons[0].rooms[31].tile = '';
+
+			window.dungeons[0].doorsns[14].tile = '';
+			window.dungeons[0].doorsns[15].tile = '';
+			window.dungeons[0].doorsns[16].tile = '';
+			window.dungeons[0].doorsns[17].tile = '';
+			window.dungeons[0].doorsns[18].tile = '';
+			window.dungeons[0].doorsns[19].tile = '';
+			window.dungeons[0].doorsns[20].tile = '';
+			window.dungeons[0].doorsns[21].tile = '';
+			window.dungeons[0].doorsns[24].tile = '';
+			window.dungeons[0].doorsns[27].tile = '';
+
+			window.dungeons[0].doorsew[16].tile = '';
+			window.dungeons[0].doorsew[17].tile = '';
+			window.dungeons[0].doorsew[19].tile = '';
+			window.dungeons[0].doorsew[20].tile = '';
+			window.dungeons[0].doorsew[22].tile = '';
+			window.dungeons[0].doorsew[23].tile = '';
+
+			//Dungeon 2
+			window.dungeons[1].rooms[17].tile = '';
+			window.dungeons[1].rooms[18].tile = '';
+			window.dungeons[1].rooms[19].tile = '';
+			window.dungeons[1].rooms[20].tile = '';
+			window.dungeons[1].rooms[21].tile = '';
+			window.dungeons[1].rooms[22].tile = '';
+			window.dungeons[1].rooms[23].tile = '';
+			window.dungeons[1].rooms[24].tile = '';
+			window.dungeons[1].rooms[25].tile = '';
+			window.dungeons[1].rooms[26].tile = '';
+			window.dungeons[1].rooms[27].tile = '';
+			window.dungeons[1].rooms[28].tile = '';
+			window.dungeons[1].rooms[29].tile = '';
+			window.dungeons[1].rooms[33].tile = '';
+			window.dungeons[1].rooms[34].tile = '';
+			window.dungeons[1].rooms[35].tile = '';
+			window.dungeons[1].rooms[36].tile = '';
+			window.dungeons[1].rooms[37].tile = '';
+			window.dungeons[1].rooms[38].tile = '';
+			window.dungeons[1].rooms[39].tile = '';
+
+			window.dungeons[1].doorsns[15].tile = '';
+			window.dungeons[1].doorsns[16].tile = '';
+			window.dungeons[1].doorsns[17].tile = '';
+			window.dungeons[1].doorsns[18].tile = '';
+			window.dungeons[1].doorsns[19].tile = '';
+			window.dungeons[1].doorsns[20].tile = '';
+			window.dungeons[1].doorsns[21].tile = '';
+			window.dungeons[1].doorsns[22].tile = '';
+			window.dungeons[1].doorsns[23].tile = '';
+			window.dungeons[1].doorsns[24].tile = '';
+			window.dungeons[1].doorsns[25].tile = '';
+			window.dungeons[1].doorsns[29].tile = '';
+			window.dungeons[1].doorsns[30].tile = '';
+			window.dungeons[1].doorsns[31].tile = '';
+			window.dungeons[1].doorsns[32].tile = '';
+			window.dungeons[1].doorsns[33].tile = '';
+			window.dungeons[1].doorsns[34].tile = '';
+
+			window.dungeons[1].doorsew[17].tile = '';
+			window.dungeons[1].doorsew[18].tile = '';
+			window.dungeons[1].doorsew[19].tile = '';
+			window.dungeons[1].doorsew[20].tile = '';
+			window.dungeons[1].doorsew[21].tile = '';
+			window.dungeons[1].doorsew[25].tile = '';
+			window.dungeons[1].doorsew[26].tile = '';
+			window.dungeons[1].doorsew[27].tile = '';
+			window.dungeons[1].doorsew[28].tile = '';
+			window.dungeons[1].doorsew[29].tile = '';
+			
+
+			//Dungeon 3
+			window.dungeons[2].rooms[2].tile = '';
+			window.dungeons[2].rooms[3].tile = '';
+			window.dungeons[2].rooms[41].tile = '';
+			window.dungeons[2].rooms[42].tile = '';
+			window.dungeons[2].rooms[43].tile = '';
+			window.dungeons[2].rooms[44].tile = '';
+			window.dungeons[2].rooms[45].tile = '';
+			window.dungeons[2].rooms[46].tile = '';
+			window.dungeons[2].rooms[47].tile = '';
+			window.dungeons[2].rooms[54].tile = '';
+			window.dungeons[2].rooms[55].tile = '';
+
+			window.dungeons[2].doorsns[2].tile = '';
+			window.dungeons[2].doorsns[36].tile = '';
+			window.dungeons[2].doorsns[37].tile = '';
+			window.dungeons[2].doorsns[38].tile = '';
+			window.dungeons[2].doorsns[39].tile = '';
+			window.dungeons[2].doorsns[40].tile = '';
+			window.dungeons[2].doorsns[41].tile = '';
+
+			window.dungeons[2].doorsew[46].tile = '';
+			window.dungeons[2].doorsew[47].tile = '';
+
+			//Dungeon 4
+			window.dungeons[3].rooms[16].tile = '';
+			window.dungeons[3].rooms[17].tile = '';
+			window.dungeons[3].rooms[18].tile = '';
+			window.dungeons[3].rooms[19].tile = '';
+			window.dungeons[3].rooms[20].tile = '';
+			window.dungeons[3].rooms[21].tile = '';
+			window.dungeons[3].rooms[22].tile = '';
+			window.dungeons[3].rooms[23].tile = '';
+			window.dungeons[3].rooms[24].tile = '';
+			window.dungeons[3].rooms[25].tile = '';
+			window.dungeons[3].rooms[26].tile = '';
+			window.dungeons[3].rooms[27].tile = '';
+			window.dungeons[3].rooms[28].tile = '';
+			window.dungeons[3].rooms[29].tile = '';
+			window.dungeons[3].rooms[30].tile = '';
+			window.dungeons[3].rooms[31].tile = '';
+			window.dungeons[3].rooms[32].tile = '';
+			window.dungeons[3].rooms[33].tile = '';
+			window.dungeons[3].rooms[34].tile = '';
+			window.dungeons[3].rooms[35].tile = '';
+			window.dungeons[3].rooms[36].tile = '';
+			window.dungeons[3].rooms[37].tile = '';
+			window.dungeons[3].rooms[38].tile = '';
+			window.dungeons[3].rooms[39].tile = '';
+			window.dungeons[3].rooms[41].tile = '';
+			window.dungeons[3].rooms[42].tile = '';
+			window.dungeons[3].rooms[43].tile = '';
+			window.dungeons[3].rooms[44].tile = '';
+			window.dungeons[3].rooms[45].tile = '';
+			window.dungeons[3].rooms[46].tile = '';
+
+			window.dungeons[3].doorsns[14].tile = '';
+			window.dungeons[3].doorsns[15].tile = '';
+			window.dungeons[3].doorsns[16].tile = '';
+			window.dungeons[3].doorsns[17].tile = '';
+			window.dungeons[3].doorsns[18].tile = '';
+			window.dungeons[3].doorsns[19].tile = '';
+			window.dungeons[3].doorsns[20].tile = '';
+			window.dungeons[3].doorsns[21].tile = '';
+			window.dungeons[3].doorsns[22].tile = '';
+			window.dungeons[3].doorsns[23].tile = '';
+			window.dungeons[3].doorsns[24].tile = '';
+			window.dungeons[3].doorsns[25].tile = '';
+			window.dungeons[3].doorsns[26].tile = '';
+			window.dungeons[3].doorsns[27].tile = '';
+			window.dungeons[3].doorsns[28].tile = '';
+			window.dungeons[3].doorsns[29].tile = '';
+			window.dungeons[3].doorsns[30].tile = '';
+			window.dungeons[3].doorsns[31].tile = '';
+			window.dungeons[3].doorsns[32].tile = '';
+			window.dungeons[3].doorsns[33].tile = '';
+			window.dungeons[3].doorsns[34].tile = '';
+			window.dungeons[3].doorsns[36].tile = '';
+			window.dungeons[3].doorsns[37].tile = '';
+			window.dungeons[3].doorsns[38].tile = '';
+			window.dungeons[3].doorsns[39].tile = '';
+			window.dungeons[3].doorsns[40].tile = '';
+
+			window.dungeons[3].doorsew[16].tile = '';
+			window.dungeons[3].doorsew[17].tile = '';
+			window.dungeons[3].doorsew[18].tile = '';
+			window.dungeons[3].doorsew[19].tile = '';
+			window.dungeons[3].doorsew[20].tile = '';
+			window.dungeons[3].doorsew[21].tile = '';
+			window.dungeons[3].doorsew[22].tile = '';
+			window.dungeons[3].doorsew[23].tile = '';
+			window.dungeons[3].doorsew[24].tile = '';
+			window.dungeons[3].doorsew[25].tile = '';
+			window.dungeons[3].doorsew[26].tile = '';
+			window.dungeons[3].doorsew[27].tile = '';
+			window.dungeons[3].doorsew[28].tile = '';
+			window.dungeons[3].doorsew[29].tile = '';
+			window.dungeons[3].doorsew[30].tile = '';
+			window.dungeons[3].doorsew[31].tile = '';
+			window.dungeons[3].doorsew[33].tile = '';
+			window.dungeons[3].doorsew[34].tile = '';
+			window.dungeons[3].doorsew[35].tile = '';
+			window.dungeons[3].doorsew[36].tile = '';
+			window.dungeons[3].doorsew[37].tile = '';
+			window.dungeons[3].doorsew[38].tile = '';
+
+			//Dungeon 5
+			window.dungeons[4].rooms[16].tile = '';
+			window.dungeons[4].rooms[17].tile = '';
+			window.dungeons[4].rooms[20].tile = '';
+			window.dungeons[4].rooms[21].tile = '';
+			window.dungeons[4].rooms[22].tile = '';
+			window.dungeons[4].rooms[23].tile = '';
+			window.dungeons[4].rooms[24].tile = '';
+			window.dungeons[4].rooms[25].tile = '';
+			window.dungeons[4].rooms[27].tile = '';
+			window.dungeons[4].rooms[28].tile = '';
+			window.dungeons[4].rooms[30].tile = '';
+			window.dungeons[4].rooms[31].tile = '';
+			window.dungeons[4].rooms[32].tile = '';
+			window.dungeons[4].rooms[33].tile = '';
+			window.dungeons[4].rooms[34].tile = '';
+			window.dungeons[4].rooms[35].tile = '';
+			window.dungeons[4].rooms[38].tile = '';
+			window.dungeons[4].rooms[39].tile = '';
+
+			window.dungeons[4].doorsns[14].tile = '';
+			window.dungeons[4].doorsns[18].tile = '';
+			window.dungeons[4].doorsns[19].tile = '';
+			window.dungeons[4].doorsns[20].tile = '';
+			window.dungeons[4].doorsns[21].tile = '';
+			window.dungeons[4].doorsns[24].tile = '';
+			window.dungeons[4].doorsns[27].tile = '';
+			window.dungeons[4].doorsns[28].tile = '';
+			window.dungeons[4].doorsns[29].tile = '';
+			window.dungeons[4].doorsns[30].tile = '';
+			window.dungeons[4].doorsns[34].tile = '';
+
+			window.dungeons[4].doorsew[16].tile = '';
+			window.dungeons[4].doorsew[17].tile = '';
+			window.dungeons[4].doorsew[20].tile = '';
+			window.dungeons[4].doorsew[22].tile = '';
+			window.dungeons[4].doorsew[23].tile = '';
+			window.dungeons[4].doorsew[24].tile = '';
+			window.dungeons[4].doorsew[25].tile = '';
+			window.dungeons[4].doorsew[27].tile = '';
+			window.dungeons[4].doorsew[30].tile = '';
+			window.dungeons[4].doorsew[31].tile = '';
+
+			//Dungeon 6
+			window.dungeons[5].rooms[13].tile = '';
+			window.dungeons[5].rooms[20].tile = '';
+			window.dungeons[5].rooms[21].tile = '';
+			window.dungeons[5].rooms[25].tile = '';
+			window.dungeons[5].rooms[26].tile = '';
+			window.dungeons[5].rooms[27].tile = '';
+			window.dungeons[5].rooms[28].tile = '';
+			window.dungeons[5].rooms[29].tile = '';
+			window.dungeons[5].rooms[30].tile = '';
+			window.dungeons[5].rooms[32].tile = '';
+			window.dungeons[5].rooms[33].tile = '';
+			window.dungeons[5].rooms[34].tile = '';
+			window.dungeons[5].rooms[35].tile = '';
+			window.dungeons[5].rooms[36].tile = '';
+			window.dungeons[5].rooms[37].tile = '';
+			window.dungeons[5].rooms[38].tile = '';
+			window.dungeons[5].rooms[39].tile = '';
+			window.dungeons[5].rooms[40].tile = '';
+			window.dungeons[5].rooms[48].tile = '';
+			window.dungeons[5].rooms[49].tile = '';
+			window.dungeons[5].rooms[50].tile = '';
+			window.dungeons[5].rooms[51].tile = '';
+
+			window.dungeons[5].doorsns[18].tile = '';
+			window.dungeons[5].doorsns[22].tile = '';
+			window.dungeons[5].doorsns[23].tile = '';
+			window.dungeons[5].doorsns[24].tile = '';
+			window.dungeons[5].doorsns[25].tile = '';
+			window.dungeons[5].doorsns[26].tile = '';
+			window.dungeons[5].doorsns[28].tile = '';
+			window.dungeons[5].doorsns[29].tile = '';
+			window.dungeons[5].doorsns[30].tile = '';
+			window.dungeons[5].doorsns[31].tile = '';
+			window.dungeons[5].doorsns[32].tile = '';
+			window.dungeons[5].doorsns[33].tile = '';
+			window.dungeons[5].doorsns[34].tile = '';
+			window.dungeons[5].doorsns[42].tile = '';
+			window.dungeons[5].doorsns[43].tile = '';
+			window.dungeons[5].doorsns[44].tile = '';
+
+			window.dungeons[5].doorsew[13].tile = '';
+			window.dungeons[5].doorsew[20].tile = '';
+			window.dungeons[5].doorsew[21].tile = '';
+			window.dungeons[5].doorsew[25].tile = '';
+			window.dungeons[5].doorsew[26].tile = '';
+			window.dungeons[5].doorsew[27].tile = '';
+			window.dungeons[5].doorsew[28].tile = '';
+			window.dungeons[5].doorsew[29].tile = '';
+			window.dungeons[5].doorsew[30].tile = '';
+			window.dungeons[5].doorsew[32].tile = '';
+			window.dungeons[5].doorsew[40].tile = '';
+
+			//Dungeon 7
+			window.dungeons[6].rooms[7].tile = '';
+			window.dungeons[6].rooms[15].tile = '';
+			window.dungeons[6].rooms[17].tile = '';
+			window.dungeons[6].rooms[18].tile = '';
+			window.dungeons[6].rooms[19].tile = '';
+			window.dungeons[6].rooms[20].tile = '';
+			window.dungeons[6].rooms[21].tile = '';
+			window.dungeons[6].rooms[23].tile = '';
+			window.dungeons[6].rooms[25].tile = '';
+			window.dungeons[6].rooms[27].tile = '';
+			window.dungeons[6].rooms[28].tile = '';
+			window.dungeons[6].rooms[29].tile = '';
+			window.dungeons[6].rooms[31].tile = '';
+			window.dungeons[6].rooms[33].tile = '';
+			window.dungeons[6].rooms[35].tile = '';
+			window.dungeons[6].rooms[36].tile = '';
+			window.dungeons[6].rooms[37].tile = '';
+			window.dungeons[6].rooms[39].tile = '';
+			window.dungeons[6].rooms[41].tile = '';
+			window.dungeons[6].rooms[47].tile = '';
+			window.dungeons[6].rooms[49].tile = '';
+			window.dungeons[6].rooms[50].tile = '';
+			window.dungeons[6].rooms[51].tile = '';
+			window.dungeons[6].rooms[52].tile = '';
+			window.dungeons[6].rooms[53].tile = '';
+			window.dungeons[6].rooms[54].tile = '';
+			window.dungeons[6].rooms[55].tile = '';
+
+			window.dungeons[6].doorsns[15].tile = '';
+			window.dungeons[6].doorsns[16].tile = '';
+			window.dungeons[6].doorsns[17].tile = '';
+			window.dungeons[6].doorsns[18].tile = '';
+			window.dungeons[6].doorsns[24].tile = '';
+			window.dungeons[6].doorsns[25].tile = '';
+			window.dungeons[6].doorsns[31].tile = '';
+			window.dungeons[6].doorsns[32].tile = '';
+			window.dungeons[6].doorsns[43].tile = '';
+			window.dungeons[6].doorsns[44].tile = '';
+			window.dungeons[6].doorsns[45].tile = '';
+			window.dungeons[6].doorsns[46].tile = '';
+			window.dungeons[6].doorsns[47].tile = '';
+			window.dungeons[6].doorsns[48].tile = '';
+
+			window.dungeons[6].doorsew[7].tile = '';
+			window.dungeons[6].doorsew[15].tile = '';
+			window.dungeons[6].doorsew[17].tile = '';
+			window.dungeons[6].doorsew[19].tile = '';
+			window.dungeons[6].doorsew[20].tile = '';
+			window.dungeons[6].doorsew[21].tile = '';
+			window.dungeons[6].doorsew[23].tile = '';
+			window.dungeons[6].doorsew[25].tile = '';
+			window.dungeons[6].doorsew[27].tile = '';
+			window.dungeons[6].doorsew[28].tile = '';
+			window.dungeons[6].doorsew[29].tile = '';
+			window.dungeons[6].doorsew[31].tile = '';
+			window.dungeons[6].doorsew[33].tile = '';
+			window.dungeons[6].doorsew[39].tile = '';
+			window.dungeons[6].doorsew[41].tile = '';
+			window.dungeons[6].doorsew[47].tile = '';
+
+			//Dungeon 8
+			window.dungeons[7].rooms[0].tile = '';
+			window.dungeons[7].rooms[1].tile = '';
+			window.dungeons[7].rooms[2].tile = '';
+			window.dungeons[7].rooms[3].tile = '';
+			window.dungeons[7].rooms[4].tile = '';
+			window.dungeons[7].rooms[5].tile = '';
+			window.dungeons[7].rooms[6].tile = '';
+			window.dungeons[7].rooms[8].tile = '';
+			window.dungeons[7].rooms[9].tile = '';
+			window.dungeons[7].rooms[10].tile = '';
+			window.dungeons[7].rooms[11].tile = '';
+			window.dungeons[7].rooms[12].tile = '';
+			window.dungeons[7].rooms[13].tile = '';
+			window.dungeons[7].rooms[14].tile = '';
+			window.dungeons[7].rooms[16].tile = '';
+			window.dungeons[7].rooms[22].tile = '';
+			window.dungeons[7].rooms[24].tile = '';
+			window.dungeons[7].rooms[30].tile = '';
+			window.dungeons[7].rooms[32].tile = '';
+			window.dungeons[7].rooms[38].tile = '';
+			window.dungeons[7].rooms[40].tile = '';
+			window.dungeons[7].rooms[42].tile = '';
+			window.dungeons[7].rooms[43].tile = '';
+			window.dungeons[7].rooms[44].tile = '';
+			window.dungeons[7].rooms[45].tile = '';
+			window.dungeons[7].rooms[46].tile = '';
+			window.dungeons[7].rooms[48].tile = '';
+			window.dungeons[7].rooms[56].tile = '';
+			window.dungeons[7].rooms[57].tile = '';
+			window.dungeons[7].rooms[58].tile = '';
+			window.dungeons[7].rooms[59].tile = '';
+			window.dungeons[7].rooms[60].tile = '';
+			window.dungeons[7].rooms[61].tile = '';
+			window.dungeons[7].rooms[62].tile = '';
+			window.dungeons[7].rooms[63].tile = '';
+
+			window.dungeons[7].doorsns[0].tile = '';
+			window.dungeons[7].doorsns[1].tile = '';
+			window.dungeons[7].doorsns[2].tile = '';
+			window.dungeons[7].doorsns[3].tile = '';
+			window.dungeons[7].doorsns[4].tile = '';
+			window.dungeons[7].doorsns[5].tile = '';
+			window.dungeons[7].doorsns[7].tile = '';
+			window.dungeons[7].doorsns[8].tile = '';
+			window.dungeons[7].doorsns[9].tile = '';
+			window.dungeons[7].doorsns[10].tile = '';
+			window.dungeons[7].doorsns[11].tile = '';
+			window.dungeons[7].doorsns[12].tile = '';
+			window.dungeons[7].doorsns[37].tile = '';
+			window.dungeons[7].doorsns[38].tile = '';
+			window.dungeons[7].doorsns[39].tile = '';
+			window.dungeons[7].doorsns[40].tile = '';
+			window.dungeons[7].doorsns[49].tile = '';
+			window.dungeons[7].doorsns[50].tile = '';
+			window.dungeons[7].doorsns[51].tile = '';
+			window.dungeons[7].doorsns[52].tile = '';
+			window.dungeons[7].doorsns[53].tile = '';
+			window.dungeons[7].doorsns[54].tile = '';
+			window.dungeons[7].doorsns[55].tile = '';
+
+			window.dungeons[7].doorsew[0].tile = '';
+			window.dungeons[7].doorsew[1].tile = '';
+			window.dungeons[7].doorsew[2].tile = '';
+			window.dungeons[7].doorsew[3].tile = '';
+			window.dungeons[7].doorsew[4].tile = '';
+			window.dungeons[7].doorsew[5].tile = '';
+			window.dungeons[7].doorsew[6].tile = '';
+			window.dungeons[7].doorsew[8].tile = '';
+			window.dungeons[7].doorsew[14].tile = '';
+			window.dungeons[7].doorsew[16].tile = '';
+			window.dungeons[7].doorsew[22].tile = '';
+			window.dungeons[7].doorsew[24].tile = '';
+			window.dungeons[7].doorsew[30].tile = '';
+			window.dungeons[7].doorsew[32].tile = '';
+			window.dungeons[7].doorsew[38].tile = '';
+			window.dungeons[7].doorsew[40].tile = '';
+			window.dungeons[7].doorsew[48].tile = '';
+
+			//Dungeon 9
+			window.dungeons[8].rooms[2].tile = 'empty';
+			window.dungeons[8].rooms[3].tile = 'empty';
+			window.dungeons[8].rooms[6].tile = 'empty';
+			window.dungeons[8].rooms[7].tile = 'empty';
+			window.dungeons[8].rooms[10].tile = 'empty';
+			window.dungeons[8].rooms[15].tile = 'empty';
+			window.dungeons[8].rooms[16].tile = 'empty';
+			window.dungeons[8].rooms[23].tile = 'empty';
+			window.dungeons[8].rooms[24].tile = 'empty';
+			window.dungeons[8].rooms[32].tile = 'empty';
+			window.dungeons[8].rooms[40].tile = 'empty';
+			window.dungeons[8].rooms[47].tile = 'empty';
+			window.dungeons[8].rooms[50].tile = 'empty';
+			window.dungeons[8].rooms[55].tile = 'empty';
+			window.dungeons[8].rooms[58].tile = 'empty';
+			window.dungeons[8].rooms[59].tile = 'empty';
+			window.dungeons[8].rooms[62].tile = 'empty';
+			window.dungeons[8].rooms[63].tile = 'empty';
+
+			window.dungeons[8].doorsns[1].tile = 'empty';
+			window.dungeons[8].doorsns[2].tile = 'empty';
+			window.dungeons[8].doorsns[3].tile = 'empty';
+			window.dungeons[8].doorsns[5].tile = 'empty';
+			window.dungeons[8].doorsns[6].tile = 'empty';
+			window.dungeons[8].doorsns[8].tile = 'empty';
+			window.dungeons[8].doorsns[9].tile = 'empty';
+			window.dungeons[8].doorsns[13].tile = 'empty';
+			window.dungeons[8].doorsns[14].tile = 'empty';
+			window.dungeons[8].doorsns[20].tile = 'empty';
+			window.dungeons[8].doorsns[21].tile = 'empty';
+			window.dungeons[8].doorsns[28].tile = 'empty';
+			window.dungeons[8].doorsns[35].tile = 'empty';
+			window.dungeons[8].doorsns[41].tile = 'empty';
+			window.dungeons[8].doorsns[43].tile = 'empty';
+			window.dungeons[8].doorsns[44].tile = 'empty';
+			window.dungeons[8].doorsns[48].tile = 'empty';
+			window.dungeons[8].doorsns[50].tile = 'empty';
+			window.dungeons[8].doorsns[51].tile = 'empty';
+			window.dungeons[8].doorsns[52].tile = 'empty';
+			window.dungeons[8].doorsns[54].tile = 'empty';
+			window.dungeons[8].doorsns[55].tile = 'empty';
+
+			window.dungeons[8].doorsew[2].tile = 'empty';
+			window.dungeons[8].doorsew[3].tile = 'empty';
+			window.dungeons[8].doorsew[6].tile = 'empty';
+			window.dungeons[8].doorsew[7].tile = 'empty';
+			window.dungeons[8].doorsew[8].tile = 'empty';
+			window.dungeons[8].doorsew[10].tile = 'empty';
+			window.dungeons[8].doorsew[15].tile = 'empty';
+			window.dungeons[8].doorsew[16].tile = 'empty';
+			window.dungeons[8].doorsew[23].tile = 'empty';
+			window.dungeons[8].doorsew[24].tile = 'empty';
+			window.dungeons[8].doorsew[32].tile = 'empty';
+			window.dungeons[8].doorsew[39].tile = 'empty';
+			window.dungeons[8].doorsew[40].tile = 'empty';
+			window.dungeons[8].doorsew[42].tile = 'empty';
+			window.dungeons[8].doorsew[47].tile = 'empty';
+			window.dungeons[8].doorsew[50].tile = 'empty';
+			window.dungeons[8].doorsew[51].tile = 'empty';
+			window.dungeons[8].doorsew[54].tile = 'empty';
+			window.dungeons[8].doorsew[55].tile = 'empty';
+		}
 
 		switchdungeon(0);
 

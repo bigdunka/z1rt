@@ -1706,6 +1706,10 @@ body {
 	visibility: hidden;
 }
 
+.dungeondoorempty {
+	visibility: hidden;
+}
+
 .showhintspanel {
 	width: 300px;
 	height: 325px;
