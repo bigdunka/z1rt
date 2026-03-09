@@ -1,7 +1,7 @@
 (function(window) {
     'use strict';
 
-	var buildstring = '10103';
+	var buildstring = '10104';
 	window.availablechecks = 0;
 	window.remainingchecks = 0;
 
@@ -732,7 +732,7 @@
 			window.locations[1][10].startingstatus = 'A';
 			window.locations[1][11].status = 'A';
 			window.locations[1][11].startingstatus = 'A';
-			window.locations[1][11].requirements = 'p';
+			window.locations[1][11].requirements = 'P';
 			window.locations[1][12].status = 'A';
 			window.locations[1][12].startingstatus = 'A';
 			window.locations[1][13].status = 'A';
@@ -847,9 +847,6 @@
 			window.locations[6][10].status = 'A';
 			window.locations[6][10].startingstatus = 'A';
 			window.locations[6][10].requirements = 'C';
-			window.locations[6][11].status = 'A';
-			window.locations[6][11].startingstatus = 'A';
-			window.locations[6][11].requirements = 'C';
 			window.locations[6][12].status = 'A';
 			window.locations[6][12].startingstatus = 'A';
 			window.locations[6][12].requirements = 'C';
