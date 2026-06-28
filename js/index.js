@@ -91,6 +91,8 @@ function parsesummarytext() {
         dungeonitemshuffle.value = "H";
     } else if (fullsummarytext.indexOf('Dungeon Item Shuffle: Items + Hearts') > -1) {
         dungeonitemshuffle.value = "F";
+    } else if (fullsummarytext.indexOf('Dungeon Item Shuffle: Intra-Dungeon') > -1) {
+        dungeonitemshuffle.value = "I";
     } else {
         dungeonitemshuffle.value = "N";
     }
